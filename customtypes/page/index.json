@@ -1,0 +1,60 @@
+{
+  "id": "page",
+  "label": "Страница",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "path": {
+        "type": "Text",
+        "config": { "label": "Адрес страницы", "placeholder": "/blog/post" }
+      },
+      "meta": {
+        "type": "Group",
+        "config": {
+          "label": "SEO",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": { "label": "title", "placeholder": "" }
+            },
+            "description": {
+              "type": "Text",
+              "config": { "label": "description", "placeholder": "" }
+            }
+          }
+        }
+      },
+      "align": {
+        "type": "Select",
+        "config": {
+          "label": "Выравнивание контента",
+          "placeholder": "",
+          "options": ["Слева", "По центру", "Справа"]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text": { "type": "SharedSlice" },
+            "image_with_caption": { "type": "SharedSlice" },
+            "header_with_link": { "type": "SharedSlice" },
+            "cards": { "type": "SharedSlice" },
+            "faq": { "type": "SharedSlice" },
+            "video": { "type": "SharedSlice" },
+            "statistics": { "type": "SharedSlice" },
+            "form": { "type": "SharedSlice" },
+            "gap": { "type": "SharedSlice" },
+            "author": { "type": "SharedSlice" },
+            "banner": { "type": "SharedSlice" },
+            "header": { "type": "SharedSlice" },
+            "hero": { "type": "SharedSlice" },
+            "buttons": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}

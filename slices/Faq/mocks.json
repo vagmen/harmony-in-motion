@@ -1,0 +1,90 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "damage",
+							"type": "Text"
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ad eu qui sit duis consequat enim voluptate minim esse nostrud Lorem reprehenderit. Ea do nostrud ullamco magna excepteur. Velit consectetur qui aliqua occaecat aliquip eiusmod mollit consequat."
+									}
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "dark",
+							"type": "Text"
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Enim ex fugiat enim eiusmod deserunt minim aliquip dolor minim. Excepteur consequat adipisicing ex exercitation nisi incididunt sint ad pariatur officia fugiat. Consequat sint incididunt non Lorem ex mollit voluptate."
+									}
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Mollit sint duis amet."
+									}
+								}
+							]
+						}
+					],
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "opportunity",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

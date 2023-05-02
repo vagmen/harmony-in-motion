@@ -1,0 +1,119 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Judge"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi nulla et id ex nostrud ullamco ipsum mollit fugiat ex consectetur. Eiusmod do cupidatat sit sunt labore sunt excepteur cillum. Proident aliquip do est eu culpa tempor officia deserunt."
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+					"width": 4752,
+					"height": 3168
+				},
+				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+				"width": 4752,
+				"height": 3168,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"imageposition": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "Справа"
+			},
+			"mobileimageposition": {
+				"__TYPE__": "FieldContent",
+				"value": "Сверху",
+				"type": "Select"
+			},
+			"align": {
+				"__TYPE__": "FieldContent",
+				"value": "Слева",
+				"type": "Select"
+			},
+			"imageweight": {
+				"__TYPE__": "FieldContent",
+				"value": "m",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "В ширину контейнера"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "event",
+							"type": "Text"
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Главная"
+						}
+					],
+					[
+						"size",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "m",
+							"type": "Select"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

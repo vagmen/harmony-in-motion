@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"url": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "https://youtu.be/wDFYRmZr1LA"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "В ширину контейнера"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

@@ -1,0 +1,83 @@
+{
+  "id": "header",
+  "type": "SharedSlice",
+  "name": "Header",
+  "description": "Header",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/header/default/92da49f2a245646e5303a2d36f237dc938bdda03.png?auto=compress%2Cformat",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Заголовок",
+            "placeholder": "Если заголовок страницы, то h1",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Описание",
+            "placeholder": "Введите описание",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "align": {
+          "type": "Select",
+          "config": {
+            "label": "Выравнивание",
+            "placeholder": "",
+            "options": ["Слева", "По центру", "Справа"]
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Название кнопки",
+            "placeholder": "Введите название кнопки"
+          }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Главная",
+              "Главная облегченная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер кнопки",
+            "placeholder": "",
+            "options": ["s", "m", "l"]
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["page"]
+          }
+        }
+      }
+    }
+  ]
+}

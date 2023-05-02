@@ -1,0 +1,25 @@
+.section {
+  margin: 0 var(--page-padding) var(--section-spacing);
+
+  text-align: center;
+  display: grid;
+  /* grid-template-columns: 100%; */
+}
+
+.imageWrapper {
+  /* background: rgba(256, 0, 0, 0.3); */
+  position: relative;
+  height: auto;
+}
+
+.image {
+  width: 100%;
+  /* background: #eee; */
+  background: var(--md-sys-color-surface);
+  height: auto;
+  border-radius: var(--border-radius-m);
+  /* margin-bottom: 4px; */
+  margin-bottom: var(--gap-m);
+  max-height: 80vh;
+  object-fit: contain;
+}

@@ -1,0 +1,40 @@
+{
+  "id": "form",
+  "type": "SharedSlice",
+  "name": "Form",
+  "description": "Form",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Form",
+      "primary": {
+        "buttontitle": {
+          "type": "Text",
+          "config": { "label": "Название кнопки", "placeholder": "" }
+        },
+        "buttonvariant": {
+          "type": "Select",
+          "config": {
+            "label": "buttonVariant",
+            "placeholder": "",
+            "options": ["filled", "filledTonal", "outlined", "text"]
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "title", "placeholder": "" }
+        },
+        "sliceexample": {
+          "type": "Embed",
+          "config": { "label": "sliceExample", "placeholder": "" }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/form/default/20205c202df3c6721f28c75619b2409f5e577ce4.png?auto=compress%2Cformat"
+    }
+  ]
+}

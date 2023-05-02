@@ -1,0 +1,225 @@
+:root {
+  --max-width: 1100px;
+  /* --border-radius: 12px; */
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --font-size-s: 12px;
+  --font-size-m: 16px;
+  --font-size-l: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 28px;
+  --font-size-xxxl: 32px;
+  --font-size-xxxxl: 36px;
+  --font-size-xxxxxl: 48px;
+  --font-size-xxxxxxl: 72px;
+
+  --gap-s: 8px;
+  --gap-m: 16px;
+  --gap-l: 32px;
+  --gap-xl: 64px;
+  --gap-xxl: 128px;
+  --gap-xxxl: 246px;
+  /* --gap-xxxxl: 250px; */
+
+  /* Расстояние от слайса до боковых границ страницы */
+  --page-padding: var(--gap-m);
+  /* Расстояние между слайсами(секциями) */
+  --section-spacing: var(--gap-xxl);
+  /* Расстояние между элементами внутри слайса(секции) */
+  --section-element-spacing: var(--gap-m);
+  /* Растояние между элементами (Например, между кнопками идущими подряд) */
+  --list-item-spacing: var(--gap-m);
+
+  --border-radius-s: 16px;
+  --border-radius-m: 32px;
+  --border-radius-l: 48px;
+
+  --breakpoint-s: 600px;
+  --breakpoint-m: 1200px;
+  --breakpoint-l: 1599px;
+  --breakpoint-xl: 1900px;
+  /* --breakpoint-l: 600px; */
+}
+
+@import url(tokens.css);
+@import url(colors.module.css);
+@import url(typography.module.css);
+@import url(theme.light.css) (prefers-color-scheme: light);
+@import url(theme.dark.css) (prefers-color-scheme: dark);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#__next {
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  font-size: var(--font-size-m);
+  font-family: Montserrat, sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+button {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  font-size: var(--font-size-xxxxl);
+  padding: 72px 0 36px;
+}
+
+h2 {
+  font-size: var(--font-size-xxxl);
+  padding: 48px 0 24px;
+}
+
+h3 {
+  font-size: var(--font-size-xxl);
+  padding: 36px 0 16px;
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  padding: 24px 0 16px;
+}
+
+h5 {
+  font-size: var(--font-size-l);
+  padding: 16px 0 12px;
+}
+
+h6 {
+  font-size: var(--font-size-m);
+  padding: 12px 0 8px;
+}
+
+p {
+  max-inline-size: 55ch;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --page-padding: var(--gap-l);
+    /* --section-spacing: var(--gap-xxl); */
+  }
+  html {
+    font-size: var(--font-size-l);
+  }
+  h1 {
+    font-size: var(--font-size-xxxxxl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xxxxl);
+  }
+
+  h3 {
+    font-size: var(--font-size-xxxl);
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --page-padding: var(--gap-xl);
+    --section-spacing: var(--gap-xxl);
+    --section-element-spacing: var(--gap-l);
+  }
+  html {
+    font-size: var(--font-size-l);
+  }
+  h1 {
+    font-size: var(--font-size-xxxxxxl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xxxxxl);
+  }
+
+  h3 {
+    font-size: var(--font-size-xxxxl);
+  }
+}
+
+@media (min-width: 1599px) {
+  :root {
+    --page-padding: var(--gap-xxl);
+    --section-spacing: var(--gap-xxl);
+    --section-element-spacing: var(--gap-xl);
+  }
+  html {
+    font-size: var(--font-size-xl);
+  }
+  h1 {
+    font-size: var(--font-size-xxxxxxl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xxxxxl);
+  }
+
+  h3 {
+    font-size: var(--font-size-xxxxl);
+  }
+}
+
+@media (min-width: 1900px) {
+  :root {
+    --page-padding: var(--gap-xxxl);
+    --section-spacing: var(--gap-xxxl);
+  }
+  html {
+    font-size: var(--font-size-xl);
+  }
+  h1 {
+    font-size: var(--font-size-xxxxxxl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xxxxxl);
+  }
+
+  h3 {
+    font-size: var(--font-size-xxxxl);
+  }
+}

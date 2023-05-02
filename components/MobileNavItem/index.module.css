@@ -1,0 +1,43 @@
+.navItem {
+  list-style: none;
+  padding: 12px 4px 16px;
+  flex: 1 1 0;
+}
+
+.navItem:active {
+  /* background: var(--md-sys-color-on-surface); */
+  /* color: var(--md-sys-color-on-surface); */
+}
+
+.link {
+  /* background: red; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.title {
+  padding: 4px;
+  /* border-radius: 40px; */
+  display: block;
+}
+
+.imageWrapper {
+  padding: 4px 16px;
+  border-radius: 18px;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
+  /* color: red; */
+  /* fill: red; */
+  /* stroke: red; */
+}
+
+.link:active .imageWrapper {
+  /* background: var(--md-sys-color-surface-variant); */
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface-3);
+}

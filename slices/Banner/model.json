@@ -1,0 +1,99 @@
+{
+  "id": "banner",
+  "type": "SharedSlice",
+  "name": "Banner",
+  "description": "Banner",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/banner/default/557a73a8dcec31372ecbe0f9ac68ef7a3ba30c71.png?auto=compress%2Cformat",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Заголовок",
+            "placeholder": "h1 для заголовка страницы",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Описание",
+            "placeholder": "Введите описание",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "Картинка", "constraint": {}, "thumbnails": [] }
+        },
+        "align": {
+          "type": "Select",
+          "config": {
+            "label": "Выравнивание",
+            "placeholder": "Выравнивание контента",
+            "options": ["Слева", "По центру", "Справа"]
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Название кнопки",
+            "placeholder": "Введите название кнопки"
+          }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Главная",
+              "Главная облегченная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер кнопки",
+            "placeholder": "",
+            "options": ["s", "m", "l"]
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["page"]
+          }
+        }
+      }
+    }
+  ]
+}

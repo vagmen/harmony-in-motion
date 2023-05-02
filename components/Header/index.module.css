@@ -1,0 +1,25 @@
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff7;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 68px;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+}

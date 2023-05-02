@@ -1,0 +1,34 @@
+{
+  "id": "menu",
+  "label": "Меню",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "menuitem": {
+        "type": "Group",
+        "config": {
+          "label": "menuItem",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": { "label": "title", "placeholder": "" }
+            },
+            "icon": {
+              "type": "Image",
+              "config": { "label": "icon", "constraint": {}, "thumbnails": [] }
+            },
+            "pageRelationshipField": {
+              "type": "Link",
+              "config": {
+                "label": "Страница",
+                "select": "document",
+                "customtypes": ["page"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

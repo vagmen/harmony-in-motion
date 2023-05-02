@@ -1,0 +1,14 @@
+[
+  {
+    "address": {
+      "__TYPE__": "FieldContent",
+      "value": "relationship",
+      "type": "Text"
+    },
+    "phone": {
+      "__TYPE__": "FieldContent",
+      "value": "property",
+      "type": "Text"
+    }
+  }
+]

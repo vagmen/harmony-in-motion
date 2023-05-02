@@ -1,0 +1,22 @@
+{
+  "id": "author",
+  "label": "Автор",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": { "label": "Имя", "placeholder": "" }
+      },
+      "photo": {
+        "type": "Image",
+        "config": { "label": "Фото", "constraint": {}, "thumbnails": [] }
+      },
+      "position": {
+        "type": "Text",
+        "config": { "label": "Должность", "placeholder": "" }
+      }
+    }
+  }
+}

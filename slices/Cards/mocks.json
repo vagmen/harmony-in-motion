@@ -1,0 +1,125 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"size": {
+				"__TYPE__": "FieldContent",
+				"value": "m",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Первая карточка"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Описание первой карточки"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "services/pol"
+						}
+					],
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc1NDI2NjM3&ixlib=rb-4.0.3&q=80",
+							"origin": {
+								"id": "9aOswReDKPo",
+								"url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc1NDI2NjM3&ixlib=rb-4.0.3&q=80",
+								"width": 8040,
+								"height": 6024
+							},
+							"width": 8040,
+							"height": 6024,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Вторая карточка"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Описание второй карточки"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "services/pol1"
+						}
+					],
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzU0MjY2Mzc&ixlib=rb-4.0.3&q=80",
+							"origin": {
+								"id": "5JQH9Iqnm9o",
+								"url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzU0MjY2Mzc&ixlib=rb-4.0.3&q=80",
+								"width": 4608,
+								"height": 3072
+							},
+							"width": 4608,
+							"height": 3072,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

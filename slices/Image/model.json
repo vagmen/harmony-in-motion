@@ -1,0 +1,39 @@
+{
+  "id": "image_with_caption",
+  "type": "SharedSlice",
+  "name": "Image",
+  "description": "ImageWithCaption",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ImageWithCaption",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": { "label": "Картинка", "constraint": {}, "thumbnails": [] }
+        },
+        "caption": {
+          "type": "Text",
+          "config": { "label": "Подпись", "placeholder": "" }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/image_with_caption/default/91a8b0c8617fadd493b7afdeccd0d26817e75106.png?auto=compress%2Cformat"
+    }
+  ]
+}

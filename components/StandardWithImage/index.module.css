@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  gap: var(--section-element-spacing);
+}
+
+.alignLeft {
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.alignRight {
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.actions {
+  display: flex;
+  gap: var(--section-element-spacing);
+  width: auto;
+  justify-content: center;
+}
+
+.alignLeft .actions {
+  justify-content: flex-start;
+}
+
+.alignRight .actions {
+  justify-content: flex-end;
+}

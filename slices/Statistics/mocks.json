@@ -1,0 +1,93 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"value",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "14 дней"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "бесплатно, полный функционал"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"value",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "10 мин"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "для создания квиза"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"value",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "482 800"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "квизов создано клиентами"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"value",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "76"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "готовых шаблонов для разных ниш"
+						}
+					]
+				]
+			}
+		]
+	}
+]

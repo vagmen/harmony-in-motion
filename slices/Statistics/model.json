@@ -1,0 +1,27 @@
+{
+  "id": "statistics",
+  "type": "SharedSlice",
+  "name": "Statistics",
+  "description": "Statistics",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Statistics",
+      "primary": {},
+      "items": {
+        "value": {
+          "type": "Text",
+          "config": { "label": "value", "placeholder": "" }
+        },
+        "description": {
+          "type": "Text",
+          "config": { "label": "description", "placeholder": "" }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/statistics/default/a5b8b57587fb74a60853d6be97eb6bc7447b8d02.png?auto=compress%2Cformat"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "title": {
+      "__TYPE__": "FieldContent",
+      "value": "deal",
+      "type": "Text"
+    },
+    "description": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ad tempor magna officia occaecat laboris esse. Velit incididunt laboris sint proident enim sint magna aliquip fugiat cillum ad sunt."
+          }
+        }
+      ]
+    }
+  }
+]

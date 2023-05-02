@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Услуги",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Описание услуг. Aute minim ut magna commodo cupidatat. Id in consequat sint tempor commodo.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"linktitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Все услуги"
+			},
+			"link": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "/services"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

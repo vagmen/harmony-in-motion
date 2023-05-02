@@ -1,0 +1,125 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Заголовок",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Описание",
+            "placeholder": "Введите описание",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Изображение",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageposition": {
+          "type": "Select",
+          "config": {
+            "label": "Положение изображения",
+            "placeholder": "",
+            "options": ["Справа", "Слева"]
+          }
+        },
+        "mobileimageposition": {
+          "type": "Select",
+          "config": {
+            "label": "Положение изображения на экране тел",
+            "placeholder": "",
+            "options": ["Сверху", "Снизу", "Не показывать"]
+          }
+        },
+        "imageweight": {
+          "type": "Select",
+          "config": {
+            "label": "Размер изображения",
+            "placeholder": "",
+            "options": ["s", "m", "l"]
+          }
+        },
+        "align": {
+          "type": "Select",
+          "config": {
+            "label": "Выравнивание контента",
+            "placeholder": "",
+            "options": ["Слева", "По центру", "Справа"],
+            "default_value": "Слева"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Название кнопки", "placeholder": "" }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Главная",
+              "Главная облегченная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер кнопки",
+            "placeholder": "",
+            "options": ["s", "m", "l"]
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["page"]
+          }
+        }
+      }
+    }
+  ]
+}

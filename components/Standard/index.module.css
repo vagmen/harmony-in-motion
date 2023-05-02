@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  gap: var(--section-element-spacing);
+  width: 100%;
+  justify-content: stretch;
+}
+
+.noHeaderPadding > *:first-child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.alignLeft {
+  text-align: start;
+}
+
+.alignRight {
+  text-align: end;
+}

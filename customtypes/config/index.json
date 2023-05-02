@@ -1,0 +1,103 @@
+{
+  "id": "config",
+  "label": "Конфигурация",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": { "label": "Логотип", "constraint": {}, "thumbnails": [] }
+      },
+      "buttons": {
+        "type": "Group",
+        "config": {
+          "label": "Кнопки в шапке",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": { "label": "Название кнопки", "placeholder": "" }
+            },
+            "variant": {
+              "type": "Select",
+              "config": {
+                "label": "Тип кнопки",
+                "placeholder": "",
+                "options": [
+                  "Главная",
+                  "Главная облегченная",
+                  "Контурная",
+                  "Текстовая",
+                  "Подчеркнутая"
+                ]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Ссылка",
+                "select": "document",
+                "customtypes": ["page"]
+              }
+            },
+            "visible": {
+              "type": "Select",
+              "config": {
+                "label": "Видимость",
+                "placeholder": "",
+                "options": ["Везде", "Только десктоп", "Только мобильный"]
+              }
+            }
+          }
+        }
+      },
+      "buttonsbottom": {
+        "type": "Group",
+        "config": {
+          "label": "Кнопки внизу",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": { "label": "Название кнопки", "placeholder": "" }
+            },
+            "variant": {
+              "type": "Select",
+              "config": {
+                "label": "Тип кнопки",
+                "placeholder": "",
+                "options": [
+                  "Главная",
+                  "Главная облегченная",
+                  "Контурная",
+                  "Текстовая",
+                  "Подчеркнутая"
+                ]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Ссылка",
+                "select": "document",
+                "customtypes": ["page"]
+              }
+            },
+            "visible": {
+              "type": "Select",
+              "config": {
+                "label": "Видимость",
+                "placeholder": "",
+                "options": ["Везде", "Только десктоп", "Только мобильный"]
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": {} }
+      }
+    }
+  }
+}

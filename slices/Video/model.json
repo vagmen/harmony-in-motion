@@ -1,0 +1,38 @@
+{
+  "id": "video",
+  "type": "SharedSlice",
+  "name": "Video",
+  "description": "Video",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Video",
+      "primary": {
+        "url": {
+          "type": "Text",
+          "config": {
+            "label": "Ссылка",
+            "placeholder": "https://youtu.be/9V4Tl0dBkVE"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/video/default/01c506c9457f8d79732f90a84c9d5bbf58e0146c.png?auto=compress%2Cformat"
+    }
+  ]
+}

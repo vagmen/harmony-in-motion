@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Harmony in motion",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Сайт, посвященный здоровому образу жизни и физической активности. Мы верим, что здоровье - это главное богатство, и поэтому наша миссия заключается в том, чтобы помочь людям достичь гармонии между телом и разумом.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Что мы предлагаем?",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Мы предлагаем широкий спектр услуг, которые помогут вам стать более здоровым и счастливым. ",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Наша команда",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Наша команда профессионалов в области фитнеса и здорового образа жизни поможет вам разработать индивидуальную программу тренировок и питания, которая будет соответствовать вашим целям и потребностям.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

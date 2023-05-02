@@ -1,0 +1,45 @@
+{
+  "id": "header_with_link",
+  "type": "SharedSlice",
+  "name": "HeaderWithLink",
+  "description": "HeaderWithLink",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "HeaderWithLink",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Заголовок",
+            "placeholder": "Введите заголовок",
+            "allowTargetBlank": true,
+            "single": "heading2,heading3"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Описание",
+            "placeholder": "Введите описание",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "linktitle": {
+          "type": "Text",
+          "config": { "label": "Название ссылки", "placeholder": "" }
+        },
+        "link": {
+          "type": "Text",
+          "config": { "label": "Ссылка", "placeholder": "без домена" }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/header_with_link/default/81e9a477cc7865e0fc9f93fb3d79575eb6be01ff.png?auto=compress%2Cformat"
+    }
+  ]
+}

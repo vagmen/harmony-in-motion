@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #212121;
+}
+
+.borderRadiusS {
+  border-radius: var(--border-radius-s);
+}
+
+.borderRadiusM {
+  border-radius: var(--border-radius-m);
+}
+
+.borderRadiusL {
+  border-radius: var(--border-radius-l);
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--md-sys-color-surface-1);
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttonShape {
+  fill: #212121;
+  fill-opacity: 0.8;
+}
+
+.buttonIcon {
+  fill: #ffffff;
+}
+
+.video:hover .buttonShape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}

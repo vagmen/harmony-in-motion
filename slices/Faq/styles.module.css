@@ -1,0 +1,7 @@
+.section {
+  margin: 0 var(--page-padding) var(--section-spacing);
+}
+
+.grid {
+  max-width: 1000px;
+}

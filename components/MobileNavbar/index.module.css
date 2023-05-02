@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  margin: 0px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav {
+  /* border-radius: 40px; */
+  box-shadow: var(--md-sys-elevation-1);
+  /* width: auto; */
+  width: 100%;
+  background: var(--md-sys-color-background);
+}
+
+.ul {
+  display: flex;
+  /* border-radius: 40px; */
+  justify-content: center;
+  background: var(--md-sys-color-surface-2);
+  gap: 8px;
+  padding: 0 8px;
+}

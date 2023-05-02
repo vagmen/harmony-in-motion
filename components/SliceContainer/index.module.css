@@ -1,0 +1,45 @@
+.section {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: var(--section-spacing);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sectionWithPadding {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.sectionAlignCenter {
+  justify-content: center;
+}
+
+.sectionAlignEnd {
+  justify-content: flex-end;
+}
+
+.noPadding {
+  padding-top: 0;
+}
+
+.topPaddingSmall {
+  padding-top: calc(var(--section-spacing) / 2);
+}
+
+.topPaddingLarge {
+  padding-top: calc(var(--section-spacing) * 2);
+}
+
+.inner {
+  width: 100%;
+}
+
+.innerAutoWidth {
+  width: auto;
+}
+
+.innerMaxWidth {
+  max-width: 700px;
+}

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 8px;
+  margin: 8px;
+}
+
+.nav {
+  width: auto;
+}
+
+.ul {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}

@@ -1,0 +1,32 @@
+{
+  "id": "faq",
+  "type": "SharedSlice",
+  "name": "Faq",
+  "description": "Faq",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Faq",
+      "primary": {},
+      "items": {
+        "question": {
+          "type": "Text",
+          "config": { "label": "Вопрос", "placeholder": "" }
+        },
+        "answer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Ответ",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/faq/default/719eddcb6f927e9b168a56774e07d8038cfac1ac.png?auto=compress%2Cformat"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "buttons",
+  "type": "SharedSlice",
+  "name": "Buttons",
+  "description": "Buttons",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        },
+        "align": {
+          "type": "Select",
+          "config": {
+            "label": "Выравнивание",
+            "placeholder": "",
+            "options": ["Слева", "По центру", "Справа"]
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Название кнопки", "placeholder": "" }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Главная",
+              "Главная облегченная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["page"]
+          }
+        }
+      }
+    }
+  ]
+}
