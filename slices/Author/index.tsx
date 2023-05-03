@@ -11,22 +11,22 @@ const AuthorSlice = ({ slice }: SliceComponentProps<AuthorSlice>) => {
     return <span>asd</span>;
   }
 
-  // if (
-  //   isFilled.contentRelationship<"author", string, AuthorDocument["data"]>(
-  //     author
-  //   )
-  // ) {
-  return (
-    <SliceContainer isMaxWidthLimited>
-      <Author
-        name={author.data?.name?.toString()}
-        position={author.data?.position?.toString()}
-        image={author.data?.photo}
-      />
-    </SliceContainer>
-  );
-  // }
+  if (
+    isFilled.contentRelationship<"author", string, AuthorDocument["data"]>(
+      author
+    )
+  ) {
+    return (
+      <SliceContainer isMaxWidthLimited>
+        <Author
+          name={author.data?.name?.toString()}
+          position={author.data?.position?.toString()}
+          image={author.data?.photo}
+        />
+      </SliceContainer>
+    );
+  }
 
-  // return <></>;
+  return <></>;
 };
 export default AuthorSlice;

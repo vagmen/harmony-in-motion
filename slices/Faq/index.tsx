@@ -11,15 +11,13 @@ const Faq = ({ slice, context }: SliceComponentProps<Content.FaqSlice>) => {
   return (
     <SliceContainer isMaxWidthLimited align={align}>
       <div className={styles.grid}>
-        {slice?.items?.map(
-          (item: { question: Key | null | undefined; answer: any }) => (
-            <FaqItem
-              key={item.question}
-              question={item.question?.toString() || ""}
-              answer={<PrismicRichText field={item.answer} />}
-            />
-          )
-        )}
+        {slice?.items?.map((item) => (
+          <FaqItem
+            key={item.question}
+            question={item.question?.toString() || ""}
+            answer={<PrismicRichText field={item.answer} />}
+          />
+        ))}
       </div>
     </SliceContainer>
   );

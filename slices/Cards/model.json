@@ -23,7 +23,7 @@
       "items": {
         "title": {
           "type": "Text",
-          "config": { "label": "title", "placeholder": "" }
+          "config": { "label": "Название", "placeholder": "" }
         },
         "description": {
           "type": "Text",
@@ -34,8 +34,12 @@
           "config": { "label": "image", "constraint": {}, "thumbnails": [] }
         },
         "link": {
-          "type": "Text",
-          "config": { "label": "link", "placeholder": "" }
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["page"]
+          }
         }
       },
       "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/cards/default/80f5e491acf7df5e0a44d35faa65f4908b52ccaa.png?auto=compress%2Cformat"

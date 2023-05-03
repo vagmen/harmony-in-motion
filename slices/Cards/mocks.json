@@ -17,8 +17,8 @@
 						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Первая карточка"
+							"value": "recent",
+							"type": "Text"
 						}
 					],
 					[
@@ -27,14 +27,6 @@
 							"__TYPE__": "FieldContent",
 							"type": "Text",
 							"value": "Описание первой карточки"
-						}
-					],
-					[
-						"link",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "services/pol"
 						}
 					],
 					[
@@ -62,6 +54,16 @@
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
 					]
 				]
 			},
@@ -72,8 +74,8 @@
 						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Вторая карточка"
+							"value": "serve",
+							"type": "Text"
 						}
 					],
 					[
@@ -82,14 +84,6 @@
 							"__TYPE__": "FieldContent",
 							"type": "Text",
 							"value": "Описание второй карточки"
-						}
-					],
-					[
-						"link",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "services/pol1"
 						}
 					],
 					[
@@ -116,6 +110,16 @@
 							"alt": null,
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
 						}
 					]
 				]

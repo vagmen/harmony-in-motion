@@ -21,13 +21,11 @@ const Buttons = ({ slice, context }: ButtonsProps): JSX.Element => {
       align={align}
     >
       <ButtonsComponent
-        actions={slice.items.map(
-          (item: { title: any; link: any; variant: any }) => ({
-            title: item.title,
-            link: item.link,
-            variant: prepareLinkVariant(item.variant),
-          })
-        )}
+        actions={slice.items.map((item) => ({
+          title: item.title,
+          link: item.link,
+          variant: prepareLinkVariant(item.variant),
+        }))}
       />
     </SliceContainer>
   );

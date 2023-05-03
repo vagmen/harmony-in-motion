@@ -805,7 +805,7 @@ interface CardsSliceDefaultPrimary {
  */
 export interface CardsSliceDefaultItem {
   /**
-   * title field in *Cards → Items*
+   * Название field in *Cards → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -835,15 +835,15 @@ export interface CardsSliceDefaultItem {
    */
   image: prismicT.ImageField<never>;
   /**
-   * link field in *Cards → Items*
+   * Ссылка field in *Cards → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
    * - **API ID Path**: cards.items[].link
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.KeyTextField;
+  link: prismicT.RelationField<"page">;
 }
 /**
  * Default variation for Cards Slice

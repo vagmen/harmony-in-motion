@@ -34,13 +34,11 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
         description={slice.primary.description}
         align={prepareAlign(slice.primary.align || "Слева")}
         image={slice.primary.image}
-        actions={slice.items.map(
-          (item: { title: any; link: any; variant: any }) => ({
-            title: item.title,
-            link: item.link,
-            variant: prepareLinkVariant(item.variant),
-          })
-        )}
+        actions={slice.items.map((item) => ({
+          title: item.title,
+          link: item.link,
+          variant: prepareLinkVariant(item.variant),
+        }))}
         imageSize={slice.primary.imageweight || "m"}
         imagePosition={
           prepareImagePosition(slice.primary.imageposition as string) || "right"
