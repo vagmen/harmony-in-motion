@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from "querystring";
-import { IMenu, PageAlignment } from "../interfaces";
+import { IMenu, ISliceContext, PageAlignment } from "../interfaces";
 import { MenuDocument, PageDocument } from "../prismicio-types";
 import { SelectField } from "@prismicio/types";
 import { LinkVariant } from "../components/Link/Link";
@@ -128,4 +128,16 @@ export const prepareLinkVisible = (linkVisible: string) => {
     return "mobile";
   }
   return undefined;
+};
+
+export const isSliceContext = (obj: unknown): obj is ISliceContext => {
+  return typeof obj === "object" && obj !== null && "align" in obj;
+};
+
+export const usePrismicContext = (context: unknown) => {
+  let align: PageAlignment = "center";
+  if (isSliceContext(context)) {
+    align = context.align;
+  }
+  return { align };
 };

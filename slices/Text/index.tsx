@@ -1,19 +1,15 @@
-import React from "react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import styles from "./styles.module.css";
-import {
-  PageAlignment,
-  SliceContainer,
-} from "../../components/SliceContainer/SliceContainer";
-import { Content } from "@prismicio/client";
+import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
+import { usePrismicContext } from "../../utils";
+import { TextSlice } from "../../prismicio-types";
 
-const Text = ({
-  slice,
-  context,
-}: SliceComponentProps<Content.TextSlice, { align: PageAlignment }>) => (
-  <SliceContainer align={context.align} isMaxWidthLimited>
-    <PrismicRichText field={slice.primary.content} />
-  </SliceContainer>
-);
+const Text = ({ slice, context }: SliceComponentProps<TextSlice>) => {
+  const { align } = usePrismicContext(context);
+  return (
+    <SliceContainer align={align} isMaxWidthLimited>
+      <PrismicRichText field={slice.primary.content} />
+    </SliceContainer>
+  );
+};
 
 export default Text;

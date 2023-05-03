@@ -1,4 +1,3 @@
-import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { Hero as HeroComponent } from "./../../components/Hero/Hero";
@@ -7,25 +6,27 @@ import {
   prepareImagePosition,
   prepareImagePositionMobile,
   prepareLinkVariant,
+  usePrismicContext,
 } from "../../utils";
 import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
-import { ISliceContext } from "../../interfaces";
+import { HeroSlice } from "../../prismicio-types";
 
 /**
  * Props for `Hero`.
  */
 
-export type HeroProps = SliceComponentProps<Content.HeroSlice, ISliceContext>;
+export type HeroProps = SliceComponentProps<HeroSlice>;
 
 /**
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice, context }: HeroProps): JSX.Element => {
+  const { align } = usePrismicContext(context);
   return (
     <SliceContainer
       isMaxWidthLimited={slice.primary.width === TEXT_WIDTH}
       noPadding={slice.primary.width === FULL_WIDTH}
-      align={context.align}
+      align={align}
       width="fullWidth"
     >
       <HeroComponent
@@ -33,11 +34,13 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
         description={slice.primary.description}
         align={prepareAlign(slice.primary.align || "Слева")}
         image={slice.primary.image}
-        actions={slice.items.map((item) => ({
-          title: item.title,
-          link: item.link,
-          variant: prepareLinkVariant(item.variant),
-        }))}
+        actions={slice.items.map(
+          (item: { title: any; link: any; variant: any }) => ({
+            title: item.title,
+            link: item.link,
+            variant: prepareLinkVariant(item.variant),
+          })
+        )}
         imageSize={slice.primary.imageweight || "m"}
         imagePosition={
           prepareImagePosition(slice.primary.imageposition as string) || "right"

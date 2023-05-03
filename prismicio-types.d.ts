@@ -1007,6 +1007,22 @@ type FormSliceVariation = FormSliceDefault;
  */
 export type FormSlice = prismicT.SharedSlice<"form", FormSliceVariation>;
 /**
+ * Primary content in Gap → Primary
+ *
+ */
+interface GapSliceDefaultPrimary {
+  /**
+   * Размер field in *Gap → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gap.primary.size
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  size: prismicT.SelectField<"s" | "m" | "l">;
+}
+/**
  * Default variation for Gap Slice
  *
  * - **API ID**: `default`
@@ -1016,7 +1032,7 @@ export type FormSlice = prismicT.SharedSlice<"form", FormSliceVariation>;
  */
 export type GapSliceDefault = prismicT.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<GapSliceDefaultPrimary>,
   never
 >;
 /**
@@ -1541,7 +1557,7 @@ export interface StatisticsSliceDefaultItem {
    */
   value: prismicT.KeyTextField;
   /**
-   * description field in *Statistics → Items*
+   * Описание field in *Statistics → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1737,6 +1753,7 @@ declare module "@prismicio/client" {
       FormSliceDefault,
       FormSliceVariation,
       FormSlice,
+      GapSliceDefaultPrimary,
       GapSliceDefault,
       GapSliceVariation,
       GapSlice,

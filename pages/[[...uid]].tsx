@@ -12,6 +12,10 @@ import {
 import { createClient } from "../prismicio";
 
 const Page = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  if (!page || !page.data || !page.data.slices) {
+    return <></>;
+  }
+
   return (
     <SliceZone
       slices={page.data.slices}

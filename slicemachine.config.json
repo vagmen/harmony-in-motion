@@ -1,6 +1,6 @@
 {
-  "apiEndpoint": "https://vagmen1.prismic.io/api/v2",
-  "repositoryName": "vagmen1",
+  "apiEndpoint": "https://harmony-in-motion.prismic.io/api/v2",
+  "repositoryName": "harmony-in-motion",
   "adapter": "@slicemachine/adapter-next",
   "libraries": ["./slices"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"

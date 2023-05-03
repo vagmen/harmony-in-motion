@@ -19,11 +19,13 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
         title={slice.primary.title}
         description={slice.primary.description}
         align={prepareAlign(slice.primary.align || "Слева")}
-        actions={slice.items.map((item) => ({
-          title: item.title,
-          link: item.link,
-          variant: prepareLinkVariant(item.variant),
-        }))}
+        actions={slice.items.map(
+          (item: { title: any; link: any; variant: any }) => ({
+            title: item.title,
+            link: item.link,
+            variant: prepareLinkVariant(item.variant),
+          })
+        )}
       />
     </SliceContainer>
   );
