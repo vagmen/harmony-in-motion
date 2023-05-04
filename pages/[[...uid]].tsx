@@ -58,14 +58,14 @@ export const getStaticProps: GetStaticProps = async ({
         menu: prepareMenuData(menu),
         config: config.data,
       },
-      revalidate: 60,
+      // revalidate: 60,
     };
   } catch (error) {
     return {
       props: {
         notFound: true,
       },
-      revalidate: 60,
+      // revalidate: 60,
     };
   }
 };
