@@ -18,6 +18,7 @@ interface ILayout {
 export const Layout = ({ children, menu, config }: ILayout) => {
   // if (error) return <div>Failed to load</div>;
   // if (!links) return <div>Loading...</div>;
+  const isThemeSwitcherVisible = !!config.isthemeswitchervisible;
 
   const { width } = useWindowSize();
 
@@ -34,6 +35,7 @@ export const Layout = ({ children, menu, config }: ILayout) => {
             visible: prepareLinkVisible(item.visible || "Везде"),
           })) || []
         }
+        isThemeSwitcherVisible={isThemeSwitcherVisible}
       />
       {width < 1000 && <MobileNavbar menu={menu} />}
       <main className={styles.main}>{children}</main>

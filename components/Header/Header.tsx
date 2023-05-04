@@ -6,14 +6,22 @@ import { Navbar } from "../Navbar/Navbar";
 import styles from "./index.module.css";
 import { SliceContainer } from "../SliceContainer/SliceContainer";
 import { Buttons, IAction } from "../Buttons/Buttons";
+import { Button } from "../Button/Button";
+import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
   menu: IMenu;
   actions?: IAction<"page">[];
+  isThemeSwitcherVisible: boolean;
 }
 
-export const Header = ({ menu, logo, actions }: IHeader) => {
+export const Header = ({
+  menu,
+  logo,
+  actions,
+  isThemeSwitcherVisible,
+}: IHeader) => {
   const { width } = useWindowSize();
 
   // const share = async () => {
@@ -46,6 +54,7 @@ export const Header = ({ menu, logo, actions }: IHeader) => {
             <Navbar menuItems={menu.menuItems} />
           )}
           <div className={styles.actions}>
+            {isThemeSwitcherVisible && <ThemeChanger />}
             <Buttons actions={actions} />
           </div>
         </div>

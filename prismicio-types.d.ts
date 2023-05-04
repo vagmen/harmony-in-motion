@@ -112,6 +112,18 @@ interface ConfigDocumentData {
     Simplify<ConfigDocumentDataButtonsbottomItem>
   >;
   /**
+   * Показывать кнопку переключения темы field in *Конфигурация*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: config.isthemeswitchervisible
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+   *
+   */
+  isthemeswitchervisible: prismicT.BooleanField;
+  /**
    * Slice Zone field in *Конфигурация*
    *
    * - **Field Type**: Slice Zone
