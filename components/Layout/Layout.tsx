@@ -3,7 +3,6 @@ import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import useWindowSize from "../../hooks/useWindowSize";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
-import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/types";
 import styles from "./index.module.css";
 import { ConfigDocumentData, Simplify } from "../../prismicio-types";
 import { prepareLinkVariant, prepareLinkVisible } from "../../utils";
@@ -12,13 +11,13 @@ import { Buttons } from "../Buttons/Buttons";
 interface ILayout {
   children: JSX.Element | JSX.Element[];
   menu: IMenu;
-  config: Simplify<ConfigDocumentData>;
+  config?: Simplify<ConfigDocumentData>;
 }
 
 export const Layout = ({ children, menu, config }: ILayout) => {
   // if (error) return <div>Failed to load</div>;
   // if (!links) return <div>Loading...</div>;
-  const isThemeSwitcherVisible = !!config.isthemeswitchervisible;
+  const isThemeSwitcherVisible = !!config?.isthemeswitchervisible;
 
   const { width } = useWindowSize();
 
