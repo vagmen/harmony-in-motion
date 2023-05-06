@@ -1,47 +1,81 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { KeyTextField } from "@prismicio/types";
+import Link from "next/link";
 
-export type ButtonVariant = "filled" | "filledTonal" | "outlined" | "text";
+export type ButtonVariant =
+  | "elevated"
+  | "filled"
+  | "filledTonal"
+  | "outlined"
+  | "text"
+  | "underlined";
 
-interface IButton {
+export type ButtonSize = "s" | "m" | "l" | "xl";
+
+interface ICommonClickableComponent {
   children: string | KeyTextField;
-  variant?: ButtonVariant;
-  onClick?: () => void;
+  variant?: ButtonVariant | null;
+  size?: ButtonSize | null;
+  defaultVariant?: ButtonVariant;
 }
 
-export const Button = ({
-  variant = "filledTonal",
-  children,
-  onClick,
-}: IButton) => {
-  // const { width } = useWindowSize();
+interface IButton extends ICommonClickableComponent {
+  onClick: () => void;
+}
 
-  return (
-    <div
-      className={classNames(styles.container, {
-        [styles.containerFilled]: variant === "filled",
-        [styles.containerOutlined]: variant === "outlined",
-        [styles.containerText]: variant === "text",
-      })}
-      onClick={onClick}
-    >
-      <div
-        className={classNames(styles.stateLayer, {
-          [styles.stateLayerFilled]: variant === "filled",
-          [styles.stateLayerOutlined]: variant === "outlined",
-          [styles.stateLayerText]: variant === "text",
-        })}
-      ></div>
+interface ILink extends ICommonClickableComponent {
+  link: string;
+  newTab?: boolean;
+}
+
+const instanceOfButton = (object: any): object is IButton => !!object.onClick;
+
+export const Button = (props: IButton | ILink) => {
+  if (instanceOfButton(props)) {
+    const { variant = "elevated", size = "m" } = props;
+    return (
       <button
         className={classNames(styles.button, {
-          [styles.filled]: variant === "filled",
-          [styles.outlined]: variant === "outlined",
-          [styles.text]: variant === "text",
+          [styles.buttonVariantElevated]: variant === "elevated",
+          [styles.buttonVariantFilled]: variant === "filled",
+          [styles.buttonVariantFilledTonal]: variant === "filledTonal",
+          [styles.buttonVariantOutlined]: variant === "outlined",
+          [styles.buttonVariantText]: variant === "text",
+          [styles.buttonVariantUnderlined]: variant === "underlined",
+          [styles.buttonSizeS]: size === "s",
+          [styles.buttonSizeL]: size === "l",
         })}
       >
-        {children}
+        <span></span>
+        {props.children}
+        <span></span>
       </button>
-    </div>
-  );
+    );
+  } else {
+    const variant = props.variant || "elevated";
+    const size = props.size || "m";
+
+    return (
+      <Link
+        href={props.link}
+        className={classNames(styles.button, {
+          [styles.buttonVariantElevated]: variant === "elevated",
+          [styles.buttonVariantFilled]: variant === "filled",
+          [styles.buttonVariantFilledTonal]: variant === "filledTonal",
+          [styles.buttonVariantOutlined]: variant === "outlined",
+          [styles.buttonVariantText]: variant === "text",
+          [styles.buttonVariantUnderlined]: variant === "underlined",
+          [styles.buttonSizeS]: size === "s",
+          [styles.buttonSizeL]: size === "l",
+          [styles.buttonSizeXL]: size === "xl",
+        })}
+        target={props.newTab ? "_blank" : "_self"}
+      >
+        <span></span>
+        {props.children}
+        <span></span>
+      </Link>
+    );
+  }
 };

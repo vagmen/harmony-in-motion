@@ -455,7 +455,7 @@ type PageDocumentDataSlicesSlice =
   | BannerSlice
   | HeaderSlice
   | HeroSlice
-  | ButtonsSlice;
+  | ButtonsV2Slice;
 /**
  * Страница document from Prismic
  *
@@ -699,13 +699,13 @@ export type BannerSlice = prismicT.SharedSlice<"banner", BannerSliceVariation>;
  * Primary content in Buttons → Primary
  *
  */
-interface ButtonsSliceDefaultPrimary {
+interface ButtonsV2SliceDefaultPrimary {
   /**
    * Ширина field in *Buttons → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons.primary.width
+   * - **API ID Path**: buttons_v2.primary.width
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
@@ -717,53 +717,65 @@ interface ButtonsSliceDefaultPrimary {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons.primary.align
+   * - **Default Value**: Слева
+   * - **API ID Path**: buttons_v2.primary.align
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  align: prismicT.SelectField<"Слева" | "По центру" | "Справа">;
+  align: prismicT.SelectField<"Слева" | "По центру" | "Справа", "filled">;
 }
 /**
  * Item in Buttons → Items
  *
  */
-export interface ButtonsSliceDefaultItem {
+export interface ButtonsV2SliceDefaultItem {
   /**
-   * Название кнопки field in *Buttons → Items*
+   * Название field in *Buttons → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons.items[].title
+   * - **API ID Path**: buttons_v2.items[].name
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  title: prismicT.KeyTextField;
+  name: prismicT.KeyTextField;
+  /**
+   * Ссылка field in *Buttons → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buttons_v2.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
   /**
    * Тип кнопки field in *Buttons → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons.items[].variant
+   * - **API ID Path**: buttons_v2.items[].variant
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
   >;
   /**
-   * Ссылка field in *Buttons → Items*
+   * Размер field in *Buttons → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons.items[].link
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   * - **API ID Path**: buttons_v2.items[].size
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  link: prismicT.RelationField<"page">;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
 }
 /**
  * Default variation for Buttons Slice
@@ -773,27 +785,27 @@ export interface ButtonsSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type ButtonsSliceDefault = prismicT.SharedSliceVariation<
+export type ButtonsV2SliceDefault = prismicT.SharedSliceVariation<
   "default",
-  Simplify<ButtonsSliceDefaultPrimary>,
-  Simplify<ButtonsSliceDefaultItem>
+  Simplify<ButtonsV2SliceDefaultPrimary>,
+  Simplify<ButtonsV2SliceDefaultItem>
 >;
 /**
  * Slice variation for *Buttons*
  *
  */
-type ButtonsSliceVariation = ButtonsSliceDefault;
+type ButtonsV2SliceVariation = ButtonsV2SliceDefault;
 /**
  * Buttons Shared Slice
  *
- * - **API ID**: `buttons`
- * - **Description**: `Buttons`
+ * - **API ID**: `buttons_v2`
+ * - **Description**: `ButtonsV2`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type ButtonsSlice = prismicT.SharedSlice<
-  "buttons",
-  ButtonsSliceVariation
+export type ButtonsV2Slice = prismicT.SharedSlice<
+  "buttons_v2",
+  ButtonsV2SliceVariation
 >;
 /**
  * Primary content in Cards → Primary
@@ -1746,11 +1758,11 @@ declare module "@prismicio/client" {
       BannerSliceDefault,
       BannerSliceVariation,
       BannerSlice,
-      ButtonsSliceDefaultPrimary,
-      ButtonsSliceDefaultItem,
-      ButtonsSliceDefault,
-      ButtonsSliceVariation,
-      ButtonsSlice,
+      ButtonsV2SliceDefaultPrimary,
+      ButtonsV2SliceDefaultItem,
+      ButtonsV2SliceDefault,
+      ButtonsV2SliceVariation,
+      ButtonsV2Slice,
       CardsSliceDefaultPrimary,
       CardsSliceDefaultItem,
       CardsSliceDefault,

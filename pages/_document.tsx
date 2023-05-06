@@ -22,11 +22,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
           rel="stylesheet"
         ></link>
-        {/* <script
-          async
-          defer
-          src="https://static.cdn.prismic.io/prismic.js?new=true&repo=vagmen1"
-        ></script> */}
       </Head>
       <body>
         <Main />

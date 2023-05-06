@@ -1,8 +1,8 @@
 {
-  "id": "buttons",
+  "id": "buttons_v2",
   "type": "SharedSlice",
   "name": "Buttons",
-  "description": "Buttons",
+  "description": "ButtonsV2",
   "variations": [
     {
       "id": "default",
@@ -29,14 +29,24 @@
           "config": {
             "label": "Выравнивание",
             "placeholder": "",
-            "options": ["Слева", "По центру", "Справа"]
+            "options": ["Слева", "По центру", "Справа"],
+            "default_value": "Слева"
           }
         }
       },
       "items": {
-        "title": {
+        "name": {
           "type": "Text",
-          "config": { "label": "Название кнопки", "placeholder": "" }
+          "config": { "label": "Название", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
         },
         "variant": {
           "type": "Select",
@@ -44,20 +54,21 @@
             "label": "Тип кнопки",
             "placeholder": "",
             "options": [
-              "Главная",
-              "Главная облегченная",
+              "Выпуклая",
+              "Заполненная",
+              "Тональная",
               "Контурная",
               "Текстовая",
               "Подчеркнутая"
             ]
           }
         },
-        "link": {
-          "type": "Link",
+        "size": {
+          "type": "Select",
           "config": {
-            "label": "Ссылка",
-            "select": "document",
-            "customtypes": ["page"]
+            "label": "Размер",
+            "placeholder": "",
+            "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
           }
         }
       }

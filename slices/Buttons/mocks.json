@@ -19,29 +19,142 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"title",
+						"link",
 						{
-							"__TYPE__": "FieldContent",
-							"value": "while",
-							"type": "Text"
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
 						}
 					],
 					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "Подчеркнутая",
-							"type": "Select"
+							"type": "Select",
+							"value": "Выпуклая"
 						}
 					],
 					[
-						"link",
+						"size",
 						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
-							}
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Средняя"
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Выпуклая"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Заполненная"
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Заполненная"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Тональная"
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Тональная"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Контурная"
+						}
+					],
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Контурная"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Текстовая"
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Текстовая"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Подчеркнутая"
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Select",
+							"value": "Подчеркнутая"
 						}
 					]
 				]

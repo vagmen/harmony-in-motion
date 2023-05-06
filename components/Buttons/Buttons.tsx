@@ -1,10 +1,9 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { ContentRelationshipField, KeyTextField } from "@prismicio/types";
-import { Link, LinkVariant } from "../Link/Link";
-import { asLink } from "@prismicio/helpers";
-import { linkResolver } from "../../linkResolver";
+import { LinkVariant } from "../Link/Link";
 import { PageAlignment } from "../../interfaces";
+import { Button, ButtonSize, ButtonVariant } from "../Button/Button";
 
 export interface IAction<T> {
   title: KeyTextField;
@@ -13,8 +12,17 @@ export interface IAction<T> {
   visible?: "all" | "desktop" | "mobile";
 }
 
-export interface IButtons {
-  actions?: IAction<"page">[];
+interface IAction1 {
+  title: KeyTextField;
+  variant?: ButtonVariant | null;
+  link: string;
+  size?: ButtonSize | null;
+  visible?: "all" | "desktop" | "mobile";
+  newTab?: boolean;
+}
+
+interface IButtons {
+  actions?: IAction1[];
   align?: PageAlignment;
 }
 
@@ -26,13 +34,15 @@ export const Buttons = ({ actions, align }: IButtons) => (
     })}
   >
     {actions?.map((action) => (
-      <Link
-        variant={action.variant}
+      <Button
         key={action.title}
-        href={asLink(action.link, linkResolver) || ""}
+        link={action.link}
+        variant={action.variant}
+        size={action.size}
+        newTab={action.newTab}
       >
         {action.title}
-      </Link>
+      </Button>
     ))}
   </div>
 );

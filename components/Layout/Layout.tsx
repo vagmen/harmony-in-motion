@@ -39,7 +39,7 @@ export const Layout = ({ children, menu, config }: ILayout) => {
       {width < 1000 && <MobileNavbar menu={menu} />}
       <main className={styles.main}>{children}</main>
       <Footer />
-      <div>
+      {/* <div>
         <Buttons
           actions={
             config?.buttonsbottom?.map((item) => ({
@@ -50,7 +50,7 @@ export const Layout = ({ children, menu, config }: ILayout) => {
             })) || []
           }
         />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -30,6 +30,6 @@ export const Standard = ({
   >
     <PrismicRichText field={title} />
     <PrismicRichText field={description} />
-    <Buttons actions={actions} align={align} />
+    {/* <Buttons actions={actions} align={align} /> */}
   </div>
 );

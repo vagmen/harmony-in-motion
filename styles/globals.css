@@ -1,6 +1,6 @@
 @import url(tokens.css);
-@import url(colors.module.css);
-@import url(typography.module.css);
+/* @import url(colors.module.css); */
+/* @import url(typography.module.css); */
 @import url(theme.light.css);
 @import url(theme.dark.css);
 
@@ -21,10 +21,9 @@
   --gap-xl: 64px;
   --gap-xxl: 128px;
   --gap-xxxl: 246px;
-  /* --gap-xxxxl: 250px; */
 
   /* Расстояние от слайса до боковых границ страницы */
-  --page-padding: var(--gap-m);
+  --page-padding: 16px;
   /* Расстояние между слайсами(секциями) */
   --section-spacing: var(--gap-xxl);
   /* Расстояние между элементами внутри слайса(секции) */
@@ -40,14 +39,40 @@
   --breakpoint-m: 1200px;
   --breakpoint-l: 1599px;
   --breakpoint-xl: 1900px;
-  /* --breakpoint-l: 600px; */
   color-scheme: dark light;
+
+  --md-sys-color-shadow-rgb: 0 0 0;
+  --md-sys-elevation-0: 0px 0px 0px 0px
+      rgb(var(--md-sys-color-shadow-rgb) / 0.2),
+    0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 0px 0px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-1: 0px 3px 1px -2px rgb(var(--md-sys-color-shadow-rgb) /
+          0.2),
+    0px 2px 2px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 1px 5px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-2: 0px 2px 4px -1px rgb(var(--md-sys-color-shadow-rgb) /
+          0.2),
+    0px 4px 5px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 1px 10px 0px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-3: 0px 5px 5px -3px rgb(var(--md-sys-color-shadow-rgb) /
+          0.2),
+    0px 8px 10px 1px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 3px 14px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-4: 0px 5px 5px -3px rgb(var(--md-sys-color-shadow-rgb) /
+          0.2),
+    0px 8px 10px 1px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 3px 14px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
+  --md-sys-elevation-5: 0px 8px 10px -6px rgb(var(--md-sys-color-shadow-rgb) /
+          0.2),
+    0px 16px 24px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
+    0px 6px 30px 5px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 html,
@@ -55,6 +80,15 @@ body {
   max-width: 100vw;
   overflow: hidden;
   height: 100vh;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  font-size: var(--font-size-m);
+  font-family: Montserrat, sans-serif;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
 }
 
 #__next {
@@ -68,29 +102,10 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-html {
-  width: 100%;
-  height: 100vh;
-  font-size: var(--font-size-m);
-  font-family: Montserrat, sans-serif;
-  color: var(--md-sys-color-on-surface);
-}
-
 button {
   font-family: Montserrat, sans-serif;
   font-size: 16px;
   line-height: 16px;
-}
-
-body {
-  height: 100vh;
 }
 
 h1 {
@@ -129,8 +144,8 @@ p {
 
 @media (min-width: 600px) {
   :root {
-    --page-padding: var(--gap-l);
-    /* --section-spacing: var(--gap-xxl); */
+    --page-padding: 24px;
+    --section-spacing: var(--gap-xxl);
   }
   html {
     font-size: var(--font-size-l);
