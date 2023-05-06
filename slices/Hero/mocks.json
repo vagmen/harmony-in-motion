@@ -82,8 +82,8 @@
 						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "event",
-							"type": "Text"
+							"type": "Text",
+							"value": "Event"
 						}
 					],
 					[
@@ -91,15 +91,15 @@
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
-							"value": "Главная"
+							"value": "Заполненная"
 						}
 					],
 					[
 						"size",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "m",
-							"type": "Select"
+							"type": "Select",
+							"value": "Большая"
 						}
 					],
 					[
@@ -107,8 +107,8 @@
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
 							}
 						}
 					]

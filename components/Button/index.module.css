@@ -10,6 +10,7 @@
   transition: all 250ms;
   position: relative;
   transition: box-shadow 250ms, background-color 250ms;
+  display: block;
 }
 
 .button > span {

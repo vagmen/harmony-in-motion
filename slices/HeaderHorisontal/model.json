@@ -1,7 +1,7 @@
 {
   "id": "header_with_link",
   "type": "SharedSlice",
-  "name": "HeaderWithLink",
+  "name": "HeaderHorisontal",
   "description": "HeaderWithLink",
   "variations": [
     {
@@ -28,17 +28,46 @@
             "allowTargetBlank": true,
             "single": "paragraph"
           }
-        },
-        "linktitle": {
-          "type": "Text",
-          "config": { "label": "Название ссылки", "placeholder": "" }
-        },
-        "link": {
-          "type": "Text",
-          "config": { "label": "Ссылка", "placeholder": "без домена" }
         }
       },
-      "items": {},
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Название кнопки", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Выпуклая",
+              "Заполненная",
+              "Тональная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер кнопки",
+            "placeholder": "",
+            "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
+          }
+        }
+      },
       "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/header_with_link/default/81e9a477cc7865e0fc9f93fb3d79575eb6be01ff.png?auto=compress%2Cformat"
     }
   ]

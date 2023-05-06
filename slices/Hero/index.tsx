@@ -5,11 +5,11 @@ import {
   prepareAlign,
   prepareImagePosition,
   prepareImagePositionMobile,
-  prepareLinkVariant,
   usePrismicContext,
 } from "../../utils";
 import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
 import { HeroSlice } from "../../prismicio-types";
+import { prepareButtons } from "../../components/Buttons/Buttons";
 
 /**
  * Props for `Hero`.
@@ -34,11 +34,7 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
         description={slice.primary.description}
         align={prepareAlign(slice.primary.align || "Слева")}
         image={slice.primary.image}
-        actions={slice.items.map((item) => ({
-          title: item.title,
-          link: item.link,
-          variant: prepareLinkVariant(item.variant),
-        }))}
+        actions={prepareButtons(slice.items)}
         imageSize={slice.primary.imageweight || "m"}
         imagePosition={
           prepareImagePosition(slice.primary.imageposition as string) || "right"

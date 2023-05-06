@@ -1,8 +1,6 @@
 import { ParsedUrlQuery } from "querystring";
 import { IMenu, ISliceContext, PageAlignment } from "../interfaces";
 import { MenuDocument, PageDocument } from "../prismicio-types";
-import { SelectField } from "@prismicio/types";
-import { LinkVariant } from "../components/Link/Link";
 
 const getUrlsFromPages = (pages: PageDocument<string>[]) => {
   const urls = pages.map((page) => {
@@ -64,32 +62,6 @@ export const prepareAlign: (align: RawAlignment | null) => PageAlignment = (
       break;
     default:
       return "center";
-      break;
-  }
-};
-
-type IActionVariant = SelectField<
-  "Главная" | "Главная облегченная" | "Контурная" | "Текстовая" | "Подчеркнутая"
->;
-
-export const prepareLinkVariant: (variant: IActionVariant) => LinkVariant = (
-  variant: IActionVariant
-) => {
-  switch (variant) {
-    case "Главная":
-      return "filled";
-      break;
-    case "Главная облегченная":
-      return "filledTonal";
-      break;
-    case "Контурная":
-      return "outlined";
-      break;
-    case "Текстовая":
-      return "text";
-      break;
-    default:
-      return "underscored";
       break;
   }
 };

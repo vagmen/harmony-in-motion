@@ -28,22 +28,47 @@
 						"direction": "ltr"
 					}
 				]
-			},
-			"linktitle": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "Все услуги"
-			},
-			"link": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "/services"
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": []
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "expect",
+							"type": "Text"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
+							}
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Заполненная",
+							"type": "Select"
+						}
+					],
+					[
+						"size",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Огромная",
+							"type": "Select"
+						}
+					]
+				]
 			}
 		]
 	}

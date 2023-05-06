@@ -91,6 +91,11 @@ html {
   color: var(--md-sys-color-on-surface);
 }
 
+/* main > :first-child { */
+/* background: red; */
+/* padding-top: calc(var(--section-spacing) / 2); */
+/* } */
+
 #__next {
   max-width: 100vw;
   height: 100vh;

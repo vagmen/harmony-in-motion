@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "По центру",
 				"type": "Select"
+			},
+			"color": {
+				"__TYPE__": "FieldContent",
+				"value": "#cf5ce8",
+				"type": "Color"
 			}
 		},
 		"items": [
@@ -45,11 +50,11 @@
 						}
 					],
 					[
-						"name",
+						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Выпуклая"
+							"value": "soon",
+							"type": "Text"
 						}
 					]
 				]
@@ -58,19 +63,19 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Заполненная"
-						}
-					],
-					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
 							"value": "Заполненная"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "longer",
+							"type": "Text"
 						}
 					]
 				]
@@ -79,19 +84,19 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Тональная"
-						}
-					],
-					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
 							"value": "Тональная"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "copy",
+							"type": "Text"
 						}
 					]
 				]
@@ -108,11 +113,11 @@
 						}
 					],
 					[
-						"name",
+						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Контурная"
+							"value": "moving",
+							"type": "Text"
 						}
 					]
 				]
@@ -121,19 +126,19 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Текстовая"
-						}
-					],
-					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
 							"value": "Текстовая"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "actual",
+							"type": "Text"
 						}
 					]
 				]
@@ -142,19 +147,19 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"name",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Подчеркнутая"
-						}
-					],
-					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Select",
 							"value": "Подчеркнутая"
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "root",
+							"type": "Text"
 						}
 					]
 				]

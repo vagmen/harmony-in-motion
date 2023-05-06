@@ -6,11 +6,8 @@ import { PrismicNextImage } from "@prismicio/next";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
-import {
-  prepareAlign,
-  prepareLinkVariant,
-  usePrismicContext,
-} from "../../utils";
+import { prepareAlign, usePrismicContext } from "../../utils";
+import { prepareButtons } from "../../components/Buttons/Buttons";
 
 /**
  * Props for `Banner`.
@@ -22,6 +19,7 @@ export type BannerProps = SliceComponentProps<Content.BannerSlice>;
  */
 const Banner = ({ slice, context }: BannerProps): JSX.Element => {
   const { align } = usePrismicContext(context);
+
   return (
     <SliceContainer
       topPadding={slice.primary.width === FULL_WIDTH ? "noPadding" : "medium"}
@@ -48,11 +46,7 @@ const Banner = ({ slice, context }: BannerProps): JSX.Element => {
             title={slice.primary.title}
             description={slice.primary.description}
             align={prepareAlign(slice.primary.align)}
-            actions={slice.items.map((item) => ({
-              title: item.title,
-              link: item.link,
-              variant: prepareLinkVariant(item.variant),
-            }))}
+            actions={prepareButtons(slice.items)}
           />
         </div>
       </div>

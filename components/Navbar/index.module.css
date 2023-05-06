@@ -13,5 +13,5 @@
 .ul {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: var(--list-item-spacing);
 }

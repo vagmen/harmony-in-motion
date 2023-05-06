@@ -12,7 +12,7 @@ import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
   menu: IMenu;
-  actions?: IAction<"page">[];
+  actions?: IAction[];
   isThemeSwitcherVisible: boolean;
 }
 

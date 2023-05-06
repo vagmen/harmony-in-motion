@@ -10,7 +10,7 @@ interface IHero {
   title: RichTextField | null;
   description?: RichTextField | null;
   align?: PageAlignment;
-  actions?: IAction<"page">[];
+  actions?: IAction[];
   image?: ImageFieldImage | null | undefined;
   imageSize?: "s" | "m" | "l";
   imagePosition?: "left" | "right" | null;

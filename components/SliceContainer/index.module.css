@@ -32,6 +32,11 @@
   padding-top: calc(var(--section-spacing) * 2);
 }
 
+.bottomPaddingNone + section {
+  padding-top: var(--section-element-spacing);
+  /* padding-top: calc(var(--section-spacing) / 2); */
+}
+
 .inner {
   width: 100%;
 }

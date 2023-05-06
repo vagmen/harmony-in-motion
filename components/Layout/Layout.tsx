@@ -5,8 +5,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
 import styles from "./index.module.css";
 import { ConfigDocumentData, Simplify } from "../../prismicio-types";
-import { prepareLinkVariant, prepareLinkVisible } from "../../utils";
-import { Buttons } from "../Buttons/Buttons";
+import { prepareButtons } from "../Buttons/Buttons";
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
@@ -26,31 +25,12 @@ export const Layout = ({ children, menu, config }: ILayout) => {
       <Header
         logo={config?.logo}
         menu={menu}
-        actions={
-          config?.buttons?.map((item) => ({
-            link: item.link,
-            title: item.title,
-            variant: prepareLinkVariant(item.variant),
-            visible: prepareLinkVisible(item.visible || "Везде"),
-          })) || []
-        }
+        actions={config?.buttons ? prepareButtons(config.buttons) : []}
         isThemeSwitcherVisible={isThemeSwitcherVisible}
       />
       {width < 1000 && <MobileNavbar menu={menu} />}
       <main className={styles.main}>{children}</main>
       <Footer />
-      {/* <div>
-        <Buttons
-          actions={
-            config?.buttonsbottom?.map((item) => ({
-              link: item.link,
-              title: item.title,
-              variant: prepareLinkVariant(item.variant),
-              visible: prepareLinkVisible(item.visible || "Везде"),
-            })) || []
-          }
-        />
-      </div> */}
     </div>
   );
 };

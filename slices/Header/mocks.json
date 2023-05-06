@@ -47,7 +47,7 @@
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "Главная",
+							"value": "Тональная",
 							"type": "Select"
 						}
 					],
@@ -55,7 +55,7 @@
 						"size",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "l",
+							"value": "Огромная",
 							"type": "Select"
 						}
 					],
@@ -64,8 +64,8 @@
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
+								"__TYPE__": "ExternalLink",
+								"url": "http://google.com"
 							}
 						}
 					]

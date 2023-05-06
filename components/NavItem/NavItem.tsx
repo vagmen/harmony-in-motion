@@ -1,4 +1,4 @@
-import { Link } from "../Link/Link";
+import { Button } from "../Button/Button";
 import styles from "./index.module.css";
 
 interface INavItem {
@@ -10,9 +10,9 @@ interface INavItem {
 export const NavItem = ({ title, active = false, href }: INavItem) => {
   return (
     <li className={styles.navItem}>
-      <Link href={href || "/"} variant="text">
+      <Button link={href || "/"} variant="text" size="l">
         {title}
-      </Link>
+      </Button>
     </li>
   );
 };

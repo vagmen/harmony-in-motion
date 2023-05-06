@@ -160,8 +160,9 @@ export interface ConfigDocumentDataButtonsItem {
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
@@ -169,25 +170,23 @@ export interface ConfigDocumentDataButtonsItem {
   /**
    * Ссылка field in *Конфигурация → Кнопки в шапке*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: config.buttons[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
+  link: prismicT.LinkField;
   /**
-   * Видимость field in *Конфигурация → Кнопки в шапке*
+   * Размер кнопки field in *Конфигурация → Кнопки в шапке*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: config.buttons[].visible
+   * - **API ID Path**: config.buttons[].size
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  visible: prismicT.SelectField<
-    "Везде" | "Только десктоп" | "Только мобильный"
-  >;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
 }
 /**
  * Item in Конфигурация → Кнопки внизу
@@ -214,34 +213,33 @@ export interface ConfigDocumentDataButtonsbottomItem {
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
   >;
   /**
+   * Размер кнопки field in *Конфигурация → Кнопки внизу*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: config.buttonsbottom[].size
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
+  /**
    * Ссылка field in *Конфигурация → Кнопки внизу*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: config.buttonsbottom[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
-  /**
-   * Видимость field in *Конфигурация → Кнопки внизу*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: config.buttonsbottom[].visible
-   * - **Documentation**: https://prismic.io/docs/core-concepts/select
-   *
-   */
-  visible: prismicT.SelectField<
-    "Везде" | "Только десктоп" | "Только мобильный"
-  >;
+  link: prismicT.LinkField;
 }
 /**
  * Slice for *Конфигурация → Slice Zone*
@@ -641,8 +639,9 @@ export interface BannerSliceDefaultItem {
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
@@ -656,17 +655,17 @@ export interface BannerSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  size: prismicT.SelectField<"s" | "m" | "l">;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
    * Ссылка field in *Banner → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: banner.items[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
+  link: prismicT.LinkField;
 }
 /**
  * Default variation for Banner Slice
@@ -723,6 +722,16 @@ interface ButtonsV2SliceDefaultPrimary {
    *
    */
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа", "filled">;
+  /**
+   * color field in *Buttons → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buttons_v2.primary.color
+   * - **Documentation**: https://prismic.io/docs/core-concepts/color
+   *
+   */
+  color: prismicT.ColorField;
 }
 /**
  * Item in Buttons → Items
@@ -734,11 +743,11 @@ export interface ButtonsV2SliceDefaultItem {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: buttons_v2.items[].name
+   * - **API ID Path**: buttons_v2.items[].title
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  name: prismicT.KeyTextField;
+  title: prismicT.KeyTextField;
   /**
    * Ссылка field in *Buttons → Items*
    *
@@ -1134,8 +1143,9 @@ export interface HeaderSliceDefaultItem {
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
@@ -1149,17 +1159,17 @@ export interface HeaderSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  size: prismicT.SelectField<"s" | "m" | "l">;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
    * Ссылка field in *Header → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: header.items[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
+  link: prismicT.LinkField;
 }
 /**
  * Default variation for Header Slice
@@ -1189,12 +1199,12 @@ type HeaderSliceVariation = HeaderSliceDefault;
  */
 export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
 /**
- * Primary content in HeaderWithLink → Primary
+ * Primary content in HeaderHorisontal → Primary
  *
  */
 interface HeaderWithLinkSliceDefaultPrimary {
   /**
-   * Заголовок field in *HeaderWithLink → Primary*
+   * Заголовок field in *HeaderHorisontal → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: Введите заголовок
@@ -1204,7 +1214,7 @@ interface HeaderWithLinkSliceDefaultPrimary {
    */
   title: prismicT.TitleField;
   /**
-   * Описание field in *HeaderWithLink → Primary*
+   * Описание field in *HeaderHorisontal → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Введите описание
@@ -1213,29 +1223,62 @@ interface HeaderWithLinkSliceDefaultPrimary {
    *
    */
   description: prismicT.RichTextField;
+}
+/**
+ * Item in HeaderHorisontal → Items
+ *
+ */
+export interface HeaderWithLinkSliceDefaultItem {
   /**
-   * Название ссылки field in *HeaderWithLink → Primary*
+   * Название кнопки field in *HeaderHorisontal → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: header_with_link.primary.linktitle
+   * - **API ID Path**: header_with_link.items[].title
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  linktitle: prismicT.KeyTextField;
+  title: prismicT.KeyTextField;
   /**
-   * Ссылка field in *HeaderWithLink → Primary*
+   * Ссылка field in *HeaderHorisontal → Items*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: без домена
-   * - **API ID Path**: header_with_link.primary.link
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_with_link.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.KeyTextField;
+  link: prismicT.LinkField;
+  /**
+   * Тип кнопки field in *HeaderHorisontal → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_with_link.items[].variant
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  variant: prismicT.SelectField<
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
+    | "Контурная"
+    | "Текстовая"
+    | "Подчеркнутая"
+  >;
+  /**
+   * Размер кнопки field in *HeaderHorisontal → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_with_link.items[].size
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
 }
 /**
- * Default variation for HeaderWithLink Slice
+ * Default variation for HeaderHorisontal Slice
  *
  * - **API ID**: `default`
  * - **Description**: `HeaderWithLink`
@@ -1245,15 +1288,15 @@ interface HeaderWithLinkSliceDefaultPrimary {
 export type HeaderWithLinkSliceDefault = prismicT.SharedSliceVariation<
   "default",
   Simplify<HeaderWithLinkSliceDefaultPrimary>,
-  never
+  Simplify<HeaderWithLinkSliceDefaultItem>
 >;
 /**
- * Slice variation for *HeaderWithLink*
+ * Slice variation for *HeaderHorisontal*
  *
  */
 type HeaderWithLinkSliceVariation = HeaderWithLinkSliceDefault;
 /**
- * HeaderWithLink Shared Slice
+ * HeaderHorisontal Shared Slice
  *
  * - **API ID**: `header_with_link`
  * - **Description**: `HeaderWithLink`
@@ -1380,8 +1423,9 @@ export interface HeroSliceDefaultItem {
    *
    */
   variant: prismicT.SelectField<
-    | "Главная"
-    | "Главная облегченная"
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
     | "Контурная"
     | "Текстовая"
     | "Подчеркнутая"
@@ -1395,17 +1439,17 @@ export interface HeroSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  size: prismicT.SelectField<"s" | "m" | "l">;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
    * Ссылка field in *Hero → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.items[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
+  link: prismicT.LinkField;
 }
 /**
  * Default variation for Hero Slice
@@ -1787,6 +1831,7 @@ declare module "@prismicio/client" {
       HeaderSliceVariation,
       HeaderSlice,
       HeaderWithLinkSliceDefaultPrimary,
+      HeaderWithLinkSliceDefaultItem,
       HeaderWithLinkSliceDefault,
       HeaderWithLinkSliceVariation,
       HeaderWithLinkSlice,

@@ -32,10 +32,14 @@
             "options": ["Слева", "По центру", "Справа"],
             "default_value": "Слева"
           }
+        },
+        "color": {
+          "type": "Color",
+          "config": { "label": "color", "placeholder": "" }
         }
       },
       "items": {
-        "name": {
+        "title": {
           "type": "Text",
           "config": { "label": "Название", "placeholder": "" }
         },

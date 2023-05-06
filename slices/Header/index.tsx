@@ -2,7 +2,8 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { Standard } from "../../components/Standard/Standard";
-import { prepareAlign, prepareLinkVariant } from "../../utils";
+import { prepareAlign } from "../../utils";
+import { prepareButtons } from "../../components/Buttons/Buttons";
 
 /**
  * Props for `Header`.
@@ -19,11 +20,7 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
         title={slice.primary.title}
         description={slice.primary.description}
         align={prepareAlign(slice.primary.align || "Слева")}
-        actions={slice.items.map((item) => ({
-          title: item.title,
-          link: item.link,
-          variant: prepareLinkVariant(item.variant),
-        }))}
+        actions={prepareButtons(slice.items)}
       />
     </SliceContainer>
   );

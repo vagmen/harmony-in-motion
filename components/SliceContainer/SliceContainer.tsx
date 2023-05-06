@@ -14,6 +14,7 @@ interface ISliceContainer {
   noPadding?: boolean;
   align?: PageAlignment;
   topPadding?: SliceContainerTopPadding;
+  bottomPadding?: SliceContainerTopPadding;
 }
 
 export const SliceContainer = ({
@@ -23,6 +24,7 @@ export const SliceContainer = ({
   noPadding = false,
   align = "start",
   topPadding = "medium",
+  bottomPadding = "medium",
 }: ISliceContainer) => {
   return (
     <section
@@ -33,7 +35,8 @@ export const SliceContainer = ({
         { [styles.sectionAlignEnd]: align === "end" },
         { [styles.noPadding]: topPadding === "noPadding" },
         { [styles.topPaddingSmall]: topPadding === "small" },
-        { [styles.topPaddingLarge]: topPadding === "large" }
+        { [styles.topPaddingLarge]: topPadding === "large" },
+        { [styles.bottomPaddingNone]: bottomPadding === "noPadding" }
       )}
     >
       <div

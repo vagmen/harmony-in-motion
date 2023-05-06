@@ -2,15 +2,15 @@ import styles from "./index.module.css";
 import classNames from "classnames";
 import { ImageField } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
-import { Link } from "../Link/Link";
-import { asLink } from "@prismicio/helpers";
-import { linkResolver } from "../../linkResolver";
 import { IStandard } from "../Standard/Standard";
 import { PrismicNextImage } from "@prismicio/next";
+import { Buttons } from "../Buttons/Buttons";
 
 interface IStandardWithImage extends IStandard {
   image: ImageField;
 }
+
+// TODO: Удалить, если не используется
 
 export const StandardWithImage = ({
   title,
@@ -30,17 +30,7 @@ export const StandardWithImage = ({
       <div className={styles.content}>
         <PrismicRichText field={title} />
         <PrismicRichText field={description} />
-        <div className={styles.actions}>
-          {actions?.map((action) => (
-            <Link
-              variant={action.variant}
-              key={action.title}
-              href={asLink(action.link, linkResolver) || ""}
-            >
-              {action.title}
-            </Link>
-          ))}
-        </div>
+        <Buttons actions={actions} />
       </div>
       <PrismicNextImage field={image} />
     </div>

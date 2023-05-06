@@ -9,7 +9,7 @@ export interface IStandard {
   title: RichTextField | null;
   description?: RichTextField | null;
   align?: PageAlignment;
-  actions?: IAction<"page">[];
+  actions?: IAction[];
   noHeaderPadding?: boolean;
 }
 
@@ -30,6 +30,6 @@ export const Standard = ({
   >
     <PrismicRichText field={title} />
     <PrismicRichText field={description} />
-    {/* <Buttons actions={actions} align={align} /> */}
+    <Buttons actions={actions} align={align} />
   </div>
 );
