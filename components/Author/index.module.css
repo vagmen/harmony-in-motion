@@ -1,5 +1,14 @@
 .container {
   display: flex;
-  gap: 8px;
+  gap: var(--list-item-spacing);
   align-items: center;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.position {
+  font-size: var(--font-size-m);
+  opacity: 0.7;
 }

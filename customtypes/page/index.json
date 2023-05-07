@@ -51,7 +51,8 @@
             "banner": { "type": "SharedSlice" },
             "header": { "type": "SharedSlice" },
             "hero": { "type": "SharedSlice" },
-            "buttons_v2": { "type": "SharedSlice" }
+            "buttons_v2": { "type": "SharedSlice" },
+            "quotes": { "type": "SharedSlice" }
           }
         }
       }

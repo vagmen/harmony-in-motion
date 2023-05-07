@@ -11,6 +11,7 @@
   position: relative;
   transition: box-shadow 250ms, background-color 250ms;
   display: block;
+  text-align: center;
 }
 
 .button > span {
@@ -82,19 +83,19 @@
 .buttonVariantElevated {
   background: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-primary);
-  box-shadow: var(--md-sys-elevation-1);
+  /* box-shadow: var(--md-sys-elevation-1); */
 }
 .buttonVariantElevated:hover,
 .buttonVariantElevated:focus-visible {
   background: var(--md-sys-color-surface-container);
-  box-shadow: var(--md-sys-elevation-2);
+  /* box-shadow: var(--md-sys-elevation-2); */
 }
 .buttonVariantElevated::before {
   /* при клике затемняется */
   background: var(--md-sys-color-primary);
 }
 .buttonVariantElevated:active {
-  box-shadow: var(--md-sys-elevation-1);
+  /* box-shadow: var(--md-sys-elevation-1); */
 }
 
 /* -------------------Filled----------------------- */

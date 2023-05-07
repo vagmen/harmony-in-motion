@@ -15,6 +15,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   image_with_caption: dynamic(() => import("./Image")),
   quiz: dynamic(() => import("./Quiz")),
+  quotes: dynamic(() => import("./Quotes")),
   statistics: dynamic(() => import("./Statistics")),
   text: dynamic(() => import("./Text")),
   video: dynamic(() => import("./Video")),

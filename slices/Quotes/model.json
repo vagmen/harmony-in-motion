@@ -1,0 +1,53 @@
+{
+  "id": "quotes",
+  "type": "SharedSlice",
+  "name": "Quotes",
+  "description": "Quotes",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер карточки",
+            "placeholder": "",
+            "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
+          }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип карточки",
+            "placeholder": "",
+            "options": ["Обычная", "Заполненная", "Контурная"]
+          }
+        }
+      },
+      "items": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "author": {
+          "type": "Link",
+          "config": {
+            "label": "author",
+            "select": "document",
+            "customtypes": ["author"]
+          }
+        }
+      }
+    }
+  ]
+}

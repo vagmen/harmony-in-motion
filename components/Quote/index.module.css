@@ -1,0 +1,8 @@
+.container {
+  display: grid;
+  gap: var(--list-item-spacing);
+}
+
+.quo {
+  font-style: italic;
+}

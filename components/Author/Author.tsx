@@ -19,8 +19,8 @@ export const Author = ({ name, position, image }: IAuthor) => {
         <Avatar image={image} />
       </div>
       <div>
-        {name ? <p>{name}</p> : <></>}
-        {position ? <p>{position}</p> : <></>}
+        {name ? <p className={styles.name}>{name}</p> : <></>}
+        {position ? <p className={styles.position}>{position}</p> : <></>}
       </div>
     </div>
   );

@@ -1,0 +1,49 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"size": {
+				"__TYPE__": "FieldContent",
+				"value": "Огромная",
+				"type": "Select"
+			},
+			"variant": {
+				"__TYPE__": "FieldContent",
+				"value": "Обычная",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ea cillum aliquip laboris pariatur nulla dolore ad officia cillum laboris et minim mollit. Incididunt sint sunt elit proident elit laborum adipisicing duis laborum deserunt duis veniam."
+									}
+								}
+							]
+						}
+					],
+					[
+						"author",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

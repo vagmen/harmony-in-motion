@@ -3,7 +3,6 @@ import { FaqItem } from "../../components/FaqItem/FaqItem";
 import styles from "./styles.module.css";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { Content } from "@prismicio/client";
-import { Key } from "react";
 import { usePrismicContext } from "../../utils";
 
 const Faq = ({ slice, context }: SliceComponentProps<Content.FaqSlice>) => {

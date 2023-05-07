@@ -453,7 +453,8 @@ type PageDocumentDataSlicesSlice =
   | BannerSlice
   | HeaderSlice
   | HeroSlice
-  | ButtonsV2Slice;
+  | ButtonsV2Slice
+  | QuotesSlice;
 /**
  * Страница document from Prismic
  *
@@ -1610,6 +1611,85 @@ type QuizSliceVariation = QuizSliceDefault;
  */
 export type QuizSlice = prismicT.SharedSlice<"quiz", QuizSliceVariation>;
 /**
+ * Primary content in Quotes → Primary
+ *
+ */
+interface QuotesSliceDefaultPrimary {
+  /**
+   * Размер карточки field in *Quotes → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quotes.primary.size
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
+  /**
+   * Тип карточки field in *Quotes → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quotes.primary.variant
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  variant: prismicT.SelectField<"Обычная" | "Заполненная" | "Контурная">;
+}
+/**
+ * Item in Quotes → Items
+ *
+ */
+export interface QuotesSliceDefaultItem {
+  /**
+   * text field in *Quotes → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quotes.items[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+  /**
+   * author field in *Quotes → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quotes.items[].author
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  author: prismicT.RelationField<"author">;
+}
+/**
+ * Default variation for Quotes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuotesSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<QuotesSliceDefaultPrimary>,
+  Simplify<QuotesSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Quotes*
+ *
+ */
+type QuotesSliceVariation = QuotesSliceDefault;
+/**
+ * Quotes Shared Slice
+ *
+ * - **API ID**: `quotes`
+ * - **Description**: `Quotes`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuotesSlice = prismicT.SharedSlice<"quotes", QuotesSliceVariation>;
+/**
  * Item in Statistics → Items
  *
  */
@@ -1848,6 +1928,11 @@ declare module "@prismicio/client" {
       QuizSliceDefault,
       QuizSliceVariation,
       QuizSlice,
+      QuotesSliceDefaultPrimary,
+      QuotesSliceDefaultItem,
+      QuotesSliceDefault,
+      QuotesSliceVariation,
+      QuotesSlice,
       StatisticsSliceDefaultItem,
       StatisticsSliceDefault,
       StatisticsSliceVariation,

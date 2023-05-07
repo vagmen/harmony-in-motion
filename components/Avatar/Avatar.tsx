@@ -1,7 +1,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
-import classNames from "classnames";
 import { ImageFieldImage } from "@prismicio/types";
 
 interface IAvatar {
