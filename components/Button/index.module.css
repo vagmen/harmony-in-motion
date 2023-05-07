@@ -10,7 +10,7 @@
   transition: all 250ms;
   position: relative;
   transition: box-shadow 250ms, background-color 250ms;
-  display: block;
+  display: inline-block;
   text-align: center;
 }
 
@@ -94,9 +94,9 @@
   /* при клике затемняется */
   background: var(--md-sys-color-primary);
 }
-.buttonVariantElevated:active {
-  /* box-shadow: var(--md-sys-elevation-1); */
-}
+/* .buttonVariantElevated:active { */
+/* box-shadow: var(--md-sys-elevation-1); */
+/* } */
 
 /* -------------------Filled----------------------- */
 
@@ -170,6 +170,9 @@
   background: none;
   color: var(--md-sys-color-primary);
   text-decoration: underline;
+  font-size: var(--font-size-l);
+  padding: 8px;
+  margin-bottom: -12px;
 }
 
 .buttonVariantUnderlined:hover,

@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import classNames from "classnames";
 import { KeyTextField } from "@prismicio/types";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 export type ButtonVariant =
   | "elevated"
@@ -14,7 +15,7 @@ export type ButtonVariant =
 export type ButtonSize = "s" | "m" | "l" | "xl";
 
 interface ICommonClickableComponent {
-  children: string | KeyTextField;
+  children?: ReactNode | KeyTextField;
   variant?: ButtonVariant | null;
   size?: ButtonSize | null;
   defaultVariant?: ButtonVariant;

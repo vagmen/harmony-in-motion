@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
@@ -9,6 +8,7 @@ import { linkResolver } from "../linkResolver";
 import { ThemeProvider } from "next-themes";
 import { ConfigDocumentData, Simplify } from "../prismicio-types";
 import { IMenu } from "../interfaces";
+import { Button } from "../components/Button/Button";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -22,10 +22,17 @@ export default function App({
   return (
     <ThemeProvider>
       <PrismicProvider
-        internalLinkComponent={({ href, children, ...props }) => (
-          <Link href={href}>{children}</Link>
+        internalLinkComponent={({ href, children }) => (
+          <Button variant="underlined" link={href}>
+            {children}
+          </Button>
         )}
         linkResolver={linkResolver}
+        externalLinkComponent={({ href, children, target }) => (
+          <Button variant="underlined" link={href} newTab={target === "_blank"}>
+            {children}
+          </Button>
+        )}
       >
         <PrismicPreview repositoryName={repositoryName}>
           <Layout menu={pageProps.menu} config={pageProps.config}>
