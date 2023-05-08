@@ -1,0 +1,7 @@
+.imageField {
+  width: 100%;
+  border-radius: var(--border-radius-m);
+  height: auto;
+  margin-top: var(--section-element-spacing);
+  margin-bottom: var(--section-element-spacing);
+}

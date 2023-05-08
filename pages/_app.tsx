@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { PrismicProvider } from "@prismicio/react";
-import { PrismicPreview } from "@prismicio/next";
+import { PrismicNextImage, PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
 import { Layout } from "../components/Layout/Layout";
 import { linkResolver } from "../linkResolver";
@@ -9,6 +9,7 @@ import { ThemeProvider } from "next-themes";
 import { ConfigDocumentData, Simplify } from "../prismicio-types";
 import { IMenu } from "../interfaces";
 import { Button } from "../components/Button/Button";
+import { ImageField } from "../components/ImageField/ImageField";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -33,6 +34,9 @@ export default function App({
             {children}
           </Button>
         )}
+        richTextComponents={{
+          image: ({ children, node, text, type }) => <ImageField node={node} />,
+        }}
       >
         <PrismicPreview repositoryName={repositoryName}>
           <Layout menu={pageProps.menu} config={pageProps.config}>
