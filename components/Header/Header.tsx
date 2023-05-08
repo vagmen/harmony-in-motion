@@ -8,6 +8,8 @@ import { SliceContainer } from "../SliceContainer/SliceContainer";
 import { Buttons, IAction } from "../Buttons/Buttons";
 import { Button } from "../Button/Button";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
+import { IconButton } from "../IconButton/IconButton";
+import { useState } from "react";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
@@ -41,6 +43,8 @@ export const Header = ({
   //   }
   // };
 
+  const [fav, setFav] = useState(false);
+
   return (
     <div className={styles.sticky}>
       <SliceContainer topPadding="noPadding" width="fullWidth">
@@ -54,6 +58,30 @@ export const Header = ({
             <Navbar menuItems={menu.menuItems} />
           )}
           <div className={styles.actions}>
+            <IconButton onClick={() => setFav(!fav)} toggledOn={fav}>
+              favorite
+            </IconButton>
+            <IconButton
+              onClick={() => setFav(!fav)}
+              toggledOn={fav}
+              variant={"filledTonal"}
+            >
+              favorite
+            </IconButton>
+            <IconButton
+              onClick={() => setFav(!fav)}
+              toggledOn={fav}
+              variant={"outlined"}
+            >
+              favorite
+            </IconButton>
+            <IconButton
+              onClick={() => setFav(!fav)}
+              toggledOn={fav}
+              variant={"standard"}
+            >
+              favorite
+            </IconButton>
             {isThemeSwitcherVisible && <ThemeChanger />}
             <Buttons actions={actions} />
           </div>

@@ -1,9 +1,10 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { IconButton } from "../IconButton/IconButton";
 
 export const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
@@ -15,16 +16,11 @@ export const ThemeChanger = () => {
   }
 
   return (
-    <div>
-      {resolvedTheme === "dark" ? (
-        <button onClick={() => setTheme("light")}>
-          <span className="material-icons-outlined">light_mode</span>
-        </button>
-      ) : (
-        <button onClick={() => setTheme("dark")}>
-          <span className="material-icons-outlined">dark_mode</span>
-        </button>
-      )}
-    </div>
+    <IconButton
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      variant="outlined"
+    >
+      {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
+    </IconButton>
   );
 };
