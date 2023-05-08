@@ -23,6 +23,12 @@
   align-items: center;
 }
 
+.logoWrapper {
+  height: 100%;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
 .actions {
   display: flex;
   gap: 4px;

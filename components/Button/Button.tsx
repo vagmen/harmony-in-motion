@@ -35,79 +35,59 @@ interface ILink extends ICommonClickableComponent {
 const instanceOfButton = (object: any): object is IButton => !!object.onClick;
 
 export const Button = (props: IButton | ILink) => {
-  const content = () => {
-    return (
-      <>
-        <span className={styles.touchEffect}></span>
-        <span className={styles.content}>
-          {props.startIcon && props.variant !== "underlined" ? (
-            <span
-              className={classNames(
-                "material-symbols-rounded",
-                styles.startIcon
-              )}
-            >
-              {props.startIcon}
-            </span>
-          ) : (
-            <></>
-          )}
-          {props.children}
-          {props.endIcon && props.variant !== "underlined" ? (
-            <span
-              className={classNames("material-symbols-rounded", styles.endIcon)}
-            >
-              {props.endIcon}
-            </span>
-          ) : (
-            <></>
-          )}
-        </span>
-        <span className={styles.touchEffect}></span>
-      </>
-    );
-  };
+  const variant = props.variant || "elevated";
+  const size = props.size || "m";
+  const classes = classNames(styles.button, {
+    [styles.buttonVariantElevated]: variant === "elevated",
+    [styles.buttonVariantFilled]: variant === "filled",
+    [styles.buttonVariantFilledTonal]: variant === "filledTonal",
+    [styles.buttonVariantOutlined]: variant === "outlined",
+    [styles.buttonVariantText]: variant === "text",
+    [styles.buttonVariantUnderlined]: variant === "underlined",
+    [styles.buttonSizeS]: size === "s",
+    [styles.buttonSizeL]: size === "l",
+    [styles.buttonSizeXL]: size === "xl",
+  });
 
-  if (instanceOfButton(props)) {
-    const { variant = "elevated", size = "m" } = props;
-    return (
-      <button
-        className={classNames(styles.button, {
-          [styles.buttonVariantElevated]: variant === "elevated",
-          [styles.buttonVariantFilled]: variant === "filled",
-          [styles.buttonVariantFilledTonal]: variant === "filledTonal",
-          [styles.buttonVariantOutlined]: variant === "outlined",
-          [styles.buttonVariantText]: variant === "text",
-          [styles.buttonVariantUnderlined]: variant === "underlined",
-          [styles.buttonSizeS]: size === "s",
-          [styles.buttonSizeL]: size === "l",
-        })}
-      >
-        {content()}
-      </button>
-    );
-  } else {
-    const variant = props.variant || "elevated";
-    const size = props.size || "m";
-
-    return (
-      <Link
-        href={props.link}
-        className={classNames(styles.button, {
-          [styles.buttonVariantElevated]: variant === "elevated",
-          [styles.buttonVariantFilled]: variant === "filled",
-          [styles.buttonVariantFilledTonal]: variant === "filledTonal",
-          [styles.buttonVariantOutlined]: variant === "outlined",
-          [styles.buttonVariantText]: variant === "text",
-          [styles.buttonVariantUnderlined]: variant === "underlined",
-          [styles.buttonSizeS]: size === "s",
-          [styles.buttonSizeL]: size === "l",
-          [styles.buttonSizeXL]: size === "xl",
-        })}
-        target={props.newTab ? "_blank" : "_self"}
-      >
-        {content()}
-      </Link>
-    );
-  }
+  return instanceOfButton(props) ? (
+    <button className={classes}>
+      <ClickableComponentContent {...props} />
+    </button>
+  ) : (
+    <Link
+      href={props.link}
+      className={classes}
+      target={props.newTab ? "_blank" : "_self"}
+    >
+      <ClickableComponentContent {...props} />
+    </Link>
+  );
 };
+
+const ClickableComponentContent = (props: ICommonClickableComponent) => (
+  <>
+    <span className={styles.touchEffect}></span>
+    <span className={styles.content}>
+      {props.startIcon && props.variant !== "underlined" ? (
+        <span
+          className={classNames("material-symbols-rounded", styles.startIcon)}
+        >
+          {props.startIcon}
+        </span>
+      ) : (
+        <></>
+      )}
+      {props.children}
+      {props.endIcon && props.variant !== "underlined" ? (
+        <span
+          className={classNames("material-symbols-rounded", styles.endIcon)}
+        >
+          {props.endIcon}
+        </span>
+      ) : (
+        <></>
+      )}
+    </span>
+    <span className={styles.touchEffect}></span>
+  </>
+);

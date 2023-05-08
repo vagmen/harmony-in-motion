@@ -10,7 +10,7 @@ interface INavItem {
 export const NavItem = ({ title, active = false, href }: INavItem) => {
   return (
     <li className={styles.navItem}>
-      <Button link={href || "/"} variant="text" size="l">
+      <Button link={href || "/"} variant="text" size="m">
         {title}
       </Button>
     </li>
