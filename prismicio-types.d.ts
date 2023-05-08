@@ -723,16 +723,6 @@ interface ButtonsV2SliceDefaultPrimary {
    *
    */
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа", "filled">;
-  /**
-   * color field in *Buttons → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: buttons_v2.primary.color
-   * - **Documentation**: https://prismic.io/docs/core-concepts/color
-   *
-   */
-  color: prismicT.ColorField;
 }
 /**
  * Item in Buttons → Items
@@ -786,6 +776,26 @@ export interface ButtonsV2SliceDefaultItem {
    *
    */
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
+  /**
+   * Иконка в начале field in *Buttons → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Material Symbols. Например: star
+   * - **API ID Path**: buttons_v2.items[].starticon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  starticon: prismicT.KeyTextField;
+  /**
+   * Иконка в конце field in *Buttons → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Material Symbols. Например: star
+   * - **API ID Path**: buttons_v2.items[].endicon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  endicon: prismicT.KeyTextField;
 }
 /**
  * Default variation for Buttons Slice

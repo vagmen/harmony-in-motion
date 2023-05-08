@@ -32,10 +32,6 @@
             "options": ["Слева", "По центру", "Справа"],
             "default_value": "Слева"
           }
-        },
-        "color": {
-          "type": "Color",
-          "config": { "label": "color", "placeholder": "" }
         }
       },
       "items": {
@@ -73,6 +69,20 @@
             "label": "Размер",
             "placeholder": "",
             "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
+          }
+        },
+        "starticon": {
+          "type": "Text",
+          "config": {
+            "label": "Иконка в начале",
+            "placeholder": "Material Symbols. Например: star"
+          }
+        },
+        "endicon": {
+          "type": "Text",
+          "config": {
+            "label": "Иконка в конце",
+            "placeholder": "Material Symbols. Например: star"
           }
         }
       }

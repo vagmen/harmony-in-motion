@@ -19,6 +19,8 @@ interface ICommonClickableComponent {
   variant?: ButtonVariant | null;
   size?: ButtonSize | null;
   defaultVariant?: ButtonVariant;
+  startIcon?: string | null;
+  endIcon?: string | null;
 }
 
 interface IButton extends ICommonClickableComponent {
@@ -33,6 +35,39 @@ interface ILink extends ICommonClickableComponent {
 const instanceOfButton = (object: any): object is IButton => !!object.onClick;
 
 export const Button = (props: IButton | ILink) => {
+  const content = () => {
+    return (
+      <>
+        <span className={styles.touchEffect}></span>
+        <span className={styles.content}>
+          {props.startIcon && props.variant !== "underlined" ? (
+            <span
+              className={classNames(
+                "material-symbols-rounded",
+                styles.startIcon
+              )}
+            >
+              {props.startIcon}
+            </span>
+          ) : (
+            <></>
+          )}
+          {props.children}
+          {props.endIcon && props.variant !== "underlined" ? (
+            <span
+              className={classNames("material-symbols-rounded", styles.endIcon)}
+            >
+              {props.endIcon}
+            </span>
+          ) : (
+            <></>
+          )}
+        </span>
+        <span className={styles.touchEffect}></span>
+      </>
+    );
+  };
+
   if (instanceOfButton(props)) {
     const { variant = "elevated", size = "m" } = props;
     return (
@@ -48,9 +83,7 @@ export const Button = (props: IButton | ILink) => {
           [styles.buttonSizeL]: size === "l",
         })}
       >
-        <span></span>
-        {props.children}
-        <span></span>
+        {content()}
       </button>
     );
   } else {
@@ -73,9 +106,7 @@ export const Button = (props: IButton | ILink) => {
         })}
         target={props.newTab ? "_blank" : "_self"}
       >
-        <span></span>
-        {props.children}
-        <span></span>
+        {content()}
       </Link>
     );
   }

@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.button > span {
+.button > .touchEffect {
   position: absolute;
   width: 33%;
   top: 0;
@@ -180,4 +180,62 @@
   background: var(--md-sys-color-surface-container-high);
   box-shadow: var(--md-sys-elevation-0);
   text-decoration: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* -------------------- */
+
+.buttonSizeS > .content {
+  gap: 4px;
+}
+
+.buttonSizeL > .content {
+  gap: 12px;
+  font-size: var(--font-size-l);
+}
+
+.buttonSizeXL > .content {
+  gap: 16px;
+  font-size: var(--font-size-xl);
+}
+
+/* -------------------- */
+
+.button:has(.startIcon) {
+  padding-left: 16px;
+}
+
+.buttonSizeS:has(.startIcon) {
+  padding-left: 8px;
+}
+
+.buttonSizeL:has(.startIcon) {
+  padding-left: 28px;
+}
+
+.buttonSizeXL:has(.startIcon) {
+  padding-left: 44px;
+}
+
+/* -------------------- */
+
+.button:has(.endIcon) {
+  padding-right: 16px;
+}
+
+.buttonSizeS:has(.endIcon) {
+  padding-right: 8px;
+}
+
+.buttonSizeL:has(.endIcon) {
+  padding-right: 28px;
+}
+
+.buttonSizeXL:has(.endIcon) {
+  padding-right: 44px;
 }

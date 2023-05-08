@@ -12,11 +12,6 @@
 				"__TYPE__": "FieldContent",
 				"value": "По центру",
 				"type": "Select"
-			},
-			"color": {
-				"__TYPE__": "FieldContent",
-				"value": "#cf5ce8",
-				"type": "Color"
 			}
 		},
 		"items": [
@@ -56,6 +51,22 @@
 							"value": "soon",
 							"type": "Text"
 						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "neighborhood",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "giving",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -75,6 +86,22 @@
 						{
 							"__TYPE__": "FieldContent",
 							"value": "longer",
+							"type": "Text"
+						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "saved",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sure",
 							"type": "Text"
 						}
 					]
@@ -98,6 +125,22 @@
 							"value": "copy",
 							"type": "Text"
 						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "creature",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "classroom",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -117,6 +160,22 @@
 						{
 							"__TYPE__": "FieldContent",
 							"value": "moving",
+							"type": "Text"
+						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "fire",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "built",
 							"type": "Text"
 						}
 					]
@@ -140,6 +199,22 @@
 							"value": "actual",
 							"type": "Text"
 						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "lake",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "action",
+							"type": "Text"
+						}
 					]
 				]
 			},
@@ -159,6 +234,22 @@
 						{
 							"__TYPE__": "FieldContent",
 							"value": "root",
+							"type": "Text"
+						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "hope",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "act",
 							"type": "Text"
 						}
 					]

@@ -13,6 +13,8 @@ export interface IAction {
   size?: ButtonSize | null;
   visible?: "all" | "desktop" | "mobile";
   newTab?: boolean;
+  startIcon?: string | null;
+  endIcon?: string | null;
 }
 
 interface IButtons {
@@ -34,6 +36,8 @@ export const Buttons = ({ actions, align = "start" }: IButtons) => (
         variant={action.variant}
         size={action.size}
         newTab={action.newTab}
+        startIcon={action.startIcon}
+        endIcon={action.endIcon}
       >
         {action.title}
       </Button>
@@ -53,17 +57,20 @@ interface IRawButton {
   >;
   size: SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   link: LinkField;
+  starticon?: KeyTextField;
+  endicon?: KeyTextField;
 }
 
-export const prepareButtons = <T extends IRawButton>(rawButtons: T[]) => {
-  return rawButtons.map((item) => ({
+export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
+  rawButtons.map((item) => ({
     title: item.title,
     variant: prepareButtonVariant(item.variant) || "outlined",
     link: asLink(item.link, linkResolver) || "",
     size: prepareButtonSize(item.size),
     newTab: item.link.link_type === "Web",
+    startIcon: item.starticon,
+    endIcon: item.endicon,
   }));
-};
 
 const prepareButtonVariant = (
   variant: SelectField<
