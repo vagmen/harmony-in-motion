@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "Во весь экран",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

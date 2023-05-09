@@ -1,0 +1,31 @@
+{
+  "id": "divider",
+  "type": "SharedSlice",
+  "name": "Divider",
+  "description": "Divider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

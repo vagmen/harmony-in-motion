@@ -7,6 +7,7 @@ export const components = {
   banner: dynamic(() => import("./Banner")),
   buttons_v2: dynamic(() => import("./Buttons")),
   cards: dynamic(() => import("./Cards")),
+  divider: dynamic(() => import("./Divider")),
   faq: dynamic(() => import("./Faq")),
   form: dynamic(() => import("./Form")),
   gap: dynamic(() => import("./Gap")),

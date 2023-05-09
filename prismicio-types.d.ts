@@ -454,7 +454,8 @@ type PageDocumentDataSlicesSlice =
   | HeaderSlice
   | HeroSlice
   | ButtonsV2Slice
-  | QuotesSlice;
+  | QuotesSlice
+  | DividerSlice;
 /**
  * Страница document from Prismic
  *
@@ -916,6 +917,54 @@ type CardsSliceVariation = CardsSliceDefault;
  *
  */
 export type CardsSlice = prismicT.SharedSlice<"cards", CardsSliceVariation>;
+/**
+ * Primary content in Divider → Primary
+ *
+ */
+interface DividerSliceDefaultPrimary {
+  /**
+   * Ширина field in *Divider → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divider.primary.width
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  width: prismicT.SelectField<
+    "Во весь экран" | "В ширину контейнера" | "В ширину текста"
+  >;
+}
+/**
+ * Default variation for Divider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DividerSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<DividerSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Divider*
+ *
+ */
+type DividerSliceVariation = DividerSliceDefault;
+/**
+ * Divider Shared Slice
+ *
+ * - **API ID**: `divider`
+ * - **Description**: `Divider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DividerSlice = prismicT.SharedSlice<
+  "divider",
+  DividerSliceVariation
+>;
 /**
  * Item in Faq → Items
  *
@@ -1902,6 +1951,10 @@ declare module "@prismicio/client" {
       CardsSliceDefault,
       CardsSliceVariation,
       CardsSlice,
+      DividerSliceDefaultPrimary,
+      DividerSliceDefault,
+      DividerSliceVariation,
+      DividerSlice,
       FaqSliceDefaultItem,
       FaqSliceDefault,
       FaqSliceVariation,
