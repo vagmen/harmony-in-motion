@@ -1,13 +1,9 @@
-// import React from "react";
+import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
+import { StatisticsSlice } from "../../prismicio-types";
 import styles from "./styles.module.css";
 
-/**
- * @typedef {import("@prismicio/client").Content.StatisticsSlice} StatisticsSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<StatisticsSlice>} StatisticsProps
- * @param { StatisticsProps }
- */
-const Statistics = ({ slice }) => (
+const Statistics = ({ slice }: SliceComponentProps<StatisticsSlice>) => (
   <SliceContainer>
     <div className={styles.grid}>
       {slice?.items?.map((item) => (
