@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"dataapp": {
+				"__TYPE__": "FieldContent",
+				"value": "even",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

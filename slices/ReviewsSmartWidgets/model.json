@@ -1,0 +1,23 @@
+{
+  "id": "reviews_smart_widgets",
+  "type": "SharedSlice",
+  "name": "ReviewsSmartWidgets",
+  "description": "ReviewsSmartWidgets",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "dataapp": {
+          "type": "Text",
+          "config": { "label": "data-app", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -53,7 +53,8 @@
             "hero": { "type": "SharedSlice" },
             "buttons_v2": { "type": "SharedSlice" },
             "quotes": { "type": "SharedSlice" },
-            "divider": { "type": "SharedSlice" }
+            "divider": { "type": "SharedSlice" },
+            "reviews_smart_widgets": { "type": "SharedSlice" }
           }
         }
       }

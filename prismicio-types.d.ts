@@ -455,7 +455,8 @@ type PageDocumentDataSlicesSlice =
   | HeroSlice
   | ButtonsV2Slice
   | QuotesSlice
-  | DividerSlice;
+  | DividerSlice
+  | ReviewsSmartWidgetsSlice;
 /**
  * Страница document from Prismic
  *
@@ -1749,6 +1750,52 @@ type QuotesSliceVariation = QuotesSliceDefault;
  */
 export type QuotesSlice = prismicT.SharedSlice<"quotes", QuotesSliceVariation>;
 /**
+ * Primary content in ReviewsSmartWidgets → Primary
+ *
+ */
+interface ReviewsSmartWidgetsSliceDefaultPrimary {
+  /**
+   * data-app field in *ReviewsSmartWidgets → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_smart_widgets.primary.dataapp
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  dataapp: prismicT.KeyTextField;
+}
+/**
+ * Default variation for ReviewsSmartWidgets Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ReviewsSmartWidgetsSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<ReviewsSmartWidgetsSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *ReviewsSmartWidgets*
+ *
+ */
+type ReviewsSmartWidgetsSliceVariation = ReviewsSmartWidgetsSliceDefault;
+/**
+ * ReviewsSmartWidgets Shared Slice
+ *
+ * - **API ID**: `reviews_smart_widgets`
+ * - **Description**: `ReviewsSmartWidgets`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ReviewsSmartWidgetsSlice = prismicT.SharedSlice<
+  "reviews_smart_widgets",
+  ReviewsSmartWidgetsSliceVariation
+>;
+/**
  * Item in Statistics → Items
  *
  */
@@ -1996,6 +2043,10 @@ declare module "@prismicio/client" {
       QuotesSliceDefault,
       QuotesSliceVariation,
       QuotesSlice,
+      ReviewsSmartWidgetsSliceDefaultPrimary,
+      ReviewsSmartWidgetsSliceDefault,
+      ReviewsSmartWidgetsSliceVariation,
+      ReviewsSmartWidgetsSlice,
       StatisticsSliceDefaultItem,
       StatisticsSliceDefault,
       StatisticsSliceVariation,
