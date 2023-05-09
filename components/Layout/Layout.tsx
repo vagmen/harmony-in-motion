@@ -4,16 +4,21 @@ import { Header } from "../Header/Header";
 import useWindowSize from "../../hooks/useWindowSize";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
 import styles from "./index.module.css";
-import { ConfigDocumentData, Simplify } from "../../prismicio-types";
+import {
+  ConfigDocumentData,
+  FooterDocumentData,
+  Simplify,
+} from "../../prismicio-types";
 import { prepareButtons } from "../Buttons/Buttons";
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
   menu: IMenu;
   config?: Simplify<ConfigDocumentData>;
+  footer?: Simplify<FooterDocumentData>;
 }
 
-export const Layout = ({ children, menu, config }: ILayout) => {
+export const Layout = ({ children, menu, config, footer }: ILayout) => {
   // if (error) return <div>Failed to load</div>;
   // if (!links) return <div>Loading...</div>;
   const isThemeSwitcherVisible = !!config?.isthemeswitchervisible;
@@ -30,7 +35,7 @@ export const Layout = ({ children, menu, config }: ILayout) => {
       />
       {width < 1000 && <MobileNavbar menu={menu} />}
       <main className={styles.main}>{children}</main>
-      <Footer />
+      <Footer footer={footer} />
     </div>
   );
 };

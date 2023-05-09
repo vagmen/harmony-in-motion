@@ -9,6 +9,7 @@ export const components = {
   cards: dynamic(() => import("./Cards")),
   divider: dynamic(() => import("./Divider")),
   faq: dynamic(() => import("./Faq")),
+  footer_column: dynamic(() => import("./FooterColumn")),
   form: dynamic(() => import("./Form")),
   gap: dynamic(() => import("./Gap")),
   header: dynamic(() => import("./Header")),

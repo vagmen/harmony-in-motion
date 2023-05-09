@@ -301,6 +301,40 @@ export type ContactsDocument<Lang extends string = string> =
     "contacts",
     Lang
   >;
+/** Content for Footer documents */
+interface FooterDocumentData {
+  /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Footer → Slice Zone*
+ *
+ */
+type FooterDocumentDataSlicesSlice = FooterColumnSlice;
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
 /** Content for Меню documents */
 interface MenuDocumentData {
   /**
@@ -513,6 +547,7 @@ export type AllDocumentTypes =
   | CategoryDocument
   | ConfigDocument
   | ContactsDocument
+  | FooterDocument
   | MenuDocument
   | PageDocument
   | ProductDocument;
@@ -1019,6 +1054,115 @@ type FaqSliceVariation = FaqSliceDefault;
  *
  */
 export type FaqSlice = prismicT.SharedSlice<"faq", FaqSliceVariation>;
+/**
+ * Primary content in FooterColumn → Primary
+ *
+ */
+interface FooterColumnSliceDefaultPrimary {
+  /**
+   * Название колонки field in *FooterColumn → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Ссылка field in *FooterColumn → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
+}
+/**
+ * Item in FooterColumn → Items
+ *
+ */
+export interface FooterColumnSliceDefaultItem {
+  /**
+   * Название кнопки field in *FooterColumn → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.items[].title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Ссылка field in *FooterColumn → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
+  /**
+   * Тип кнопки field in *FooterColumn → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.items[].variant
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  variant: prismicT.SelectField<
+    | "Выпуклая"
+    | "Заполненная"
+    | "Тональная"
+    | "Контурная"
+    | "Текстовая"
+    | "Подчеркнутая"
+  >;
+  /**
+   * Иконка в начале field in *FooterColumn → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_column.items[].starticon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  starticon: prismicT.KeyTextField;
+}
+/**
+ * Default variation for FooterColumn Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterColumnSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<FooterColumnSliceDefaultPrimary>,
+  Simplify<FooterColumnSliceDefaultItem>
+>;
+/**
+ * Slice variation for *FooterColumn*
+ *
+ */
+type FooterColumnSliceVariation = FooterColumnSliceDefault;
+/**
+ * FooterColumn Shared Slice
+ *
+ * - **API ID**: `footer_column`
+ * - **Description**: `FooterColumn`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterColumnSlice = prismicT.SharedSlice<
+  "footer_column",
+  FooterColumnSliceVariation
+>;
 /**
  * Primary content in Form → Primary
  *
@@ -1969,6 +2113,9 @@ declare module "@prismicio/client" {
       ConfigDocument,
       ContactsDocumentData,
       ContactsDocument,
+      FooterDocumentData,
+      FooterDocumentDataSlicesSlice,
+      FooterDocument,
       MenuDocumentData,
       MenuDocumentDataMenuitemItem,
       MenuDocument,
@@ -2006,6 +2153,11 @@ declare module "@prismicio/client" {
       FaqSliceDefault,
       FaqSliceVariation,
       FaqSlice,
+      FooterColumnSliceDefaultPrimary,
+      FooterColumnSliceDefaultItem,
+      FooterColumnSliceDefault,
+      FooterColumnSliceVariation,
+      FooterColumnSlice,
       FormSliceDefaultPrimary,
       FormSliceDefaultItem,
       FormSliceDefault,

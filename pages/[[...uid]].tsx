@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({
     const client = createClient({ previewData });
     const path = getPathFromParams(params);
 
-    const [pages, menu, config] = await Promise.all([
+    const [pages, menu, config, footer] = await Promise.all([
       client.getAllByType("page", {
         predicates: [prismic.predicate.at("my.page.path", path)],
         fetchLinks: [
@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async ({
         fetchLinks: ["page.path"],
       }),
       client.getSingle("config"),
+      client.getSingle("footer"),
     ]);
 
     const currentPage = pages[0];
@@ -58,6 +59,7 @@ export const getStaticProps: GetStaticProps = async ({
         page: currentPage,
         menu: prepareMenuData(menu),
         config: config.data,
+        footer: footer.data,
       },
       // revalidate: 60,
     };

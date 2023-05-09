@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
-import styles from "./styles.module.css";
+import { Divider as DividerComponent } from "../../components/Divider/Divider";
 import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
 import { usePrismicContext } from "../../utils";
 
@@ -21,7 +21,7 @@ const Divider = ({ slice, context }: DividerProps): JSX.Element => {
       noPadding={slice.primary.width === FULL_WIDTH}
       align={align}
     >
-      <div className={styles.divider}></div>
+      <DividerComponent />
     </SliceContainer>
   );
 };

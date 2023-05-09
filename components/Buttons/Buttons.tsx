@@ -72,7 +72,7 @@ export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
     endIcon: item.endicon,
   }));
 
-const prepareButtonVariant = (
+export const prepareButtonVariant = (
   variant: SelectField<
     | "Выпуклая"
     | "Заполненная"
@@ -108,7 +108,7 @@ const prepareButtonVariant = (
   }
 };
 
-const prepareButtonSize = (
+export const prepareButtonSize = (
   size: SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">
 ): ButtonSize | null => {
   switch (size) {
