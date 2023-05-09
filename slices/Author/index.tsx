@@ -3,9 +3,11 @@ import { Author } from "../../components/Author/Author";
 import { isFilled } from "@prismicio/helpers";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { AuthorDocument, AuthorSlice } from "../../prismicio-types";
+import { usePrismicContext } from "../../utils";
 
-const AuthorSlice = ({ slice }: SliceComponentProps<AuthorSlice>) => {
+const AuthorSlice = ({ slice, context }: SliceComponentProps<AuthorSlice>) => {
   const { author } = slice.primary;
+  const { align } = usePrismicContext(context);
 
   if (!author) {
     return <span>asd</span>;
@@ -17,7 +19,7 @@ const AuthorSlice = ({ slice }: SliceComponentProps<AuthorSlice>) => {
     )
   ) {
     return (
-      <SliceContainer isMaxWidthLimited>
+      <SliceContainer isMaxWidthLimited align={align}>
         <Author
           name={author.data?.name?.toString()}
           position={author.data?.position?.toString()}

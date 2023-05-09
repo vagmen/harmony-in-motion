@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
 import { RichTextField } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
-import { Card, CardVariant } from "../Card/Card";
+import { CardContainer, CardVariant } from "../CardContainer/CardContainer";
 
 interface IQuote {
   text: RichTextField;
@@ -12,7 +12,7 @@ interface IQuote {
 
 export const Quote = ({ text, variant, children }: IQuote) => {
   return (
-    <Card variant={variant} className={styles.container}>
+    <CardContainer variant={variant} className={styles.container}>
       <PrismicRichText
         field={text}
         components={{
@@ -20,6 +20,6 @@ export const Quote = ({ text, variant, children }: IQuote) => {
         }}
       />
       {children}
-    </Card>
+    </CardContainer>
   );
 };

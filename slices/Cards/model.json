@@ -14,9 +14,9 @@
         "size": {
           "type": "Select",
           "config": {
-            "label": "Размер карточек",
+            "label": "Размер карточки",
             "placeholder": "",
-            "options": ["m", "s", "l"]
+            "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
           }
         }
       },
@@ -27,18 +27,23 @@
         },
         "description": {
           "type": "Text",
-          "config": { "label": "description", "placeholder": "" }
+          "config": { "label": "Описание", "placeholder": "" }
         },
         "image": {
           "type": "Image",
-          "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "Изображение",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
         "link": {
           "type": "Link",
           "config": {
             "label": "Ссылка",
-            "select": "document",
-            "customtypes": ["page"]
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
           }
         }
       },

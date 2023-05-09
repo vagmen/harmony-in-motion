@@ -34,6 +34,7 @@ export const getStaticProps: GetStaticProps = async ({
   try {
     const client = createClient({ previewData });
     const path = getPathFromParams(params);
+
     const [pages, menu, config] = await Promise.all([
       client.getAllByType("page", {
         predicates: [prismic.predicate.at("my.page.path", path)],
@@ -62,9 +63,11 @@ export const getStaticProps: GetStaticProps = async ({
     };
   } catch (error) {
     return {
-      props: {
-        notFound: true,
-      },
+      // props: {
+      //   notFound: true,
+      // },
+      notFound: true,
+
       // revalidate: 60,
     };
   }

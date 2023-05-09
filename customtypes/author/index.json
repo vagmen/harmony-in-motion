@@ -9,13 +9,13 @@
         "type": "Text",
         "config": { "label": "Имя", "placeholder": "" }
       },
-      "photo": {
-        "type": "Image",
-        "config": { "label": "Фото", "constraint": {}, "thumbnails": [] }
-      },
       "position": {
         "type": "Text",
         "config": { "label": "Должность", "placeholder": "" }
+      },
+      "photo": {
+        "type": "Image",
+        "config": { "label": "Фото", "constraint": {}, "thumbnails": [] }
       }
     }
   }

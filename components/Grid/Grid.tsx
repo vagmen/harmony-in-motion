@@ -18,7 +18,8 @@ export const Grid = <IItem,>({ items, buildItem, size }: IGrid<IItem>) => {
       className={classNames(
         styles.container,
         { [styles.sizeS]: size === "s" },
-        { [styles.sizeL]: size === "l" }
+        { [styles.sizeL]: size === "l" },
+        { [styles.sizeXL]: size === "xl" }
       )}
     >
       {items.map((item, index) => (

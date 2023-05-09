@@ -5,7 +5,7 @@
 		"primary": {
 			"size": {
 				"__TYPE__": "FieldContent",
-				"value": "m",
+				"value": "Большая",
 				"type": "Select"
 			}
 		},
@@ -25,33 +25,31 @@
 						"description",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Описание первой карточки"
+							"value": "border",
+							"type": "Text"
 						}
 					],
 					[
 						"image",
 						{
-							"url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc1NDI2NjM3&ixlib=rb-4.0.3&q=80",
+							"__TYPE__": "ImageContent",
 							"origin": {
-								"id": "9aOswReDKPo",
-								"url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc1NDI2NjM3&ixlib=rb-4.0.3&q=80",
-								"width": 8040,
-								"height": 6024
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+								"width": 4380,
+								"height": 2895
 							},
-							"width": 8040,
-							"height": 6024,
+							"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+							"width": 4380,
+							"height": 2895,
 							"edit": {
-								"background": "transparent",
 								"zoom": 1,
 								"crop": {
 									"x": 0,
 									"y": 0
-								}
+								},
+								"background": "transparent"
 							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -60,8 +58,8 @@
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
 							}
 						}
 					]
@@ -82,33 +80,31 @@
 						"description",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Описание второй карточки"
+							"value": "sharp",
+							"type": "Text"
 						}
 					],
 					[
 						"image",
 						{
-							"url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzU0MjY2Mzc&ixlib=rb-4.0.3&q=80",
+							"__TYPE__": "ImageContent",
 							"origin": {
-								"id": "5JQH9Iqnm9o",
-								"url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzU0MjY2Mzc&ixlib=rb-4.0.3&q=80",
-								"width": 4608,
-								"height": 3072
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+								"width": 2747,
+								"height": 4120
 							},
-							"width": 4608,
-							"height": 3072,
+							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+							"width": 2747,
+							"height": 4120,
 							"edit": {
-								"background": "transparent",
 								"zoom": 1,
 								"crop": {
 									"x": 0,
 									"y": 0
-								}
+								},
+								"background": "transparent"
 							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -117,8 +113,8 @@
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
-								"__TYPE__": "DocumentLink",
-								"id": "mock_document_id"
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io"
 							}
 						}
 					]

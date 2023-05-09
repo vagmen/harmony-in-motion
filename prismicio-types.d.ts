@@ -20,17 +20,6 @@ interface AuthorDocumentData {
    */
   name: prismicT.KeyTextField;
   /**
-   * Фото field in *Автор*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.photo
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  photo: prismicT.ImageField<never>;
-  /**
    * Должность field in *Автор*
    *
    * - **Field Type**: Text
@@ -41,6 +30,17 @@ interface AuthorDocumentData {
    *
    */
   position: prismicT.KeyTextField;
+  /**
+   * Фото field in *Автор*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.photo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  photo: prismicT.ImageField<never>;
 }
 /**
  * Автор document from Prismic
@@ -833,7 +833,7 @@ export type ButtonsV2Slice = prismicT.SharedSlice<
  */
 interface CardsSliceDefaultPrimary {
   /**
-   * Размер карточек field in *Cards → Primary*
+   * Размер карточки field in *Cards → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -841,7 +841,7 @@ interface CardsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/core-concepts/select
    *
    */
-  size: prismicT.SelectField<"m" | "s" | "l">;
+  size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
 }
 /**
  * Item in Cards → Items
@@ -859,7 +859,7 @@ export interface CardsSliceDefaultItem {
    */
   title: prismicT.KeyTextField;
   /**
-   * description field in *Cards → Items*
+   * Описание field in *Cards → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -869,7 +869,7 @@ export interface CardsSliceDefaultItem {
    */
   description: prismicT.KeyTextField;
   /**
-   * image field in *Cards → Items*
+   * Изображение field in *Cards → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -881,13 +881,13 @@ export interface CardsSliceDefaultItem {
   /**
    * Ссылка field in *Cards → Items*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: cards.items[].link
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  link: prismicT.RelationField<"page">;
+  link: prismicT.LinkField;
 }
 /**
  * Default variation for Cards Slice

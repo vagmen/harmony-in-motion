@@ -7,7 +7,9 @@ const getUrlsFromPages = (pages: PageDocument<string>[]) => {
     let pathParts: string[] = [];
     if (page.data.path) {
       pathParts = page.data.path.split("/");
-      pathParts.shift();
+      if (page.data.path[0] === "/") {
+        pathParts.shift();
+      }
     }
     return pathParts;
   });

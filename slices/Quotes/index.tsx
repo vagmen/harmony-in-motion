@@ -5,7 +5,7 @@ import { Quote } from "../../components/Quote/Quote";
 import { isFilled } from "@prismicio/helpers";
 import { AuthorDocument, QuotesSlice } from "../../prismicio-types";
 import { Author } from "../../components/Author/Author";
-import { prepareCardVariant } from "../../components/Card/Card";
+import { prepareCardVariant } from "../../components/CardContainer/CardContainer";
 
 /**
  * Props for `Quotes`.
