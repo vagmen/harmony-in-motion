@@ -20,27 +20,63 @@ export const CardContainer = ({
   children,
   padding = "m",
   link,
+  onClick,
 }: ICard) => {
-  return (
+  return link ? (
     <Link href={link || ""}>
-      <div
-        className={classNames(
-          styles.container,
-          {
-            [styles.containerElevated]: variant === "elevated",
-            [styles.containerFilled]: variant === "filled",
-            [styles.containerOutlined]: variant === "outlined",
-            [styles.containerNoPadding]: padding === "noPadding",
-            [styles.containerClickable]: link?.length,
-          },
-          className
-        )}
+      <CardContainerContent
+        clickable={true}
+        className={className}
+        padding={padding}
+        variant={variant}
       >
         {children}
-      </div>
+      </CardContainerContent>
     </Link>
+  ) : (
+    <CardContainerContent
+      className={className}
+      onClick={onClick}
+      padding={padding}
+      variant={variant}
+    >
+      {children}
+    </CardContainerContent>
   );
 };
+
+const CardContainerContent = ({
+  clickable,
+  className,
+  children,
+  padding,
+  variant,
+  onClick,
+}: {
+  clickable?: boolean;
+  className?: string;
+  children?: React.ReactNode;
+  variant?: CardVariant;
+  onClick?: () => void;
+  padding?: "noPadding" | "s" | "m" | "l";
+}) => (
+  <div
+    className={classNames(
+      styles.container,
+      {
+        [styles.containerElevated]: variant === "elevated",
+        [styles.containerFilled]: variant === "filled",
+        [styles.containerOutlined]: variant === "outlined",
+        [styles.containerNoPadding]: padding === "noPadding",
+        [styles.containerClickable]: clickable || onClick,
+      },
+      className
+    )}
+    onClick={() => onClick && onClick()}
+  >
+    {children}
+  </div>
+);
 
 export const prepareCardVariant = (
   rawVariant: SelectField<"Обычная" | "Заполненная" | "Контурная">

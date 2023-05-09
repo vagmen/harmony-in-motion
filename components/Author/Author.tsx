@@ -1,8 +1,10 @@
 import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
 import classNames from "classnames";
-import { ImageFieldImage } from "@prismicio/types";
+import { ContentRelationshipField, ImageFieldImage } from "@prismicio/types";
 import { Avatar } from "../Avatar/Avatar";
+import { isFilled } from "@prismicio/helpers";
+import { AuthorDocument } from "../../prismicio-types";
 
 interface IAuthor {
   name?: string;
@@ -25,3 +27,18 @@ export const Author = ({ name, position, image }: IAuthor) => {
     </div>
   );
 };
+
+export const getAuthorComponent = (
+  author: ContentRelationshipField<"author">
+) =>
+  isFilled.contentRelationship<"author", string, AuthorDocument["data"]>(
+    author
+  ) ? (
+    <Author
+      name={author.data?.name?.toString()}
+      position={author.data?.position?.toString()}
+      image={author.data?.photo}
+    />
+  ) : (
+    <></>
+  );
