@@ -9,7 +9,7 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Judge"
+							"text": "Language"
 						}
 					}
 				]
@@ -20,58 +20,15 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nisi nulla et id ex nostrud ullamco ipsum mollit fugiat ex consectetur. Eiusmod do cupidatat sit sunt labore sunt excepteur cillum. Proident aliquip do est eu culpa tempor officia deserunt."
+							"text": "Id id in excepteur sunt eiusmod cupidatat do sit aliqua. Fugiat ut laborum elit ad esse minim reprehenderit culpa nulla voluptate adipisicing quis minim duis."
 						}
 					}
 				]
 			},
-			"image": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-					"width": 4752,
-					"height": 3168
-				},
-				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-				"width": 4752,
-				"height": 3168,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"imageposition": {
-				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "Справа"
-			},
-			"mobileimageposition": {
-				"__TYPE__": "FieldContent",
-				"value": "Сверху",
-				"type": "Select"
-			},
 			"align": {
 				"__TYPE__": "FieldContent",
-				"value": "Слева",
+				"value": "По центру",
 				"type": "Select"
-			},
-			"imageweight": {
-				"__TYPE__": "FieldContent",
-				"value": "m",
-				"type": "Select"
-			},
-			"width": {
-				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "В ширину контейнера"
 			}
 		},
 		"items": [
@@ -82,24 +39,24 @@
 						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Event"
+							"value": "exclaimed",
+							"type": "Text"
 						}
 					],
 					[
 						"variant",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Select",
-							"value": "Заполненная"
+							"value": "Тональная",
+							"type": "Select"
 						}
 					],
 					[
 						"size",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Select",
-							"value": "Большая"
+							"value": "Огромная",
+							"type": "Select"
 						}
 					],
 					[
@@ -108,7 +65,7 @@
 							"__TYPE__": "LinkContent",
 							"value": {
 								"__TYPE__": "ExternalLink",
-								"url": "https://slicemachine.dev"
+								"url": "http://google.com"
 							}
 						}
 					]

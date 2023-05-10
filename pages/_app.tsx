@@ -14,6 +14,8 @@ import {
 import { IMenu } from "../interfaces";
 import { Button } from "../components/Button/Button";
 import { ImageField } from "../components/ImageField/ImageField";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -25,34 +27,56 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<CustomPageProps>) {
+  const router = useRouter();
+  const pageKey = router.asPath;
+
+  const onExitComplete = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <ThemeProvider>
-      <PrismicProvider
-        internalLinkComponent={({ href, children }) => (
-          <Button variant="underlined" link={href}>
-            {children}
-          </Button>
-        )}
-        linkResolver={linkResolver}
-        externalLinkComponent={({ href, children, target }) => (
-          <Button variant="underlined" link={href} newTab={target === "_blank"}>
-            {children}
-          </Button>
-        )}
-        richTextComponents={{
-          image: ({ children, node, text, type }) => <ImageField node={node} />,
-        }}
+      <AnimatePresence
+        // onExitComplete={onExitComplete}
+        initial={false}
+        // mode="wait"
+        mode="popLayout"
       >
-        <PrismicPreview repositoryName={repositoryName}>
-          <Layout
-            menu={pageProps.menu}
-            config={pageProps.config}
-            footer={pageProps.footer}
-          >
-            <Component {...pageProps} />
-          </Layout>
-        </PrismicPreview>
-      </PrismicProvider>
+        {/* mode="wait" initial={false} */}
+        {/* > */}
+        <PrismicProvider
+          internalLinkComponent={({ href, children }) => (
+            <Button variant="underlined" link={href}>
+              {children}
+            </Button>
+          )}
+          linkResolver={linkResolver}
+          externalLinkComponent={({ href, children, target }) => (
+            <Button
+              variant="underlined"
+              link={href}
+              newTab={target === "_blank"}
+            >
+              {children}
+            </Button>
+          )}
+          richTextComponents={{
+            image: ({ children, node, text, type }) => (
+              <ImageField node={node} />
+            ),
+          }}
+        >
+          <PrismicPreview repositoryName={repositoryName}>
+            <Layout
+              menu={pageProps.menu}
+              config={pageProps.config}
+              footer={pageProps.footer}
+            >
+              <Component key={pageKey} {...pageProps} />
+            </Layout>
+          </PrismicPreview>
+        </PrismicProvider>
+      </AnimatePresence>
     </ThemeProvider>
   );
 }

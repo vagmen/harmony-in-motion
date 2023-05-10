@@ -1,8 +1,8 @@
 {
-  "id": "banner",
+  "id": "hero",
   "type": "SharedSlice",
-  "name": "Banner",
-  "description": "Banner",
+  "name": "HeroImage",
+  "description": "Hero",
   "variations": [
     {
       "id": "default",
@@ -10,13 +10,13 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/banner/default/557a73a8dcec31372ecbe0f9ac68ef7a3ba30c71.png?auto=compress%2Cformat",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
       "primary": {
         "title": {
           "type": "StructuredText",
           "config": {
             "label": "Заголовок",
-            "placeholder": "h1 для заголовка страницы",
+            "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading1,heading2"
           }
@@ -32,14 +32,43 @@
         },
         "image": {
           "type": "Image",
-          "config": { "label": "Картинка", "constraint": {}, "thumbnails": [] }
+          "config": {
+            "label": "Изображение",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageposition": {
+          "type": "Select",
+          "config": {
+            "label": "Положение изображения",
+            "placeholder": "",
+            "options": ["Справа", "Слева"]
+          }
+        },
+        "mobileimageposition": {
+          "type": "Select",
+          "config": {
+            "label": "Положение изображения на экране тел",
+            "placeholder": "",
+            "options": ["Сверху", "Снизу", "Не показывать"]
+          }
+        },
+        "imageweight": {
+          "type": "Select",
+          "config": {
+            "label": "Размер изображения",
+            "placeholder": "",
+            "options": ["s", "m", "l"]
+          }
         },
         "align": {
           "type": "Select",
           "config": {
-            "label": "Выравнивание",
-            "placeholder": "Выравнивание контента",
-            "options": ["Слева", "По центру", "Справа"]
+            "label": "Выравнивание контента",
+            "placeholder": "",
+            "options": ["Слева", "По центру", "Справа"],
+            "default_value": "Слева"
           }
         },
         "width": {
@@ -58,10 +87,7 @@
       "items": {
         "title": {
           "type": "Text",
-          "config": {
-            "label": "Название кнопки",
-            "placeholder": "Введите название кнопки"
-          }
+          "config": { "label": "Название кнопки", "placeholder": "" }
         },
         "variant": {
           "type": "Select",

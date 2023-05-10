@@ -1,0 +1,69 @@
+{
+  "id": "hero_vertical",
+  "type": "SharedSlice",
+  "name": "HeroVertical",
+  "description": "HeroVertical",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Заголовок", "placeholder": "" }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Описание",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Изображение",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина изображения",
+            "placeholder": "",
+            "options": [
+              "На всю ширину экрана",
+              "На всю ширину с отступами",
+              "Под размер текста"
+            ]
+          }
+        },
+        "isimagebottom": {
+          "type": "Boolean",
+          "config": {
+            "label": "Изображение внизу",
+            "placeholder_false": "Нет",
+            "placeholder_true": "Да",
+            "default_value": false
+          }
+        },
+        "align": {
+          "type": "Select",
+          "config": {
+            "label": "Выравнивание контента",
+            "placeholder": "",
+            "options": ["Слева", "По центру", "Справа"]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

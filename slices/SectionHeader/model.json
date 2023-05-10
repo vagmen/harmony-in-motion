@@ -1,7 +1,7 @@
 {
   "id": "header_with_link",
   "type": "SharedSlice",
-  "name": "HeaderHorisontal",
+  "name": "SectionHeader",
   "description": "HeaderWithLink",
   "variations": [
     {

@@ -58,6 +58,7 @@ export const Button = (props: IButton | ILink) => {
       href={props.link}
       className={classes}
       target={props.newTab ? "_blank" : "_self"}
+      scroll={false}
     >
       <ClickableComponentContent {...props} />
     </Link>

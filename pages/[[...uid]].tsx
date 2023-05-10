@@ -10,18 +10,28 @@ import {
   prepareMenuData,
 } from "../utils";
 import { createClient } from "../prismicio";
+import PageTransition from "../components/PageTransition/PageTransition";
 
-const Page = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+type IndexPageProps = {};
+type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
+
+const Page = (
+  { page }: InferGetStaticPropsType<typeof getStaticProps>,
+  ref: IndexPageRef
+) => {
+  // const Page = (({ page }, ref): InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!page || !page.data || !page.data.slices) {
     return <></>;
   }
 
   return (
-    <SliceZone
-      slices={page.data.slices}
-      components={components}
-      context={{ align: prepareAlign(page.data.align) }}
-    />
+    <PageTransition ref={ref}>
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
+        context={{ align: prepareAlign(page.data.align) }}
+      />
+    </PageTransition>
   );
 };
 

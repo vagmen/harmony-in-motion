@@ -18,6 +18,10 @@
             "placeholder": "",
             "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
           }
+        },
+        "test": {
+          "type": "Text",
+          "config": { "label": "test", "placeholder": "" }
         }
       },
       "items": {

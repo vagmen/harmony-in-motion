@@ -410,17 +410,6 @@ interface PageDocumentData {
    */
   path: prismicT.KeyTextField;
   /**
-   * SEO field in *Страница*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.meta[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/group
-   *
-   */
-  meta: prismicT.GroupField<Simplify<PageDocumentDataMetaItem>>;
-  /**
    * Выравнивание контента field in *Страница*
    *
    * - **Field Type**: Select
@@ -431,6 +420,40 @@ interface PageDocumentData {
    *
    */
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа">;
+  /**
+   * Meta: Title field in *Страница*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.metatitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  metatitle: prismicT.KeyTextField;
+  /**
+   * Meta: Description field in *Страница*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.metadescription
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  metadescription: prismicT.KeyTextField;
+  /**
+   * Показывать кнопку "Назад" field in *Страница*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: page.goback
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+   *
+   */
+  goback: prismicT.BooleanField;
   /**
    * Slice Zone field in *Страница*
    *
@@ -444,32 +467,6 @@ interface PageDocumentData {
   slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
 }
 /**
- * Item in Страница → SEO
- *
- */
-export interface PageDocumentDataMetaItem {
-  /**
-   * title field in *Страница → SEO*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.meta[].title
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  title: prismicT.KeyTextField;
-  /**
-   * description field in *Страница → SEO*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.meta[].description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  description: prismicT.KeyTextField;
-}
-/**
  * Slice for *Страница → Slice Zone*
  *
  */
@@ -477,7 +474,6 @@ type PageDocumentDataSlicesSlice =
   | TextSlice
   | ImageWithCaptionSlice
   | HeaderWithLinkSlice
-  | CardsSlice
   | FaqSlice
   | VideoSlice
   | StatisticsSlice
@@ -490,7 +486,8 @@ type PageDocumentDataSlicesSlice =
   | ButtonsV2Slice
   | QuotesSlice
   | DividerSlice
-  | ReviewsSmartWidgetsSlice;
+  | ReviewsSmartWidgetsSlice
+  | HeroVerticalSlice;
 /**
  * Страница document from Prismic
  *
@@ -595,12 +592,12 @@ type AuthorSliceVariation = AuthorSliceDefault;
  */
 export type AuthorSlice = prismicT.SharedSlice<"author", AuthorSliceVariation>;
 /**
- * Primary content in Banner → Primary
+ * Primary content in HeroBanner → Primary
  *
  */
 interface BannerSliceDefaultPrimary {
   /**
-   * Заголовок field in *Banner → Primary*
+   * Заголовок field in *HeroBanner → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: h1 для заголовка страницы
@@ -610,7 +607,7 @@ interface BannerSliceDefaultPrimary {
    */
   title: prismicT.TitleField;
   /**
-   * Описание field in *Banner → Primary*
+   * Описание field in *HeroBanner → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Введите описание
@@ -620,7 +617,7 @@ interface BannerSliceDefaultPrimary {
    */
   description: prismicT.RichTextField;
   /**
-   * Картинка field in *Banner → Primary*
+   * Картинка field in *HeroBanner → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -630,7 +627,7 @@ interface BannerSliceDefaultPrimary {
    */
   image: prismicT.ImageField<never>;
   /**
-   * Выравнивание field in *Banner → Primary*
+   * Выравнивание field in *HeroBanner → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Выравнивание контента
@@ -640,7 +637,7 @@ interface BannerSliceDefaultPrimary {
    */
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа">;
   /**
-   * Ширина field in *Banner → Primary*
+   * Ширина field in *HeroBanner → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -653,12 +650,12 @@ interface BannerSliceDefaultPrimary {
   >;
 }
 /**
- * Item in Banner → Items
+ * Item in HeroBanner → Items
  *
  */
 export interface BannerSliceDefaultItem {
   /**
-   * Название кнопки field in *Banner → Items*
+   * Название кнопки field in *HeroBanner → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Введите название кнопки
@@ -668,7 +665,7 @@ export interface BannerSliceDefaultItem {
    */
   title: prismicT.KeyTextField;
   /**
-   * Тип кнопки field in *Banner → Items*
+   * Тип кнопки field in *HeroBanner → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -685,7 +682,7 @@ export interface BannerSliceDefaultItem {
     | "Подчеркнутая"
   >;
   /**
-   * Размер кнопки field in *Banner → Items*
+   * Размер кнопки field in *HeroBanner → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -695,7 +692,7 @@ export interface BannerSliceDefaultItem {
    */
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
-   * Ссылка field in *Banner → Items*
+   * Ссылка field in *HeroBanner → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -706,7 +703,7 @@ export interface BannerSliceDefaultItem {
   link: prismicT.LinkField;
 }
 /**
- * Default variation for Banner Slice
+ * Default variation for HeroBanner Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
@@ -719,12 +716,12 @@ export type BannerSliceDefault = prismicT.SharedSliceVariation<
   Simplify<BannerSliceDefaultItem>
 >;
 /**
- * Slice variation for *Banner*
+ * Slice variation for *HeroBanner*
  *
  */
 type BannerSliceVariation = BannerSliceDefault;
 /**
- * Banner Shared Slice
+ * HeroBanner Shared Slice
  *
  * - **API ID**: `banner`
  * - **Description**: `Banner`
@@ -747,7 +744,7 @@ interface ButtonsV2SliceDefaultPrimary {
    *
    */
   width: prismicT.SelectField<
-    "Во весь экран" | "В ширину контейнера" | "В ширину текста"
+    "На всю ширину с отступами" | "Под размер текста"
   >;
   /**
    * Выравнивание field in *Buttons → Primary*
@@ -879,6 +876,16 @@ interface CardsSliceDefaultPrimary {
    *
    */
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
+  /**
+   * test field in *Cards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.primary.test
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  test: prismicT.KeyTextField;
 }
 /**
  * Item in Cards → Items
@@ -968,7 +975,7 @@ interface DividerSliceDefaultPrimary {
    *
    */
   width: prismicT.SelectField<
-    "Во весь экран" | "В ширину контейнера" | "В ширину текста"
+    "На всю ширину экрана" | "На всю ширину с отступами" | "Под размер текста"
   >;
 }
 /**
@@ -1288,12 +1295,12 @@ type GapSliceVariation = GapSliceDefault;
  */
 export type GapSlice = prismicT.SharedSlice<"gap", GapSliceVariation>;
 /**
- * Primary content in Header → Primary
+ * Primary content in Hero → Primary
  *
  */
 interface HeaderSliceDefaultPrimary {
   /**
-   * Заголовок field in *Header → Primary*
+   * Заголовок field in *Hero → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: Если заголовок страницы, то h1
@@ -1303,7 +1310,7 @@ interface HeaderSliceDefaultPrimary {
    */
   title: prismicT.TitleField;
   /**
-   * Описание field in *Header → Primary*
+   * Описание field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Введите описание
@@ -1313,7 +1320,7 @@ interface HeaderSliceDefaultPrimary {
    */
   description: prismicT.RichTextField;
   /**
-   * Выравнивание field in *Header → Primary*
+   * Выравнивание field in *Hero → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1324,12 +1331,12 @@ interface HeaderSliceDefaultPrimary {
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа">;
 }
 /**
- * Item in Header → Items
+ * Item in Hero → Items
  *
  */
 export interface HeaderSliceDefaultItem {
   /**
-   * Название кнопки field in *Header → Items*
+   * Название кнопки field in *Hero → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Введите название кнопки
@@ -1339,7 +1346,7 @@ export interface HeaderSliceDefaultItem {
    */
   title: prismicT.KeyTextField;
   /**
-   * Тип кнопки field in *Header → Items*
+   * Тип кнопки field in *Hero → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1356,7 +1363,7 @@ export interface HeaderSliceDefaultItem {
     | "Подчеркнутая"
   >;
   /**
-   * Размер кнопки field in *Header → Items*
+   * Размер кнопки field in *Hero → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1366,7 +1373,7 @@ export interface HeaderSliceDefaultItem {
    */
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
-   * Ссылка field in *Header → Items*
+   * Ссылка field in *Hero → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -1377,7 +1384,7 @@ export interface HeaderSliceDefaultItem {
   link: prismicT.LinkField;
 }
 /**
- * Default variation for Header Slice
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
@@ -1390,12 +1397,12 @@ export type HeaderSliceDefault = prismicT.SharedSliceVariation<
   Simplify<HeaderSliceDefaultItem>
 >;
 /**
- * Slice variation for *Header*
+ * Slice variation for *Hero*
  *
  */
 type HeaderSliceVariation = HeaderSliceDefault;
 /**
- * Header Shared Slice
+ * Hero Shared Slice
  *
  * - **API ID**: `header`
  * - **Description**: `Header`
@@ -1404,12 +1411,12 @@ type HeaderSliceVariation = HeaderSliceDefault;
  */
 export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
 /**
- * Primary content in HeaderHorisontal → Primary
+ * Primary content in SectionHeader → Primary
  *
  */
 interface HeaderWithLinkSliceDefaultPrimary {
   /**
-   * Заголовок field in *HeaderHorisontal → Primary*
+   * Заголовок field in *SectionHeader → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: Введите заголовок
@@ -1419,7 +1426,7 @@ interface HeaderWithLinkSliceDefaultPrimary {
    */
   title: prismicT.TitleField;
   /**
-   * Описание field in *HeaderHorisontal → Primary*
+   * Описание field in *SectionHeader → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Введите описание
@@ -1430,12 +1437,12 @@ interface HeaderWithLinkSliceDefaultPrimary {
   description: prismicT.RichTextField;
 }
 /**
- * Item in HeaderHorisontal → Items
+ * Item in SectionHeader → Items
  *
  */
 export interface HeaderWithLinkSliceDefaultItem {
   /**
-   * Название кнопки field in *HeaderHorisontal → Items*
+   * Название кнопки field in *SectionHeader → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1445,7 +1452,7 @@ export interface HeaderWithLinkSliceDefaultItem {
    */
   title: prismicT.KeyTextField;
   /**
-   * Ссылка field in *HeaderHorisontal → Items*
+   * Ссылка field in *SectionHeader → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -1455,7 +1462,7 @@ export interface HeaderWithLinkSliceDefaultItem {
    */
   link: prismicT.LinkField;
   /**
-   * Тип кнопки field in *HeaderHorisontal → Items*
+   * Тип кнопки field in *SectionHeader → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1472,7 +1479,7 @@ export interface HeaderWithLinkSliceDefaultItem {
     | "Подчеркнутая"
   >;
   /**
-   * Размер кнопки field in *HeaderHorisontal → Items*
+   * Размер кнопки field in *SectionHeader → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1483,7 +1490,7 @@ export interface HeaderWithLinkSliceDefaultItem {
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
 }
 /**
- * Default variation for HeaderHorisontal Slice
+ * Default variation for SectionHeader Slice
  *
  * - **API ID**: `default`
  * - **Description**: `HeaderWithLink`
@@ -1496,12 +1503,12 @@ export type HeaderWithLinkSliceDefault = prismicT.SharedSliceVariation<
   Simplify<HeaderWithLinkSliceDefaultItem>
 >;
 /**
- * Slice variation for *HeaderHorisontal*
+ * Slice variation for *SectionHeader*
  *
  */
 type HeaderWithLinkSliceVariation = HeaderWithLinkSliceDefault;
 /**
- * HeaderHorisontal Shared Slice
+ * SectionHeader Shared Slice
  *
  * - **API ID**: `header_with_link`
  * - **Description**: `HeaderWithLink`
@@ -1513,12 +1520,12 @@ export type HeaderWithLinkSlice = prismicT.SharedSlice<
   HeaderWithLinkSliceVariation
 >;
 /**
- * Primary content in Hero → Primary
+ * Primary content in HeroImage → Primary
  *
  */
 interface HeroSliceDefaultPrimary {
   /**
-   * Заголовок field in *Hero → Primary*
+   * Заголовок field in *HeroImage → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -1528,7 +1535,7 @@ interface HeroSliceDefaultPrimary {
    */
   title: prismicT.TitleField;
   /**
-   * Описание field in *Hero → Primary*
+   * Описание field in *HeroImage → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Введите описание
@@ -1538,7 +1545,7 @@ interface HeroSliceDefaultPrimary {
    */
   description: prismicT.RichTextField;
   /**
-   * Изображение field in *Hero → Primary*
+   * Изображение field in *HeroImage → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1548,7 +1555,7 @@ interface HeroSliceDefaultPrimary {
    */
   image: prismicT.ImageField<never>;
   /**
-   * Положение изображения field in *Hero → Primary*
+   * Положение изображения field in *HeroImage → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1558,7 +1565,7 @@ interface HeroSliceDefaultPrimary {
    */
   imageposition: prismicT.SelectField<"Справа" | "Слева">;
   /**
-   * Положение изображения на экране тел field in *Hero → Primary*
+   * Положение изображения на экране тел field in *HeroImage → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1570,7 +1577,7 @@ interface HeroSliceDefaultPrimary {
     "Сверху" | "Снизу" | "Не показывать"
   >;
   /**
-   * Размер изображения field in *Hero → Primary*
+   * Размер изображения field in *HeroImage → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1580,7 +1587,7 @@ interface HeroSliceDefaultPrimary {
    */
   imageweight: prismicT.SelectField<"s" | "m" | "l">;
   /**
-   * Выравнивание контента field in *Hero → Primary*
+   * Выравнивание контента field in *HeroImage → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1591,7 +1598,7 @@ interface HeroSliceDefaultPrimary {
    */
   align: prismicT.SelectField<"Слева" | "По центру" | "Справа", "filled">;
   /**
-   * Ширина field in *Hero → Primary*
+   * Ширина field in *HeroImage → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1604,12 +1611,12 @@ interface HeroSliceDefaultPrimary {
   >;
 }
 /**
- * Item in Hero → Items
+ * Item in HeroImage → Items
  *
  */
 export interface HeroSliceDefaultItem {
   /**
-   * Название кнопки field in *Hero → Items*
+   * Название кнопки field in *HeroImage → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1619,7 +1626,7 @@ export interface HeroSliceDefaultItem {
    */
   title: prismicT.KeyTextField;
   /**
-   * Тип кнопки field in *Hero → Items*
+   * Тип кнопки field in *HeroImage → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1636,7 +1643,7 @@ export interface HeroSliceDefaultItem {
     | "Подчеркнутая"
   >;
   /**
-   * Размер кнопки field in *Hero → Items*
+   * Размер кнопки field in *HeroImage → Items*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -1646,7 +1653,7 @@ export interface HeroSliceDefaultItem {
    */
   size: prismicT.SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   /**
-   * Ссылка field in *Hero → Items*
+   * Ссылка field in *HeroImage → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -1657,7 +1664,7 @@ export interface HeroSliceDefaultItem {
   link: prismicT.LinkField;
 }
 /**
- * Default variation for Hero Slice
+ * Default variation for HeroImage Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
@@ -1670,12 +1677,12 @@ export type HeroSliceDefault = prismicT.SharedSliceVariation<
   Simplify<HeroSliceDefaultItem>
 >;
 /**
- * Slice variation for *Hero*
+ * Slice variation for *HeroImage*
  *
  */
 type HeroSliceVariation = HeroSliceDefault;
 /**
- * Hero Shared Slice
+ * HeroImage Shared Slice
  *
  * - **API ID**: `hero`
  * - **Description**: `Hero`
@@ -1683,6 +1690,105 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Primary content in HeroVertical → Primary
+ *
+ */
+interface HeroVerticalSliceDefaultPrimary {
+  /**
+   * Заголовок field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Описание field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
+  /**
+   * Изображение field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * Ширина изображения field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.width
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  width: prismicT.SelectField<
+    "На всю ширину экрана" | "На всю ширину с отступами" | "Под размер текста"
+  >;
+  /**
+   * Изображение внизу field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_vertical.primary.isimagebottom
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+   *
+   */
+  isimagebottom: prismicT.BooleanField;
+  /**
+   * Выравнивание контента field in *HeroVertical → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.align
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  align: prismicT.SelectField<"Слева" | "По центру" | "Справа">;
+}
+/**
+ * Default variation for HeroVertical Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroVerticalSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<HeroVerticalSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *HeroVertical*
+ *
+ */
+type HeroVerticalSliceVariation = HeroVerticalSliceDefault;
+/**
+ * HeroVertical Shared Slice
+ *
+ * - **API ID**: `hero_vertical`
+ * - **Description**: `HeroVertical`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroVerticalSlice = prismicT.SharedSlice<
+  "hero_vertical",
+  HeroVerticalSliceVariation
+>;
 /**
  * Primary content in Image → Primary
  *
@@ -1718,7 +1824,7 @@ interface ImageWithCaptionSliceDefaultPrimary {
    *
    */
   width: prismicT.SelectField<
-    "Во весь экран" | "В ширину контейнера" | "В ширину текста"
+    "На всю ширину экрана" | "На всю ширину с отступами" | "Под размер текста"
   >;
 }
 /**
@@ -2063,7 +2169,7 @@ interface VideoSliceDefaultPrimary {
    *
    */
   width: prismicT.SelectField<
-    "Во весь экран" | "В ширину контейнера" | "В ширину текста"
+    "На всю ширину экрана" | "На всю ширину с отступами" | "Под размер текста"
   >;
 }
 /**
@@ -2120,7 +2226,6 @@ declare module "@prismicio/client" {
       MenuDocumentDataMenuitemItem,
       MenuDocument,
       PageDocumentData,
-      PageDocumentDataMetaItem,
       PageDocumentDataSlicesSlice,
       PageDocument,
       ProductDocumentData,
@@ -2182,6 +2287,10 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
+      HeroVerticalSliceDefaultPrimary,
+      HeroVerticalSliceDefault,
+      HeroVerticalSliceVariation,
+      HeroVerticalSlice,
       ImageWithCaptionSliceDefaultPrimary,
       ImageWithCaptionSliceDefault,
       ImageWithCaptionSliceVariation,

@@ -7,6 +7,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Большая",
 				"type": "Select"
+			},
+			"test": {
+				"__TYPE__": "FieldContent",
+				"value": "captured",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -32,7 +37,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
@@ -50,6 +54,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -87,7 +94,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
@@ -105,6 +111,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],

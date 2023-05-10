@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  gap: var(--section-element-spacing);
+  align-items: stretch;
+  flex-direction: column;
+  background: firebrick;
+}
+
+.mobileImageBottom {
+  flex-direction: column-reverse;
+}
+
+.imageWrapper {
+  height: 30vh;
+  width: 100%;
+  background: rebeccapurple;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  height: 100%;
+  width: auto;
+  border-radius: var(--border-radius-m);
+}
+
+.contentWrapper {
+  background: darkgreen;
+}

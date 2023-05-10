@@ -1,8 +1,8 @@
 {
-  "id": "header",
+  "id": "banner",
   "type": "SharedSlice",
-  "name": "Header",
-  "description": "Header",
+  "name": "HeroBanner",
+  "description": "Banner",
   "variations": [
     {
       "id": "default",
@@ -10,13 +10,13 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/header/default/92da49f2a245646e5303a2d36f237dc938bdda03.png?auto=compress%2Cformat",
+      "imageUrl": "https://images.prismic.io/vagmen1/shared-slices/banner/default/557a73a8dcec31372ecbe0f9ac68ef7a3ba30c71.png?auto=compress%2Cformat",
       "primary": {
         "title": {
           "type": "StructuredText",
           "config": {
             "label": "Заголовок",
-            "placeholder": "Если заголовок страницы, то h1",
+            "placeholder": "h1 для заголовка страницы",
             "allowTargetBlank": true,
             "single": "heading1,heading2"
           }
@@ -27,15 +27,31 @@
             "label": "Описание",
             "placeholder": "Введите описание",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
           }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "Картинка", "constraint": {}, "thumbnails": [] }
         },
         "align": {
           "type": "Select",
           "config": {
             "label": "Выравнивание",
-            "placeholder": "",
+            "placeholder": "Выравнивание контента",
             "options": ["Слева", "По центру", "Справа"]
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Ширина",
+            "placeholder": "",
+            "options": [
+              "Во весь экран",
+              "В ширину контейнера",
+              "В ширину текста"
+            ]
           }
         }
       },

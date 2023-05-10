@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   author: dynamic(() => import("./Author")),
-  banner: dynamic(() => import("./Banner")),
+  banner: dynamic(() => import("./HeroBanner")),
   buttons_v2: dynamic(() => import("./Buttons")),
   cards: dynamic(() => import("./Cards")),
   divider: dynamic(() => import("./Divider")),
@@ -12,9 +12,10 @@ export const components = {
   footer_column: dynamic(() => import("./FooterColumn")),
   form: dynamic(() => import("./Form")),
   gap: dynamic(() => import("./Gap")),
-  header: dynamic(() => import("./Header")),
-  header_with_link: dynamic(() => import("./HeaderHorisontal")),
-  hero: dynamic(() => import("./Hero")),
+  header: dynamic(() => import("./Hero")),
+  header_with_link: dynamic(() => import("./SectionHeader")),
+  hero: dynamic(() => import("./HeroImage")),
+  hero_vertical: dynamic(() => import("./HeroVertical")),
   image_with_caption: dynamic(() => import("./Image")),
   quiz: dynamic(() => import("./Quiz")),
   quotes: dynamic(() => import("./Quotes")),

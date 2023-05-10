@@ -1,0 +1,60 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "someone",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim incididunt proident ipsum esse dolore eu ut Lorem voluptate consequat ipsum cillum sint consequat. Officia qui ullamco excepteur excepteur deserunt ad."
+						}
+					}
+				]
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "На всю ширину экрана",
+				"type": "Select"
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+					"width": 12288,
+					"height": 16384
+				},
+				"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+				"width": 12288,
+				"height": 16384,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {}
+			},
+			"isimagebottom": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"align": {
+				"__TYPE__": "FieldContent",
+				"value": "Слева",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

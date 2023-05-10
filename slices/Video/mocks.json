@@ -10,8 +10,8 @@
 			},
 			"width": {
 				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "В ширину контейнера"
+				"value": "На всю ширину экрана",
+				"type": "Select"
 			}
 		},
 		"items": [

@@ -10,6 +10,8 @@ import {
   Simplify,
 } from "../../prismicio-types";
 import { prepareButtons } from "../Buttons/Buttons";
+import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
@@ -24,9 +26,33 @@ export const Layout = ({ children, menu, config, footer }: ILayout) => {
   const isThemeSwitcherVisible = !!config?.isthemeswitchervisible;
 
   const { width } = useWindowSize();
+  const router = useRouter();
+  const pageKey = router.asPath;
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    onExitComplete();
+  }, [pageKey]);
+
+  const onExitComplete = () => {
+    if (ref.current) {
+      ref.current.scrollTo({ top: 0 });
+    }
+  };
 
   return (
-    <div className={styles.container}>
+    // <motion.div
+    //   initial={{ x: 300, opacity: 0 }}
+    //   animate={{ x: 0, opacity: 1 }}
+    //   exit={{ x: 300, opacity: 0 }}
+    //   transition={{
+    //     type: "spring",
+    //     stiffness: 260,
+    //     damping: 20,
+    //   }}
+    //   className={styles.container}
+    // >
+    <div className={styles.container} ref={ref}>
       <Header
         logo={config?.logo}
         menu={menu}

@@ -33,7 +33,7 @@
 			},
 			"width": {
 				"__TYPE__": "FieldContent",
-				"value": "В ширину контейнера",
+				"value": "На всю ширину экрана",
 				"type": "Select"
 			}
 		},

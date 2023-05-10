@@ -5,7 +5,7 @@
 		"primary": {
 			"width": {
 				"__TYPE__": "FieldContent",
-				"value": "Во весь экран",
+				"value": "На всю ширину с отступами",
 				"type": "Select"
 			}
 		},
