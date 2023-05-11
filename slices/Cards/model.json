@@ -18,29 +18,9 @@
             "placeholder": "",
             "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
           }
-        },
-        "test": {
-          "type": "Text",
-          "config": { "label": "test", "placeholder": "" }
         }
       },
       "items": {
-        "title": {
-          "type": "Text",
-          "config": { "label": "Название", "placeholder": "" }
-        },
-        "description": {
-          "type": "Text",
-          "config": { "label": "Описание", "placeholder": "" }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Изображение",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "link": {
           "type": "Link",
           "config": {

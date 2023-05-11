@@ -1,11 +1,14 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
+import {
+  SliceContainer,
+  prepareSliceContainerWidth,
+} from "../../components/SliceContainer/SliceContainer";
 import { Standard } from "../../components/Standard/Standard";
 import { PrismicNextImage } from "@prismicio/next";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
+import { FULL_WIDTH, FULL_WIDTH_WITH_MARGIN } from "../../constants";
 import { prepareAlign, usePrismicContext } from "../../utils";
 import { prepareButtons } from "../../components/Buttons/Buttons";
 
@@ -23,8 +26,9 @@ const Banner = ({ slice, context }: BannerProps): JSX.Element => {
   return (
     <SliceContainer
       topPadding={slice.primary.width === FULL_WIDTH ? "noPadding" : "medium"}
-      isMaxWidthLimited={slice.primary.width === TEXT_WIDTH}
-      noPadding={slice.primary.width === FULL_WIDTH}
+      width={prepareSliceContainerWidth(
+        slice.primary.width || FULL_WIDTH_WITH_MARGIN
+      )}
       align={align}
     >
       <div

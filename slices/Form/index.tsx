@@ -8,7 +8,7 @@ import { usePrismicContext } from "../../utils";
 const Form = ({ slice, context }: SliceComponentProps<Content.FormSlice>) => {
   const { align } = usePrismicContext(context);
   return (
-    <SliceContainer isMaxWidthLimited align={align}>
+    <SliceContainer width="textWidth" align={align}>
       <form className={styles.form}>
         {slice?.items?.map((item, i) => (
           <div key={i} className={styles.control}>

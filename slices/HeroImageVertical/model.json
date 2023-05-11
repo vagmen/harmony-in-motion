@@ -1,7 +1,7 @@
 {
   "id": "hero_vertical",
   "type": "SharedSlice",
-  "name": "HeroVertical",
+  "name": "HeroImageVertical",
   "description": "HeroVertical",
   "variations": [
     {
@@ -13,8 +13,13 @@
       "imageUrl": "",
       "primary": {
         "title": {
-          "type": "Text",
-          "config": { "label": "Заголовок", "placeholder": "" }
+          "type": "StructuredText",
+          "config": {
+            "label": "Заголовок",
+            "placeholder": "Можно выбрать h1, h2 или h3",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,heading3,strong,em"
+          }
         },
         "description": {
           "type": "StructuredText",
@@ -63,7 +68,52 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Название кнопки", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "variant": {
+          "type": "Select",
+          "config": {
+            "label": "Тип кнопки",
+            "placeholder": "",
+            "options": [
+              "Выпуклая",
+              "Заполненная",
+              "Тональная",
+              "Контурная",
+              "Текстовая",
+              "Подчеркнутая"
+            ]
+          }
+        },
+        "size": {
+          "type": "Select",
+          "config": {
+            "label": "Размер кнопки",
+            "placeholder": "",
+            "options": ["Маленькая", "Средняя", "Большая", "Огромная"]
+          }
+        },
+        "starticon": {
+          "type": "Text",
+          "config": { "label": "Иконка в начале", "placeholder": "" }
+        },
+        "endicon": {
+          "type": "Text",
+          "config": { "label": "Иконка в конце", "placeholder": "" }
+        }
+      }
     }
   ]
 }

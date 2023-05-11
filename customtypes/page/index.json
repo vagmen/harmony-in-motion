@@ -17,14 +17,6 @@
           "options": ["Слева", "По центру", "Справа"]
         }
       },
-      "metatitle": {
-        "type": "Text",
-        "config": { "label": "Meta: Title", "placeholder": "" }
-      },
-      "metadescription": {
-        "type": "Text",
-        "config": { "label": "Meta: Description", "placeholder": "" }
-      },
       "goback": {
         "type": "Boolean",
         "config": {
@@ -33,6 +25,18 @@
           "placeholder_true": "Да",
           "default_value": false
         }
+      },
+      "metatitle": {
+        "type": "Text",
+        "config": { "label": "Meta: Title", "placeholder": "" }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": { "label": "Meta: Description", "placeholder": "" }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": { "label": "Meta: Image", "constraint": {}, "thumbnails": [] }
       },
       "slices": {
         "type": "Slices",
@@ -55,7 +59,8 @@
             "quotes": { "type": "SharedSlice" },
             "divider": { "type": "SharedSlice" },
             "reviews_smart_widgets": { "type": "SharedSlice" },
-            "hero_vertical": { "type": "SharedSlice" }
+            "hero_vertical": { "type": "SharedSlice" },
+            "cards": { "type": "SharedSlice" }
           }
         }
       }

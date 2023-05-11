@@ -6,8 +6,8 @@ import { PrismicNextImage } from "@prismicio/next";
 export type CardVariant = "elevated" | "filled" | "outlined";
 
 interface ICard {
-  title: KeyTextField;
-  description?: KeyTextField | null;
+  title: KeyTextField | string;
+  description?: KeyTextField | string | null;
   image?: ImageFieldImage | null;
   link?: string;
   extra?: string;

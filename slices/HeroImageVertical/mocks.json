@@ -4,9 +4,15 @@
 		"variation": "default",
 		"primary": {
 			"title": {
-				"__TYPE__": "FieldContent",
-				"value": "someone",
-				"type": "Text"
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Appearance"
+						}
+					}
+				]
 			},
 			"description": {
 				"__TYPE__": "StructuredTextContent",
@@ -25,7 +31,6 @@
 				"type": "Select"
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
@@ -43,6 +48,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"isimagebottom": {
@@ -55,6 +63,62 @@
 				"type": "Select"
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "greatest",
+							"type": "Text"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"variant",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Контурная",
+							"type": "Select"
+						}
+					],
+					[
+						"size",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "Маленькая",
+							"type": "Select"
+						}
+					],
+					[
+						"starticon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "surface",
+							"type": "Text"
+						}
+					],
+					[
+						"endicon",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "seed",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
 	}
 ]

@@ -15,7 +15,7 @@ export const Footer = ({ footer }: IFooter) => {
   }
   return (
     <>
-      <SliceContainer noPadding>
+      <SliceContainer width="fullWidthWithMargin">
         <DividerComponent />
       </SliceContainer>
       <SliceContainer>

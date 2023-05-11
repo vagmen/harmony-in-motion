@@ -1,16 +1,12 @@
-import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
-import classNames from "classnames";
 import { ImageFieldImage, RTImageNode } from "@prismicio/types";
-import { Avatar } from "../Avatar/Avatar";
 import { PrismicNextImage } from "@prismicio/next";
 
 interface IImageField {
+  field?: ImageFieldImage | null | undefined;
   node: RTImageNode;
 }
 
-export const ImageField = ({ node }: IImageField) => {
-  const { width } = useWindowSize();
-
-  return <PrismicNextImage field={{ ...node }} className={styles.imageField} />;
-};
+export const ImageField = ({ field, node }: IImageField) => (
+  <PrismicNextImage field={{ ...node }} className={styles.imageField} />
+);

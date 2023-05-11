@@ -1,5 +1,8 @@
 import { SliceComponentProps } from "@prismicio/react";
-import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
+import {
+  SliceContainer,
+  prepareSliceContainerWidth,
+} from "../../components/SliceContainer/SliceContainer";
 import { Hero as HeroComponent } from "./../../components/Hero/Hero";
 import {
   prepareAlign,
@@ -7,10 +10,9 @@ import {
   prepareImagePositionMobile,
   usePrismicContext,
 } from "../../utils";
-import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
+import { FULL_WIDTH, FULL_WIDTH_WITH_MARGIN } from "../../constants";
 import { HeroSlice } from "../../prismicio-types";
 import { prepareButtons } from "../../components/Buttons/Buttons";
-import { HeroVertical } from "../../components/HeroVertical/HeroVertical";
 
 /**
  * Props for `Hero`.
@@ -25,12 +27,11 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
   const { align } = usePrismicContext(context);
   return (
     <SliceContainer
-      isMaxWidthLimited={slice.primary.width === TEXT_WIDTH}
-      noPadding={slice.primary.width === FULL_WIDTH}
       align={align}
-      width="fullWidth"
+      width={prepareSliceContainerWidth(
+        slice.primary.width || FULL_WIDTH_WITH_MARGIN
+      )}
     >
-      {/* <HeroVertical title={slice.primary.title} image={slice.primary.image} /> */}
       <HeroComponent
         title={slice.primary.title}
         description={slice.primary.description}

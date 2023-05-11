@@ -7,59 +7,12 @@
 				"__TYPE__": "FieldContent",
 				"value": "Большая",
 				"type": "Select"
-			},
-			"test": {
-				"__TYPE__": "FieldContent",
-				"value": "captured",
-				"type": "Text"
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "recent",
-							"type": "Text"
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "border",
-							"type": "Text"
-						}
-					],
-					[
-						"image",
-						{
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-								"width": 4380,
-								"height": 2895
-							},
-							"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-							"width": 4380,
-							"height": 2895,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								},
-								"background": "transparent"
-							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					],
 					[
 						"link",
 						{
@@ -75,48 +28,6 @@
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "serve",
-							"type": "Text"
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "sharp",
-							"type": "Text"
-						}
-					],
-					[
-						"image",
-						{
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-								"width": 2747,
-								"height": 4120
-							},
-							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-							"width": 2747,
-							"height": 4120,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								},
-								"background": "transparent"
-							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					],
 					[
 						"link",
 						{

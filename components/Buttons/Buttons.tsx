@@ -67,7 +67,7 @@ export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
     variant: prepareButtonVariant(item.variant) || "outlined",
     link: asLink(item.link, linkResolver) || "",
     size: prepareButtonSize(item.size),
-    newTab: item.link.link_type === "Web",
+    newTab: item.link?.link_type === "Web",
     startIcon: item.starticon,
     endIcon: item.endicon,
   }));

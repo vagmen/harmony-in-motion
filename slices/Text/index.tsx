@@ -6,7 +6,7 @@ import { TextSlice } from "../../prismicio-types";
 const Text = ({ slice, context }: SliceComponentProps<TextSlice>) => {
   const { align } = usePrismicContext(context);
   return (
-    <SliceContainer align={align} isMaxWidthLimited>
+    <SliceContainer align={align} width="textWidth">
       <PrismicRichText field={slice.primary.content} />
     </SliceContainer>
   );

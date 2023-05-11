@@ -43,7 +43,7 @@ export const Header = ({
 
   return (
     <div className={styles.sticky}>
-      <SliceContainer topPadding="noPadding" width="fullWidth">
+      <SliceContainer topPadding="noPadding" width="fullWidthWithMargin">
         <div className={styles.container}>
           <div className={styles.logoWrapper}>
             {logo ? (

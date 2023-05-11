@@ -70,8 +70,8 @@
 			},
 			"width": {
 				"__TYPE__": "FieldContent",
-				"type": "Select",
-				"value": "В ширину контейнера"
+				"value": "Под размер текста",
+				"type": "Select"
 			}
 		},
 		"items": [

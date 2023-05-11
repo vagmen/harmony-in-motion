@@ -8,7 +8,7 @@ const AuthorSlice = ({ slice, context }: SliceComponentProps<AuthorSlice>) => {
   const { align } = usePrismicContext(context);
 
   return (
-    <SliceContainer isMaxWidthLimited align={align}>
+    <SliceContainer width="textWidth" align={align}>
       {getAuthorComponent(slice.primary.author)}
     </SliceContainer>
   );

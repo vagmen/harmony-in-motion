@@ -53,6 +53,9 @@ export const getStaticProps: GetStaticProps = async ({
           "author.position",
           "author.photo",
           "page.path",
+          "page.metatitle",
+          "page.metadescription",
+          "page.metaimage",
         ],
       }),
       client.getSingle("menu", {

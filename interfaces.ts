@@ -12,7 +12,10 @@ export interface IMenu {
 
 export type PageAlignment = "start" | "center" | "end";
 
-export type SliceContainerWidth = "fullWidth" | "autoWidth";
+export type SliceContainerWidth =
+  | "fullWidth"
+  | "fullWidthWithMargin"
+  | "textWidth";
 export type SliceContainerTopPadding =
   | "noPadding"
   | "small"

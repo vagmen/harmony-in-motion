@@ -8,7 +8,7 @@ import { usePrismicContext } from "../../utils";
 const Faq = ({ slice, context }: SliceComponentProps<Content.FaqSlice>) => {
   const { align } = usePrismicContext(context);
   return (
-    <SliceContainer isMaxWidthLimited align={align}>
+    <SliceContainer width="textWidth" align={align}>
       <div className={styles.grid}>
         {slice?.items?.map((item) => (
           <FaqItem

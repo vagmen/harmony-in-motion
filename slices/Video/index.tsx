@@ -1,8 +1,15 @@
-import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
+import {
+  SliceContainer,
+  prepareSliceContainerWidth,
+} from "../../components/SliceContainer/SliceContainer";
 import { Video as VideoComponent } from "../../components/Video/Video";
 import { VideoSlice } from "../../prismicio-types";
 import { SliceComponentProps } from "@prismicio/react";
-import { FULL_WIDTH, TEXT_WIDTH } from "../../constants";
+import {
+  FULL_WIDTH,
+  FULL_WIDTH_WITH_MARGIN,
+  TEXT_WIDTH,
+} from "../../constants";
 import { usePrismicContext } from "../../utils";
 
 const Video = ({ slice, context }: SliceComponentProps<VideoSlice>) => {
@@ -10,8 +17,9 @@ const Video = ({ slice, context }: SliceComponentProps<VideoSlice>) => {
   return (
     <SliceContainer
       align={align}
-      isMaxWidthLimited={slice.primary.width === TEXT_WIDTH}
-      noPadding={slice.primary.width === FULL_WIDTH}
+      width={prepareSliceContainerWidth(
+        slice.primary.width || FULL_WIDTH_WITH_MARGIN
+      )}
     >
       <VideoComponent
         url={slice.primary.url as string}

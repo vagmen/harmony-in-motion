@@ -7,48 +7,28 @@ import {
   SliceContainerWidth,
 } from "../../interfaces";
 
-import { motion } from "framer-motion";
-
 interface ISliceContainer {
   children: ReactElement | ReactElement[] | boolean;
-  width?: SliceContainerWidth;
-  isMaxWidthLimited?: boolean;
-  noPadding?: boolean;
   align?: PageAlignment;
   topPadding?: SliceContainerTopPadding;
   bottomPadding?: SliceContainerTopPadding;
+  autoWidth?: boolean;
+  width?: SliceContainerWidth;
 }
-
-const variants = {
-  // hidden: { opacity: 0, x: -200, y: 0 },
-  // enter: { opacity: 1, x: 0, y: 0 },
-  // exit: { opacity: 0, x: 0, y: -100 },
-  hidden: { opacity: 0, x: 0, y: -200 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: 200 },
-};
 
 export const SliceContainer = ({
   children,
-  width = "fullWidth",
-  isMaxWidthLimited = false,
-  noPadding = false,
   align = "start",
   topPadding = "medium",
   bottomPadding = "medium",
+  autoWidth,
+  width = "textWidth",
 }: ISliceContainer) => {
   return (
     <div
-      // variants={variants} // Pass the variant object into Framer Motion
-      // initial="hidden" // Set the initial state to variants.hidden
-      // // animate="enter" // Animated state to variants.enter
-      // exit="exit" // Exit state (used later) to variants.exit
-      // // transition={{ type: "linear" }} // Set the transition to linear
-      // whileInView="enter"
-      // viewport={{ once: false, amount: 0.8 }}
       className={classNames(
         styles.section,
-        { [styles.sectionWithPadding]: !noPadding },
+        { [styles.sectionWithPadding]: width !== "fullWidth" },
         { [styles.sectionAlignCenter]: align === "center" },
         { [styles.sectionAlignEnd]: align === "end" },
         { [styles.noPadding]: topPadding === "noPadding" },
@@ -59,12 +39,33 @@ export const SliceContainer = ({
     >
       <div
         className={classNames(styles.inner, {
-          [styles.innerAutoWidth]: width === "autoWidth",
-          [styles.innerMaxWidth]: isMaxWidthLimited,
+          [styles.innerAutoWidth]: autoWidth,
+          [styles.innerMaxWidth]: width === "textWidth",
         })}
       >
         {children}
       </div>
     </div>
   );
+};
+
+type RawWidth =
+  | "На всю ширину экрана"
+  | "На всю ширину с отступами"
+  | "Под размер текста";
+
+export const prepareSliceContainerWidth = (
+  width: RawWidth
+): SliceContainerWidth => {
+  switch (width) {
+    case "На всю ширину экрана":
+      return "fullWidth";
+      break;
+    case "Под размер текста":
+      return "textWidth";
+      break;
+    default:
+      return "fullWidthWithMargin";
+      break;
+  }
 };
