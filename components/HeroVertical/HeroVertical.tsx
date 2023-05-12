@@ -26,11 +26,15 @@ export const HeroVertical = ({
   width,
 }: IHeroVertical) => (
   <>
-    <SliceContainer width={width} align="center">
-      <PrismicNextImage field={image} />
-    </SliceContainer>
-    <SliceContainer width={"textWidth"} align={align}>
-      <Standard title={title} description={description} actions={actions} />
-    </SliceContainer>
+    <div className={styles.container}>
+      <SliceContainer width={width} align="center">
+        <div className={styles.imageWrapper}>
+          <PrismicNextImage field={image} className={styles.image} />
+        </div>
+      </SliceContainer>
+      <SliceContainer width={"textWidth"} align={align}>
+        <Standard title={title} description={description} actions={actions} />
+      </SliceContainer>
+    </div>
   </>
 );

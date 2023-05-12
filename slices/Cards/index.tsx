@@ -16,7 +16,7 @@ import { ImageFieldImage } from "@prismicio/types";
 // };
 
 const Cards = ({ slice }: SliceComponentProps<CardsSlice>) => (
-  <SliceContainer>
+  <SliceContainer width="fullWidthWithMargin">
     <Grid
       items={slice.items}
       buildItem={(item) => {

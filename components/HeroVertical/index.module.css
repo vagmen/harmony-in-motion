@@ -1,9 +1,10 @@
 .container {
-  display: flex;
+  /* display: flex;
   gap: var(--section-element-spacing);
   align-items: stretch;
-  flex-direction: column;
-  background: firebrick;
+  flex-direction: column; */
+  /* background: firebrick; */
+  width: 100%;
 }
 
 .mobileImageBottom {
@@ -11,16 +12,25 @@
 }
 
 .imageWrapper {
-  height: 30vh;
+  background: darkgray;
   width: 100%;
-  background: rebeccapurple;
+  /* max-height: 30%; */
   display: flex;
   justify-content: center;
+  height: auto;
+  min-height: 0;
+  flex: 1 1 auto;
 }
 
 .image {
-  height: 100%;
+  /* height: 100%;
   width: auto;
+  border-radius: var(--border-radius-m); */
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  /* height: 100%; */
+  object-fit: contain;
   border-radius: var(--border-radius-m);
 }
 

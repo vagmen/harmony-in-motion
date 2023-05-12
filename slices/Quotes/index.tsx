@@ -17,7 +17,7 @@ export type QuotesProps = SliceComponentProps<QuotesSlice>;
 const Quotes = ({ slice }: QuotesProps): JSX.Element => {
   const cardVariand = prepareCardVariant(slice.primary.variant);
   return (
-    <SliceContainer>
+    <SliceContainer width="fullWidthWithMargin">
       <Grid
         items={slice.items}
         buildItem={(item) => (
@@ -25,7 +25,8 @@ const Quotes = ({ slice }: QuotesProps): JSX.Element => {
             {getAuthorComponent(item.author)}
           </Quote>
         )}
-        size={prepareGridSize(slice.primary.size) || "m"}
+        size={"m"}
+        // size={prepareGridSize(slice.primary.size) || "m"}
       />
     </SliceContainer>
   );
