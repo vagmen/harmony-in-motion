@@ -433,39 +433,6 @@ interface PageDocumentData {
    */
   goback: prismicT.BooleanField;
   /**
-   * Meta: Title field in *Страница*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.metatitle
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  metatitle: prismicT.KeyTextField;
-  /**
-   * Meta: Description field in *Страница*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.metadescription
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  metadescription: prismicT.KeyTextField;
-  /**
-   * Meta: Image field in *Страница*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.metaimage
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  metaimage: prismicT.ImageField<never>;
-  /**
    * Slice Zone field in *Страница*
    *
    * - **Field Type**: Slice Zone
@@ -532,7 +499,8 @@ type PageDocumentDataSlicesSlice =
   | DividerSlice
   | ReviewsSmartWidgetsSlice
   | HeroVerticalSlice
-  | CardsSlice;
+  | CardsSlice
+  | PostsSlice;
 /**
  * Страница document from Prismic
  *
@@ -1951,6 +1919,33 @@ export type ImageWithCaptionSlice = prismicT.SharedSlice<
   ImageWithCaptionSliceVariation
 >;
 /**
+ * Default variation for LatestPosts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PostsSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+/**
+ * Slice variation for *LatestPosts*
+ *
+ */
+type PostsSliceVariation = PostsSliceDefault;
+/**
+ * LatestPosts Shared Slice
+ *
+ * - **API ID**: `posts`
+ * - **Description**: `Posts`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PostsSlice = prismicT.SharedSlice<"posts", PostsSliceVariation>;
+/**
  * Primary content in Quiz → Primary
  *
  */
@@ -2389,6 +2384,9 @@ declare module "@prismicio/client" {
       ImageWithCaptionSliceDefault,
       ImageWithCaptionSliceVariation,
       ImageWithCaptionSlice,
+      PostsSliceDefault,
+      PostsSliceVariation,
+      PostsSlice,
       QuizSliceDefaultPrimary,
       QuizSliceDefault,
       QuizSliceVariation,

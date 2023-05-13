@@ -26,18 +26,6 @@
           "default_value": false
         }
       },
-      "metatitle": {
-        "type": "Text",
-        "config": { "label": "Meta: Title", "placeholder": "" }
-      },
-      "metadescription": {
-        "type": "Text",
-        "config": { "label": "Meta: Description", "placeholder": "" }
-      },
-      "metaimage": {
-        "type": "Image",
-        "config": { "label": "Meta: Image", "constraint": {}, "thumbnails": [] }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -60,7 +48,8 @@
             "divider": { "type": "SharedSlice" },
             "reviews_smart_widgets": { "type": "SharedSlice" },
             "hero_vertical": { "type": "SharedSlice" },
-            "cards": { "type": "SharedSlice" }
+            "cards": { "type": "SharedSlice" },
+            "posts": { "type": "SharedSlice" }
           }
         }
       }

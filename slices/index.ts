@@ -17,6 +17,7 @@ export const components = {
   hero: dynamic(() => import("./HeroImage")),
   hero_vertical: dynamic(() => import("./HeroImageVertical")),
   image_with_caption: dynamic(() => import("./Image")),
+  posts: dynamic(() => import("./LatestPosts")),
   quiz: dynamic(() => import("./Quiz")),
   quotes: dynamic(() => import("./Quotes")),
   reviews_smart_widgets: dynamic(() => import("./ReviewsSmartWidgets")),

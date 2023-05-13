@@ -13,16 +13,12 @@ export const HeaderHorisontal = ({
   title,
   description,
   actions,
-}: IHeaderHorisontal) => {
-  // const { width } = useWindowSize();
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.titleLine}>
-        <PrismicRichText field={title} />
-        <Buttons actions={actions} align="end" />
-      </div>
-      <PrismicRichText field={description} />
+}: IHeaderHorisontal) => (
+  <div className={styles.container}>
+    <div className={styles.titleLine}>
+      <PrismicRichText field={title} />
+      <Buttons actions={actions} align="end" />
     </div>
-  );
-};
+    <PrismicRichText field={description} />
+  </div>
+);

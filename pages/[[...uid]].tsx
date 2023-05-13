@@ -12,7 +12,6 @@ import {
 import { createClient } from "../prismicio";
 import PageTransition from "../components/PageTransition/PageTransition";
 
-type IndexPageProps = {};
 type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
 
 const Page = (
@@ -53,9 +52,7 @@ export const getStaticProps: GetStaticProps = async ({
           "author.position",
           "author.photo",
           "page.path",
-          "page.metatitle",
-          "page.metadescription",
-          "page.metaimage",
+          "page.slices",
         ],
       }),
       client.getSingle("menu", {

@@ -1,0 +1,18 @@
+{
+  "id": "posts",
+  "type": "SharedSlice",
+  "name": "LatestPosts",
+  "description": "Posts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

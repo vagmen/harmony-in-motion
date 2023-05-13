@@ -59,13 +59,13 @@
 			},
 			"align": {
 				"__TYPE__": "FieldContent",
-				"value": "Слева",
-				"type": "Select"
+				"type": "Select",
+				"value": "По центру"
 			},
 			"imageheight": {
 				"__TYPE__": "FieldContent",
-				"value": "Большая",
-				"type": "Select"
+				"type": "Select",
+				"value": "Маленькая"
 			}
 		},
 		"items": [
@@ -102,24 +102,16 @@
 						"size",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "Маленькая",
-							"type": "Select"
+							"type": "Select",
+							"value": "Большая"
 						}
 					],
 					[
 						"starticon",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "surface",
-							"type": "Text"
-						}
-					],
-					[
-						"endicon",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "seed",
-							"type": "Text"
+							"type": "Text",
+							"value": "face"
 						}
 					]
 				]

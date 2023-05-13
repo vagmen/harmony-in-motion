@@ -22,7 +22,7 @@ export const SliceContainer = ({
   topPadding = "medium",
   bottomPadding = "medium",
   autoWidth,
-  width = "textWidth",
+  width = "fullWidthWithMargin",
 }: ISliceContainer) => {
   return (
     <section
