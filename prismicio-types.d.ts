@@ -476,6 +476,39 @@ interface PageDocumentData {
    *
    */
   slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+  /**
+   * title field in *Страница*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * description field in *Страница*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismicT.KeyTextField;
+  /**
+   * image field in *Страница*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
 }
 /**
  * Slice for *Страница → Slice Zone*
@@ -1707,7 +1740,22 @@ interface HeroVerticalSliceDefaultPrimary {
    *
    */
   width: prismicT.SelectField<
-    "На всю ширину экрана" | "На всю ширину с отступами" | "Под размер текста"
+    | "На всю ширину экрана"
+    | "На всю ширину с отступами"
+    | "Под размер текста"
+    | "Авто"
+  >;
+  /**
+   * Высота изображения field in *HeroImageVertical → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_vertical.primary.imageheight
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  imageheight: prismicT.SelectField<
+    "Маленькая" | "Средняя" | "Большая" | "Полная"
   >;
   /**
    * Изображение внизу field in *HeroImageVertical → Primary*

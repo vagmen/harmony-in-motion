@@ -42,7 +42,7 @@ export const Header = ({
   // };
 
   return (
-    <div className={styles.sticky}>
+    <header className={styles.sticky}>
       <SliceContainer topPadding="noPadding" width="fullWidthWithMargin">
         <div className={styles.container}>
           <div className={styles.logoWrapper}>
@@ -63,6 +63,6 @@ export const Header = ({
           </div>
         </div>
       </SliceContainer>
-    </div>
+    </header>
   );
 };

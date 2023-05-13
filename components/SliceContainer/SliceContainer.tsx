@@ -25,7 +25,7 @@ export const SliceContainer = ({
   width = "textWidth",
 }: ISliceContainer) => {
   return (
-    <div
+    <section
       className={classNames(
         styles.section,
         { [styles.sectionWithPadding]: width !== "fullWidth" },
@@ -45,7 +45,7 @@ export const SliceContainer = ({
       >
         {children}
       </div>
-    </div>
+    </section>
   );
 };
 

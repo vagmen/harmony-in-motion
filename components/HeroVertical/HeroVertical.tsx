@@ -1,19 +1,22 @@
-import { PrismicNextImage } from "@prismicio/next";
 import { RichTextField, ImageFieldImage } from "@prismicio/types";
 import styles from "./index.module.css";
 import { Standard } from "../Standard/Standard";
 import { PageAlignment, SliceContainerWidth } from "../../interfaces";
 import { IAction } from "../Buttons/Buttons";
 import { SliceContainer } from "../SliceContainer/SliceContainer";
+import { Image } from "../Image/Image";
+import classNames from "classnames";
 
 interface IHeroVertical {
   title: RichTextField | null;
   description?: RichTextField | null;
-  align?: PageAlignment;
+  alignContainer?: PageAlignment;
+  alignContent?: PageAlignment;
   actions?: IAction[];
   image?: ImageFieldImage | null | undefined;
   isImageBottom?: boolean;
-  width?: SliceContainerWidth;
+  imageWidth?: SliceContainerWidth | "auto";
+  imageHeight?: "s" | "m" | "l" | "auto";
 }
 
 export const HeroVertical = ({
@@ -21,20 +24,92 @@ export const HeroVertical = ({
   description,
   image,
   isImageBottom,
-  align,
+  alignContainer,
+  alignContent,
   actions,
-  width,
+  imageWidth,
+  imageHeight,
 }: IHeroVertical) => (
   <>
-    <div className={styles.container}>
-      <SliceContainer width={width} align="center">
-        <div className={styles.imageWrapper}>
-          <PrismicNextImage field={image} className={styles.image} />
-        </div>
+    <div
+      className={classNames(styles.container, {
+        [styles.isImageBottom]: isImageBottom,
+      })}
+    >
+      <SliceContainer
+        width={imageWidth === "auto" ? "fullWidthWithMargin" : imageWidth}
+        align="center"
+        topPadding={
+          imageWidth === "fullWidth" && !isImageBottom ? "noPadding" : undefined
+        }
+      >
+        <Image
+          field={image}
+          autoWidth={imageWidth === "auto"}
+          height={imageHeight}
+          noBorderRadiusTop={imageWidth === "fullWidth"}
+          noBorderRadiusBottom={imageWidth === "fullWidth" && isImageBottom}
+          alt=""
+        />
       </SliceContainer>
-      <SliceContainer width={"textWidth"} align={align}>
-        <Standard title={title} description={description} actions={actions} />
+      <SliceContainer
+        width={"textWidth"}
+        align={alignContainer}
+        topPadding={isImageBottom ? "medium" : "noPadding"}
+      >
+        <Standard
+          title={title}
+          description={description}
+          actions={actions}
+          align={alignContent}
+        />
       </SliceContainer>
     </div>
   </>
 );
+
+type RawImageWidth =
+  | "На всю ширину экрана"
+  | "На всю ширину с отступами"
+  | "Под размер текста"
+  | "Авто";
+
+export const prepareImageWidth = (
+  width: RawImageWidth
+): SliceContainerWidth | "auto" => {
+  switch (width) {
+    case "На всю ширину экрана":
+      return "fullWidth";
+      break;
+    case "Под размер текста":
+      return "textWidth";
+      break;
+    case "Авто":
+      return "auto";
+      break;
+    default:
+      return "fullWidthWithMargin";
+      break;
+  }
+};
+
+type RawImageHeight = "Маленькая" | "Средняя" | "Большая" | "Полная";
+
+export const prepareImageHeight = (
+  height: RawImageHeight
+): "s" | "m" | "l" | "auto" => {
+  switch (height) {
+    case "Маленькая":
+      return "s";
+      break;
+    case "Большая":
+      return "l";
+      break;
+    case "Полная":
+      return "auto";
+      break;
+    default:
+      return "m";
+      break;
+  }
+};

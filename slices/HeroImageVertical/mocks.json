@@ -27,7 +27,7 @@
 			},
 			"width": {
 				"__TYPE__": "FieldContent",
-				"value": "На всю ширину экрана",
+				"value": "Под размер текста",
 				"type": "Select"
 			},
 			"image": {
@@ -60,6 +60,11 @@
 			"align": {
 				"__TYPE__": "FieldContent",
 				"value": "Слева",
+				"type": "Select"
+			},
+			"imageheight": {
+				"__TYPE__": "FieldContent",
+				"value": "Большая",
 				"type": "Select"
 			}
 		},

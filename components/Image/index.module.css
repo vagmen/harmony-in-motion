@@ -1,0 +1,56 @@
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.withPadding {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: cover;
+  border-radius: var(--border-radius-m);
+}
+
+.autoWidth {
+  width: auto;
+  height: 100%;
+}
+
+.sHeight {
+  max-height: 30vh;
+}
+
+.lHeight {
+  max-height: 70vh;
+}
+
+.autoHeight {
+  max-height: unset;
+}
+
+.noBorderRadiusTop {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.noBorderRadiusBottom {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.figcaption {
+  padding-top: 16px;
+  font-size: var(--font-size-m);
+  text-align: center;
+}

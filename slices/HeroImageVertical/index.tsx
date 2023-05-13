@@ -1,10 +1,13 @@
 import { SliceComponentProps } from "@prismicio/react";
-import { prepareSliceContainerWidth } from "../../components/SliceContainer/SliceContainer";
 import { HeroVerticalSlice } from "../../prismicio-types";
-import { usePrismicContext } from "../../utils";
-import { HeroVertical } from "../../components/HeroVertical/HeroVertical";
+import { prepareAlign, usePrismicContext } from "../../utils";
+import {
+  HeroVertical,
+  prepareImageHeight,
+  prepareImageWidth,
+} from "../../components/HeroVertical/HeroVertical";
 import { prepareButtons } from "../../components/Buttons/Buttons";
-import { FULL_WIDTH_WITH_MARGIN } from "../../constants";
+import { TEXT_WIDTH } from "../../constants";
 
 /**
  * Props for `HeroVertical`.
@@ -23,12 +26,12 @@ const HeroImageVertical = ({
     <HeroVertical
       title={slice.primary.title}
       description={slice.primary.description}
-      width={prepareSliceContainerWidth(
-        slice.primary.width || FULL_WIDTH_WITH_MARGIN
-      )}
-      align={align}
+      alignContainer={align}
+      alignContent={prepareAlign(slice.primary.align)}
       actions={prepareButtons(slice.items)}
       image={slice.primary.image}
+      imageWidth={prepareImageWidth(slice.primary.width || TEXT_WIDTH)}
+      imageHeight={prepareImageHeight(slice.primary.imageheight || "Средняя")}
       isImageBottom={slice.primary.isimagebottom}
     />
   );

@@ -1,12 +1,11 @@
 import { SliceComponentProps } from "@prismicio/react";
-import styles from "./styles.module.css";
-import { PrismicNextImage } from "@prismicio/next";
 import {
   SliceContainer,
   prepareSliceContainerWidth,
 } from "../../components/SliceContainer/SliceContainer";
 import { ImageWithCaptionSlice } from "../../prismicio-types";
 import { usePrismicContext } from "../../utils";
+import { Image as ImageComponent } from "../../components/Image/Image";
 
 const Image = ({
   slice,
@@ -20,14 +19,7 @@ const Image = ({
       )}
       align={align}
     >
-      <div className={styles.imageWrapper}>
-        <PrismicNextImage
-          field={slice.primary.image}
-          className={styles.image}
-          alt=""
-        />
-        <span className={styles.caption}>{slice.primary.caption}</span>
-      </div>
+      <ImageComponent field={slice.primary.image} height="auto" alt="" />
     </SliceContainer>
   );
 };

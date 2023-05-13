@@ -16,6 +16,7 @@ export type SliceContainerWidth =
   | "fullWidth"
   | "fullWidthWithMargin"
   | "textWidth";
+  
 export type SliceContainerTopPadding =
   | "noPadding"
   | "small"

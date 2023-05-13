@@ -21,7 +21,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  height: 68px;
+  height: var(--header-height);
   align-items: center;
 }
 

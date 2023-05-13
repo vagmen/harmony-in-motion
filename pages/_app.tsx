@@ -13,9 +13,9 @@ import {
 } from "../prismicio-types";
 import { IMenu } from "../interfaces";
 import { Button } from "../components/Button/Button";
-import { ImageField } from "../components/ImageField/ImageField";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { Image } from "../components/Image/Image";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -61,8 +61,8 @@ export default function App({
             </Button>
           )}
           richTextComponents={{
-            image: ({ children, node, text, type }) => (
-              <ImageField node={node} />
+            image: ({ children, node, type }) => (
+              <Image field={node} alt={node.alt || ""} withPadding />
             ),
           }}
         >
