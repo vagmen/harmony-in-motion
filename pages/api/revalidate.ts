@@ -1,5 +1,7 @@
 import * as prismic from "@prismicio/client";
 import sm from "./../../slicemachine.config.json";
+import { asLink } from "@prismicio/helpers";
+import { linkResolver } from "../../linkResolver";
 /**
  * This API endpoint will be called by a Prismic webhook. The webhook
  * will send an object containing a list of added, updated, or deleted
@@ -27,26 +29,39 @@ export default async function handler(
   }
 ) {
   if (req.body.type === "api-update" && req.body.documents.length > 0) {
+    // if (req.body.type === "api-update" && req.body.documents.length > 0) {
     // Check for secret to confirm this is a valid request
     if (req.body.secret !== process.env.PRISMIC_WEBHOOK_SECRET) {
       return res.status(401).json({ message: "Invalid token" });
     }
 
     const client = prismic.createClient(sm.apiEndpoint);
-    const pages = await client.getAllByType("page");
+    // const pages = await client.getAllByType("page");
+
+    const documents = await client.getAllByIDs(req.body.documents as string[]);
+    const urls = documents.map((doc) => asLink(doc, linkResolver));
 
     try {
-      // Revalidate the URLs for those documents
-      await Promise.all(
-        pages.map(async (page) => await res.revalidate(page.data.path))
-      );
+      await Promise.all(urls.map(async (url) => await res.revalidate(url)));
 
       return res.json({ revalidated: true });
     } catch (err) {
       // If there was an error, Next.js will continue to show
       // the last successfully generated page
-      return res.status(500).send("Error revalidating");
+      return res.status(500).send(
+        "Error revalidating"
+        //  urls.length" +
+        //   urls.length +
+        //   " " +
+        //   urls[0] +
+        //   " " +
+        //   err
+      );
     }
+  }
+
+  if (req.body.type === "test-trigger") {
+    return res.status(200).send("Test test");
   }
 
   // If the request's body is unknown, tell the requester

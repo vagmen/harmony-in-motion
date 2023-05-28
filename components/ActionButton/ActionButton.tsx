@@ -3,6 +3,8 @@ import classNames from "classnames";
 import { ContentRelationshipField, KeyTextField } from "@prismicio/types";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { PrismicNextImage } from "@prismicio/next";
+import Image from "next/image";
 
 export type ButtonVariant =
   | "elevated"
@@ -21,7 +23,7 @@ interface ICommonClickableComponent {
   defaultVariant?: ButtonVariant;
   startIcon?: string | null;
   endIcon?: string | null;
-  // actionType?: ContentRelationshipField<"action">;
+  actionType?: ContentRelationshipField<"action">;
 }
 
 interface IButton extends ICommonClickableComponent {
@@ -35,7 +37,7 @@ interface ILink extends ICommonClickableComponent {
 
 const instanceOfButton = (object: any): object is IButton => !!object.onClick;
 
-export const Button = (props: IButton | ILink) => {
+export const ActionButton = (props: IButton | ILink) => {
   const variant = props.variant || "elevated";
   const size = props.size || "m";
   const classes = classNames(styles.button, {
@@ -71,12 +73,25 @@ const ClickableComponentContent = (props: ICommonClickableComponent) => (
     <span className={styles.touchEffect}></span>
     <span className={styles.content}>
       {props.startIcon && props.variant !== "underlined" ? (
-        <span
-          className={classNames("material-symbols-rounded", styles.startIcon)}
-        >
-          {props.startIcon}
-        </span>
+        // <span
+        //   className={classNames("material-symbols-rounded", styles.startIcon)}
+        // >
+        //   {props.startIcon}
+        // </span>
+        <Image
+          src="https://img.icons8.com/?size=512&id=98970&format=png"
+          className={styles.startIcon}
+          alt=""
+          width={24}
+          height={24}
+        />
       ) : (
+        //   src="
+        // https://img.icons8.com/?size=512&id=98970&format=png
+        // "
+        //   className={styles.startIconImg}
+        // />
+        // /next.svg
         <></>
       )}
       {props.children}

@@ -8,6 +8,7 @@ import { SliceContainer } from "../SliceContainer/SliceContainer";
 import { Buttons, IAction } from "../Buttons/Buttons";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 import Link from "next/link";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
@@ -58,6 +59,14 @@ export const Header = ({
             <Navbar menuItems={menu.menuItems} />
           )}
           <div className={styles.actions}>
+            {/* <ActionButton
+              link="https://t.me/AhmetovaKat"
+              startIcon="etert"
+              newTab
+              variant={"filled"}
+            > */}
+            {/* Телега */}
+            {/* </ActionButton> */}
             <Buttons actions={actions} />
             {isThemeSwitcherVisible && <ThemeChanger />}
           </div>

@@ -134,8 +134,7 @@ h4 {
 h1 {
   font-size: var(--font-size-xxxxl);
   padding: 72px 0 36px;
-  max-width: 30ch;
-  /* max-width: 20ch; */
+  max-width: 28ch;
 }
 
 h2 {
@@ -169,6 +168,13 @@ p {
   max-inline-size: 65ch;
   /* max-inline-size: 55ch; */
   /* max-width: 65ch; */
+  /* padding: 16px 0 12px; */
+  /* padding: 24px 0 16px; */
+  margin: 24px 0 16px;
+}
+
+li {
+  /* padding: 16px 0 12px; */
 }
 
 @media (min-width: 600px) {
@@ -184,12 +190,14 @@ p {
   }
 
   h2 {
+    /* font-size: var(--font-size-xxxl); */
     font-size: var(--font-size-xxxxl);
   }
 
   h3 {
     font-size: var(--font-size-xxxl);
   }
+
   h4 {
     font-size: var(--font-size-xxl);
   }
@@ -205,6 +213,7 @@ p {
     font-size: var(--font-size-l);
   }
   h1 {
+    /* font-size: var(--font-size-xxxxxl); */
     font-size: var(--font-size-xxxxxxl);
   }
 
@@ -230,18 +239,18 @@ p {
     font-size: var(--font-size-xl);
   }
   h1 {
-    font-size: var(--font-size-xxxxxxl);
+    /* font-size: var(--font-size-xxxxxxl); */
   }
 
   h2 {
-    font-size: var(--font-size-xxxxxl);
+    /* font-size: var(--font-size-xxxxxl); */
   }
 
   h3 {
-    font-size: var(--font-size-xxxxl);
+    /* font-size: var(--font-size-xxxxl); */
   }
   h3 {
-    font-size: var(--font-size-xxxl);
+    /* font-size: var(--font-size-xxxl); */
   }
 }
 
@@ -254,17 +263,17 @@ p {
     font-size: var(--font-size-xl);
   }
   h1 {
-    font-size: var(--font-size-xxxxxxl);
+    /* font-size: var(--font-size-xxxxxxl); */
   }
 
   h2 {
-    font-size: var(--font-size-xxxxxl);
+    /* font-size: var(--font-size-xxxxxl); */
   }
 
   h3 {
-    font-size: var(--font-size-xxxxl);
+    /* font-size: var(--font-size-xxxxl); */
   }
   h4 {
-    font-size: var(--font-size-xxxl);
+    /* font-size: var(--font-size-xxxl); */
   }
 }

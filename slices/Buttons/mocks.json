@@ -67,6 +67,16 @@
 							"value": "giving",
 							"type": "Text"
 						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
 					]
 				]
 			},
@@ -103,6 +113,16 @@
 							"__TYPE__": "FieldContent",
 							"value": "sure",
 							"type": "Text"
+						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
 						}
 					]
 				]
@@ -141,6 +161,16 @@
 							"value": "classroom",
 							"type": "Text"
 						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
 					]
 				]
 			},
@@ -177,6 +207,16 @@
 							"__TYPE__": "FieldContent",
 							"value": "built",
 							"type": "Text"
+						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
 						}
 					]
 				]
@@ -215,6 +255,16 @@
 							"value": "action",
 							"type": "Text"
 						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
 					]
 				]
 			},
@@ -251,6 +301,16 @@
 							"__TYPE__": "FieldContent",
 							"value": "act",
 							"type": "Text"
+						}
+					],
+					[
+						"action",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
 						}
 					]
 				]

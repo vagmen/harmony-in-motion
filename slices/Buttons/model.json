@@ -80,6 +80,14 @@
             "label": "Иконка в конце",
             "placeholder": "Material Symbols. Например: star"
           }
+        },
+        "action": {
+          "type": "Link",
+          "config": {
+            "label": "Действие",
+            "select": "document",
+            "customtypes": ["action"]
+          }
         }
       }
     }

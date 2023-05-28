@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async ({
         config: config.data,
         footer: footer.data,
       },
-      // revalidate: 60,
+      revalidate: 60,
     };
   } catch (error) {
     return {
@@ -92,6 +92,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getPathsFromPages(pages);
   return {
     paths: paths,
-    fallback: false,
+    // fallback: false,
+    fallback: "blocking",
   };
 };

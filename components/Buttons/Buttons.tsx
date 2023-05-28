@@ -1,10 +1,16 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
-import { KeyTextField, LinkField, SelectField } from "@prismicio/types";
+import {
+  ContentRelationshipField,
+  KeyTextField,
+  LinkField,
+  SelectField,
+} from "@prismicio/types";
 import { PageAlignment } from "../../interfaces";
 import { Button, ButtonSize, ButtonVariant } from "../Button/Button";
 import { linkResolver } from "../../linkResolver";
 import { asLink } from "@prismicio/helpers";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 export interface IAction {
   title: KeyTextField;
@@ -15,6 +21,7 @@ export interface IAction {
   newTab?: boolean;
   startIcon?: string | null;
   endIcon?: string | null;
+  actionType?: ContentRelationshipField<"action">;
 }
 
 interface IButtons {
@@ -29,36 +36,56 @@ export const Buttons = ({ actions, align = "start" }: IButtons) => (
       [styles.alignRight]: align === "end",
     })}
   >
-    {actions?.map((action) => (
-      <Button
-        key={action.title}
-        link={action.link}
-        variant={action.variant}
-        size={action.size}
-        newTab={action.newTab}
-        startIcon={action.startIcon}
-        endIcon={action.endIcon}
-      >
-        {action.title}
-      </Button>
-    ))}
+    {actions?.map((action) =>
+      action.actionType ? (
+        <ActionButton
+          key={action.title}
+          link={action.link}
+          variant={action.variant}
+          size={action.size}
+          newTab={action.newTab}
+          startIcon={action.startIcon}
+          endIcon={action.endIcon}
+          actionType={action.actionType}
+          // onClick={(()=>clickHandler(action)}
+        >
+          {action.title}
+        </ActionButton>
+      ) : (
+        <Button
+          key={action.title}
+          link={action.link}
+          variant={action.variant}
+          size={action.size}
+          newTab={action.newTab}
+          startIcon={action.startIcon}
+          endIcon={action.endIcon}
+          // actionType={action.actionType}
+        >
+          {action.title}
+        </Button>
+      )
+    )}
   </div>
 );
 
+type RawButtonVariant = SelectField<
+  | "Выпуклая"
+  | "Заполненная"
+  | "Тональная"
+  | "Контурная"
+  | "Текстовая"
+  | "Подчеркнутая"
+>;
+
 interface IRawButton {
   title: KeyTextField;
-  variant: SelectField<
-    | "Выпуклая"
-    | "Заполненная"
-    | "Тональная"
-    | "Контурная"
-    | "Текстовая"
-    | "Подчеркнутая"
-  >;
+  variant: RawButtonVariant;
   size: SelectField<"Маленькая" | "Средняя" | "Большая" | "Огромная">;
   link: LinkField;
   starticon?: KeyTextField;
   endicon?: KeyTextField;
+  action?: ContentRelationshipField<"action">;
 }
 
 export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
@@ -70,6 +97,7 @@ export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
     newTab: item.link?.link_type === "Web",
     startIcon: item.starticon,
     endIcon: item.endicon,
+    actionType: item.action,
   }));
 
 export const prepareButtonVariant = (

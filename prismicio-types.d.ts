@@ -6,6 +6,42 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Действие documents */
+interface ActionDocumentData {
+  /**
+   * title field in *Действие*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: action.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * link field in *Действие*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: action.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
+}
+/**
+ * Действие document from Prismic
+ *
+ * - **API ID**: `action`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ActionDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<Simplify<ActionDocumentData>, "action", Lang>;
 /** Content for Автор documents */
 interface AuthorDocumentData {
   /**
@@ -261,44 +297,55 @@ export type ConfigDocument<Lang extends string = string> =
     "config",
     Lang
   >;
-/** Content for Контакты documents */
-interface ContactsDocumentData {
+/** Content for contact documents */
+interface ContactDocumentData {
   /**
-   * address field in *Контакты*
+   * title field in *contact*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contacts.address
+   * - **API ID Path**: contact.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  address: prismicT.KeyTextField;
+  title: prismicT.KeyTextField;
   /**
-   * phone field in *Контакты*
+   * link field in *contact*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: contacts.phone
+   * - **API ID Path**: contact.link
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  phone: prismicT.KeyTextField;
+  link: prismicT.LinkField;
+  /**
+   * icon field in *contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.icon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  icon: prismicT.ImageField<never>;
 }
 /**
- * Контакты document from Prismic
+ * contact document from Prismic
  *
- * - **API ID**: `contacts`
- * - **Repeatable**: `false`
+ * - **API ID**: `contact`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ContactsDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<ContactsDocumentData>,
-    "contacts",
+export type ContactDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<
+    Simplify<ContactDocumentData>,
+    "contact",
     Lang
   >;
 /** Content for Footer documents */
@@ -553,10 +600,11 @@ export type ProductDocument<Lang extends string = string> =
     Lang
   >;
 export type AllDocumentTypes =
+  | ActionDocument
   | AuthorDocument
   | CategoryDocument
   | ConfigDocument
-  | ContactsDocument
+  | ContactDocument
   | FooterDocument
   | MenuDocument
   | PageDocument
@@ -843,6 +891,16 @@ export interface ButtonsV2SliceDefaultItem {
    *
    */
   endicon: prismicT.KeyTextField;
+  /**
+   * Действие field in *Buttons → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buttons_v2.items[].action
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  action: prismicT.RelationField<"action">;
 }
 /**
  * Default variation for Buttons Slice
@@ -2296,6 +2354,8 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
+      ActionDocumentData,
+      ActionDocument,
       AuthorDocumentData,
       AuthorDocument,
       CategoryDocumentData,
@@ -2305,8 +2365,8 @@ declare module "@prismicio/client" {
       ConfigDocumentDataButtonsbottomItem,
       ConfigDocumentDataSlicesSlice,
       ConfigDocument,
-      ContactsDocumentData,
-      ContactsDocument,
+      ContactDocumentData,
+      ContactDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
       FooterDocument,

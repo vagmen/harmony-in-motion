@@ -39,7 +39,7 @@ export const StandardCard = ({
       </div>
       <div className={styles.content}>
         <code>{extra}</code>
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         <p className={styles.description}>{description}</p>
       </div>
     </CardContainer>
