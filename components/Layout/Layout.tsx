@@ -12,6 +12,7 @@ import {
 import { prepareButtons } from "../Buttons/Buttons";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
