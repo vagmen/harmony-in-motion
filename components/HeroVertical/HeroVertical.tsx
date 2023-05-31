@@ -1,4 +1,4 @@
-import { RichTextField, ImageFieldImage } from "@prismicio/types";
+import { RichTextField, ImageFieldImage } from "@prismicio/client";
 import styles from "./index.module.css";
 import { Standard } from "../Standard/Standard";
 import { PageAlignment, SliceContainerWidth } from "../../interfaces";
@@ -30,42 +30,40 @@ export const HeroVertical = ({
   imageWidth,
   imageHeight,
 }: IHeroVertical) => (
-  <>
-    <div
-      className={classNames(styles.container, {
-        [styles.isImageBottom]: isImageBottom,
-      })}
+  <div
+    className={classNames(styles.container, {
+      [styles.isImageBottom]: isImageBottom,
+    })}
+  >
+    <SliceContainer
+      width={imageWidth === "auto" ? "fullWidthWithMargin" : imageWidth}
+      align="center"
+      topPadding={
+        imageWidth === "fullWidth" && !isImageBottom ? "noPadding" : undefined
+      }
     >
-      <SliceContainer
-        width={imageWidth === "auto" ? "fullWidthWithMargin" : imageWidth}
-        align="center"
-        topPadding={
-          imageWidth === "fullWidth" && !isImageBottom ? "noPadding" : undefined
-        }
-      >
-        <Image
-          field={image}
-          autoWidth={imageWidth === "auto"}
-          height={imageHeight}
-          noBorderRadiusTop={imageWidth === "fullWidth"}
-          noBorderRadiusBottom={imageWidth === "fullWidth" && isImageBottom}
-          alt=""
-        />
-      </SliceContainer>
-      <SliceContainer
-        width={"textWidth"}
-        align={alignContainer}
-        topPadding={isImageBottom ? "medium" : "noPadding"}
-      >
-        <Standard
-          title={title}
-          description={description}
-          actions={actions}
-          align={alignContent}
-        />
-      </SliceContainer>
-    </div>
-  </>
+      <Image
+        field={image}
+        autoWidth={imageWidth === "auto"}
+        height={imageHeight}
+        noBorderRadiusTop={imageWidth === "fullWidth"}
+        noBorderRadiusBottom={imageWidth === "fullWidth" && isImageBottom}
+        alt=""
+      />
+    </SliceContainer>
+    <SliceContainer
+      width={"textWidth"}
+      align={alignContainer}
+      topPadding={isImageBottom ? "medium" : "noPadding"}
+    >
+      <Standard
+        title={title}
+        description={description}
+        actions={actions}
+        align={alignContent}
+      />
+    </SliceContainer>
+  </div>
 );
 
 type RawImageWidth =

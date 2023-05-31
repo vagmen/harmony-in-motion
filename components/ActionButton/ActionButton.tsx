@@ -1,9 +1,8 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
-import { ContentRelationshipField, KeyTextField } from "@prismicio/types";
+import { ContentRelationshipField, KeyTextField } from "@prismicio/client";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { PrismicNextImage } from "@prismicio/next";
 import Image from "next/image";
 
 export type ButtonVariant =

@@ -1,5 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { RichTextField, ImageFieldImage } from "@prismicio/types";
+import { RichTextField, ImageFieldImage } from "@prismicio/client";
 import styles from "./index.module.css";
 import { Standard } from "../Standard/Standard";
 import classNames from "classnames";
@@ -75,6 +75,7 @@ export const Hero = ({
               // exp: -20,
             }
           }
+          alt=""
         />
       </div>
     </div>

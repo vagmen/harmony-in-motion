@@ -1,5 +1,7 @@
-import { LinkResolverFunction } from "@prismicio/helpers";
-import { FilledContentRelationshipField } from "@prismicio/types";
+import {
+  LinkResolverFunction,
+  FilledContentRelationshipField,
+} from "@prismicio/client";
 
 interface IDocumentPath {
   path: string;

@@ -1,10 +1,13 @@
 import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
 import classNames from "classnames";
-import { ContentRelationshipField, ImageFieldImage } from "@prismicio/types";
 import { Avatar } from "../Avatar/Avatar";
-import { isFilled } from "@prismicio/helpers";
 import { AuthorDocument } from "../../prismicio-types";
+import {
+  isFilled,
+  ContentRelationshipField,
+  ImageFieldImage,
+} from "@prismicio/client";
 
 interface IAuthor {
   name?: string;

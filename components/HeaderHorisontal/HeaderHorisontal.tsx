@@ -1,4 +1,4 @@
-import { RichTextField } from "@prismicio/types";
+import { RichTextField } from "@prismicio/client";
 import styles from "./index.module.css";
 import { Buttons, IAction } from "../Buttons/Buttons";
 import { PrismicRichText } from "@prismicio/react";

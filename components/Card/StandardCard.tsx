@@ -4,11 +4,12 @@ import {
   ImageFieldImage,
   KeyTextField,
   SelectField,
-} from "@prismicio/types";
+  asText,
+  isFilled,
+} from "@prismicio/client";
 import styles from "./index.module.css";
 import { CardContainer } from "../CardContainer/CardContainer";
 import { PrismicNextImage } from "@prismicio/next";
-import { asText, isFilled } from "@prismicio/helpers";
 import {
   PageDocument,
   PageDocumentData,
@@ -35,7 +36,7 @@ export const StandardCard = ({
   return (
     <CardContainer padding="noPadding" variant="outlined" link={link}>
       <div className={styles.imageWrapper}>
-        <PrismicNextImage field={image} className={styles.image} />
+        <PrismicNextImage field={image} className={styles.image} alt="" />
       </div>
       <div className={styles.content}>
         <code>{extra}</code>

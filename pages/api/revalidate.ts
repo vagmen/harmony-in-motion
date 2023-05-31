@@ -1,6 +1,6 @@
 import * as prismic from "@prismicio/client";
 import sm from "./../../slicemachine.config.json";
-import { asLink } from "@prismicio/helpers";
+import { asLink } from "@prismicio/client";
 import { linkResolver } from "../../linkResolver";
 /**
  * This API endpoint will be called by a Prismic webhook. The webhook
@@ -39,7 +39,7 @@ export default async function handler(
     // const pages = await client.getAllByType("page");
 
     const documents = await client.getAllByIDs(req.body.documents as string[]);
-    const urls = documents.map((doc) => asLink(doc, linkResolver));
+    const urls = documents.map((doc) => asLink(doc, { linkResolver }));
 
     try {
       await Promise.all(urls.map(async (url) => await res.revalidate(url)));

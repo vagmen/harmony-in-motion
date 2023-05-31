@@ -43,6 +43,7 @@ const Banner = ({ slice, context }: BannerProps): JSX.Element => {
             imgixParams={{
               exp: -20,
             }}
+            alt=""
           />
         </div>
         <div className={styles.content}>

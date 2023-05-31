@@ -1,4 +1,4 @@
-import { LinkField, SelectField } from "@prismicio/types";
+import { SelectField } from "@prismicio/client";
 import styles from "./index.module.css";
 import classNames from "classnames";
 import Link from "next/link";

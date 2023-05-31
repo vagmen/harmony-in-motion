@@ -1,8 +1,6 @@
 import { ParsedUrlQuery } from "querystring";
 import { IMenu, ISliceContext, PageAlignment } from "../interfaces";
-import { AuthorDocument, MenuDocument, PageDocument } from "../prismicio-types";
-import { ContentRelationshipField } from "@prismicio/types";
-import { isFilled } from "@prismicio/helpers";
+import { MenuDocument, PageDocument } from "../prismicio-types";
 
 const getUrlsFromPages = (pages: PageDocument<string>[]) => {
   const urls = pages.map((page) => {

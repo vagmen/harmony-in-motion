@@ -15,8 +15,6 @@ export function createClient({
   ...config
 }: prismicNext.CreateClientConfig = {}) {
   const client = prismic.createClient(sm.apiEndpoint, config);
-
   prismicNext.enableAutoPreviews({ client, previewData, req });
-
   return client;
 }

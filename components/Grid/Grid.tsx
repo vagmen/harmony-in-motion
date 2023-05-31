@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./index.module.css";
 import { ReactElement } from "react";
-import { SelectField } from "@prismicio/types";
+import { SelectField } from "@prismicio/client";
 
 export type GridItemSize = "s" | "m" | "l" | "xl";
 

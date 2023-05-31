@@ -1,5 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/types";
+import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/client";
 import Link from "next/link";
 import styles from "./index.module.css";
 

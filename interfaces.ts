@@ -1,4 +1,4 @@
-import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/types";
+import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/client";
 
 export interface IMenuItem {
   title: string;
@@ -16,7 +16,7 @@ export type SliceContainerWidth =
   | "fullWidth"
   | "fullWidthWithMargin"
   | "textWidth";
-  
+
 export type SliceContainerTopPadding =
   | "noPadding"
   | "small"

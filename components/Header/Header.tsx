@@ -1,5 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/types";
+import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/client";
 import useWindowSize from "../../hooks/useWindowSize";
 import { IMenu } from "../../interfaces";
 import { Navbar } from "../Navbar/Navbar";
@@ -8,7 +8,6 @@ import { SliceContainer } from "../SliceContainer/SliceContainer";
 import { Buttons, IAction } from "../Buttons/Buttons";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 import Link from "next/link";
-import { ActionButton } from "../ActionButton/ActionButton";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;

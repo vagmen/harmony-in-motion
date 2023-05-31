@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import { ImageFieldImage, RTImageNode } from "@prismicio/types";
+import { ImageFieldImage, RTImageNode } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import classNames from "classnames";
 
@@ -36,6 +36,7 @@ export const Image = ({
         [styles.noBorderRadiusTop]: noBorderRadiusTop,
         [styles.noBorderRadiusBottom]: noBorderRadiusBottom,
       })}
+      alt=""
     />
     <figcaption className={styles.figcaption}>{field?.alt}</figcaption>
   </div>

@@ -1,14 +1,13 @@
 import { PrismicNextImage } from "@prismicio/next";
-import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
-import { ImageFieldImage } from "@prismicio/types";
+import { ImageFieldImage } from "@prismicio/client";
 
 interface IAvatar {
   image?: ImageFieldImage;
 }
 
 export const Avatar = ({ image }: IAvatar) => {
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
 
   if (!image) {
     return <span>Нет картинки</span>;

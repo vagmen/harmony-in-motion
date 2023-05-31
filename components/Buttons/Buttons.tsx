@@ -5,11 +5,11 @@ import {
   KeyTextField,
   LinkField,
   SelectField,
-} from "@prismicio/types";
+  asLink,
+} from "@prismicio/client";
 import { PageAlignment } from "../../interfaces";
 import { Button, ButtonSize, ButtonVariant } from "../Button/Button";
 import { linkResolver } from "../../linkResolver";
-import { asLink } from "@prismicio/helpers";
 import { ActionButton } from "../ActionButton/ActionButton";
 
 export interface IAction {
@@ -92,7 +92,7 @@ export const prepareButtons = (rawButtons: IRawButton[]): IAction[] =>
   rawButtons.map((item) => ({
     title: item.title,
     variant: prepareButtonVariant(item.variant) || "outlined",
-    link: asLink(item.link, linkResolver) || "",
+    link: asLink(item.link, { linkResolver }) || "",
     size: prepareButtonSize(item.size),
     newTab: item.link?.link_type === "Web",
     startIcon: item.starticon,

@@ -6,7 +6,7 @@ import {
   StandardCard,
   getPreviewData,
 } from "../../components/Card/StandardCard";
-import { asLink } from "@prismicio/helpers";
+import { asLink } from "@prismicio/client";
 import { linkResolver } from "../../linkResolver";
 
 const Cards = ({ slice }: SliceComponentProps<CardsSlice>) => (
@@ -20,7 +20,7 @@ const Cards = ({ slice }: SliceComponentProps<CardsSlice>) => (
             title={title || ""}
             description={description}
             image={image}
-            link={asLink(item.link, linkResolver) || ""}
+            link={asLink(item.link, { linkResolver }) || ""}
             extra={date || ""}
           />
         );

@@ -2,7 +2,19 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"test": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit ut reprehenderit irure minim et reprehenderit. Veniam eu laborum est ea."
+						}
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

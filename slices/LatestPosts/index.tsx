@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { HeaderHorisontal } from "../../components/HeaderHorisontal/HeaderHorisontal";
-import { RichTextField } from "@prismicio/types";
+import { RichTextField } from "@prismicio/client";
 import { LatestPostsGrid } from "../../components/LatestPostsGrid/LatestPostsGrid";
 
 const title: RichTextField = [

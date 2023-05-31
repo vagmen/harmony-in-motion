@@ -177,6 +177,16 @@ li {
   /* padding: 16px 0 12px; */
 }
 
+ol {
+  /* padding-left: 40px; */
+  /* Задаем отступ слева для всего списка */
+}
+
+ol li {
+  margin-bottom: 20px;
+  /* Задаем отступ снизу для каждого элемента списка */
+}
+
 @media (min-width: 600px) {
   :root {
     --page-padding: 24px;

@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
-import { RichTextField } from "@prismicio/types";
+import { RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { PageAlignment } from "../../interfaces";
 import { Buttons, IAction } from "../Buttons/Buttons";

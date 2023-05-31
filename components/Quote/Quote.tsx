@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import { RichTextField } from "@prismicio/types";
+import { RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { CardContainer, CardVariant } from "../CardContainer/CardContainer";
 
