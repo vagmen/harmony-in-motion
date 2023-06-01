@@ -10,20 +10,13 @@ import {
   prepareMenuData,
 } from "../utils";
 import { createClient } from "../prismicio";
-import PageTransition from "../components/PageTransition/PageTransition";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const ROOT_URL = "http://harmony-in-motion.ru";
+const ROOT_URL = "https://harmony-in-motion.ru";
 
-type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
-
-const Page = (
-  { page }: InferGetStaticPropsType<typeof getStaticProps>,
-  ref: IndexPageRef
-) => {
+const Page = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
-  // const Page = (({ page }, ref): InferGetStaticPropsType<typeof getStaticProps>) => {
 
   if (!page || !page.data || !page.data.slices) {
     return <></>;
@@ -36,7 +29,7 @@ const Page = (
   const canonicalUrl = ROOT_URL + router.asPath;
 
   return (
-    <PageTransition ref={ref}>
+    <>
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -55,7 +48,7 @@ const Page = (
         components={components}
         context={{ align: prepareAlign(page.data.align) }}
       />
-    </PageTransition>
+    </>
   );
 };
 
@@ -88,7 +81,6 @@ export const getStaticProps: GetStaticProps = async ({
     ]);
 
     const currentPage = pages[0];
-    // console.log("currentPage", currentPage);
 
     return {
       props: {

@@ -13,12 +13,12 @@ import {
 } from "../prismicio-types";
 import { IMenu } from "../interfaces";
 import { Button } from "../components/Button/Button";
-import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { Image } from "../components/Image/Image";
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
+import Transition from "../components/Transition/Transition";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -31,11 +31,6 @@ export default function App({
   pageProps,
 }: AppProps<CustomPageProps>) {
   const router = useRouter();
-  const pageKey = router.asPath;
-
-  // const onExitComplete = () => {
-  //   window.scrollTo({ top: 0 });
-  // };
 
   useEffect(() => {
     const handleRouteChange = (url: any) => {
@@ -51,62 +46,51 @@ export default function App({
 
   return (
     <ThemeProvider>
-      <AnimatePresence
-        // onExitComplete={onExitComplete}
-        initial={false}
-        // mode="wait"
-        mode="popLayout"
+      <PrismicProvider
+        internalLinkComponent={({ href, children }) => (
+          <Button variant="underlined" link={href}>
+            {children}
+          </Button>
+        )}
+        linkResolver={linkResolver}
+        externalLinkComponent={({ href, children, target }) => (
+          <Button variant="underlined" link={href} newTab={target === "_blank"}>
+            {children}
+          </Button>
+        )}
+        richTextComponents={{
+          image: ({ children, node, type }) => (
+            <Image field={node} alt={node.alt || ""} withPadding />
+          ),
+        }}
       >
-        {/* mode="wait" initial={false} */}
-        {/* > */}
-        <PrismicProvider
-          internalLinkComponent={({ href, children }) => (
-            <Button variant="underlined" link={href}>
-              {children}
-            </Button>
-          )}
-          linkResolver={linkResolver}
-          externalLinkComponent={({ href, children, target }) => (
-            <Button
-              variant="underlined"
-              link={href}
-              newTab={target === "_blank"}
-            >
-              {children}
-            </Button>
-          )}
-          richTextComponents={{
-            image: ({ children, node, type }) => (
-              <Image field={node} alt={node.alt || ""} withPadding />
-            ),
-          }}
-        >
-          <PrismicPreview repositoryName={repositoryName}>
-            {/* <!-- Google tag (gtag.js) --> */}
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-              strategy="afterInteractive"
-            ></Script>
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
+        <PrismicPreview repositoryName={repositoryName}>
+          {/* <!-- Google tag (gtag.js) --> */}
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+            strategy="afterInteractive"
+          ></Script>
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
                 gtag('config', '${gtag.GA_TRACKING_ID}',{page_path: window.location.pathname});
              `}
-            </Script>
-            <Layout
-              menu={pageProps.menu}
-              config={pageProps.config}
-              footer={pageProps.footer}
-            >
-              <Component key={pageKey} {...pageProps} />
-            </Layout>
-          </PrismicPreview>
-        </PrismicProvider>
-      </AnimatePresence>
+          </Script>
+          <Layout
+            menu={pageProps.menu}
+            config={pageProps.config}
+            footer={pageProps.footer}
+          >
+            <Transition>
+              <Component {...pageProps} />
+            </Transition>
+          </Layout>
+        </PrismicPreview>
+      </PrismicProvider>
     </ThemeProvider>
   );
 }

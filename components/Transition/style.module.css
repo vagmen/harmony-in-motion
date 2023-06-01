@@ -1,0 +1,4 @@
+/* Prevent scrollbar during animation */
+.effect1 {
+  overflow: hidden;
+}

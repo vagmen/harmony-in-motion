@@ -12,7 +12,6 @@ import {
 import { prepareButtons } from "../Buttons/Buttons";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import Script from "next/script";
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
@@ -36,23 +35,14 @@ export const Layout = ({ children, menu, config, footer }: ILayout) => {
   }, [pageKey]);
 
   const onExitComplete = () => {
-    if (ref.current) {
-      ref.current.scrollTo({ top: 0 });
-    }
+    setTimeout(() => {
+      if (ref.current) {
+        ref.current.scrollTo({ top: 0 });
+      }
+    }, 750);
   };
 
   return (
-    // <motion.div
-    //   initial={{ x: 300, opacity: 0 }}
-    //   animate={{ x: 0, opacity: 1 }}
-    //   exit={{ x: 300, opacity: 0 }}
-    //   transition={{
-    //     type: "spring",
-    //     stiffness: 260,
-    //     damping: 20,
-    //   }}
-    //   className={styles.container}
-    // >
     <div className={styles.container} ref={ref}>
       <Header
         logo={config?.logo}
