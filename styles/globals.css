@@ -170,7 +170,8 @@ p {
   /* max-width: 65ch; */
   /* padding: 16px 0 12px; */
   /* padding: 24px 0 16px; */
-  margin: 24px 0 16px;
+  margin: 32px 0 24px;
+  /* margin: 24px 0 16px; */
 }
 
 li {

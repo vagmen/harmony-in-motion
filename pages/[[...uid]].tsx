@@ -11,6 +11,10 @@ import {
 } from "../utils";
 import { createClient } from "../prismicio";
 import PageTransition from "../components/PageTransition/PageTransition";
+import Head from "next/head";
+import { useRouter } from "next/router";
+
+const ROOT_URL = "http://harmony-in-motion.ru";
 
 type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
 
@@ -18,13 +22,34 @@ const Page = (
   { page }: InferGetStaticPropsType<typeof getStaticProps>,
   ref: IndexPageRef
 ) => {
+  const router = useRouter();
   // const Page = (({ page }, ref): InferGetStaticPropsType<typeof getStaticProps>) => {
+
   if (!page || !page.data || !page.data.slices) {
     return <></>;
   }
 
+  const metaTitle = page.data.title || "Гармония в движении";
+  const metaDescription =
+    page.data.description ||
+    "Сайт, который поможет вам обрести гармонию в движении и заботиться о своем теле. Здесь вы найдете множество упражнений и советов, чтобы улучшить свою физическую форму и настроение. Наша миссия - помочь вам достигнуть гармонии тела и духа";
+  const canonicalUrl = ROOT_URL + router.asPath;
+
   return (
     <PageTransition ref={ref}>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta name="robots" content="index,follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:image" content={page.data?.image?.url || ""} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="canonical" href={canonicalUrl} />
+      </Head>
       <SliceZone
         slices={page.data.slices}
         components={components}
@@ -63,6 +88,7 @@ export const getStaticProps: GetStaticProps = async ({
     ]);
 
     const currentPage = pages[0];
+    // console.log("currentPage", currentPage);
 
     return {
       props: {
