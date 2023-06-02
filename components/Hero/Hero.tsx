@@ -18,6 +18,11 @@ interface IHero {
   hasContentPadding?: boolean;
 }
 
+const sizes = `
+    (max-width: 400px) 400px,
+    (max-width: 600px) 600px
+  `;
+
 export const Hero = ({
   title,
   description,
@@ -76,6 +81,8 @@ export const Hero = ({
             }
           }
           alt=""
+          loading="eager"
+          sizes={sizes}
         />
       </div>
     </div>

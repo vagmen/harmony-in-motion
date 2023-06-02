@@ -12,6 +12,19 @@ import {
 import { prepareButtons } from "../Buttons/Buttons";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import classNames from "classnames";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
+
+const materialSymbols = localFont({
+  variable: "--font-family-symbols", // Variable name (to reference after in CSS/styles)
+  style: "normal",
+  src: "../../node_modules/material-symbols/material-symbols-rounded.woff2", // This is a reference to woff2 file from NPM package "material-symbols"
+  display: "block",
+  weight: "100 700",
+});
+
+const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
 
 interface ILayout {
   children: JSX.Element | JSX.Element[];
@@ -43,7 +56,11 @@ export const Layout = ({ children, menu, config, footer }: ILayout) => {
   };
 
   return (
-    <div className={styles.container} ref={ref}>
+    <div
+      style={montserrat.style}
+      className={classNames(materialSymbols.variable, styles.container)}
+      ref={ref}
+    >
       <Header
         logo={config?.logo}
         menu={menu}

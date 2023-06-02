@@ -35,7 +35,11 @@
           "config": {
             "label": "Изображение",
             "constraint": {},
-            "thumbnails": []
+            "thumbnails": [
+              { "name": "mobile", "width": 400, "height": null },
+              { "name": "tablet", "width": 600, "height": null },
+              { "name": "laptop", "width": 900, "height": null }
+            ]
           }
         },
         "imageposition": {

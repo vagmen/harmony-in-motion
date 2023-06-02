@@ -1581,7 +1581,7 @@ interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/core-concepts/image
    *
    */
-  image: prismic.ImageField<never>;
+  image: prismic.ImageField<"mobile" | "tablet" | "laptop">;
   /**
    * Положение изображения field in *HeroImage → Primary*
    *
