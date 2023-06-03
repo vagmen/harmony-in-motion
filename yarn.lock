@@ -283,10 +283,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@8.41.0":
-  version "8.41.0"
-  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.41.0.tgz#080321c3b68253522f7646b55b577dd99d2950b3"
-  integrity sha512-LxcyMGxwmTh2lY9FwHPGWOHmYFCZvbrFCBZL4FzSSsxsRPuhrYUg/49/0KDfW8tnIEaEHtfmn6+NPN+1DqaNmA==
+"@eslint/js@8.42.0":
+  version "8.42.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.42.0.tgz#484a1d638de2911e6f5a30c12f49c7e4a3270fb6"
+  integrity sha512-6SWlXpWU5AvId8Ac7zjzmIOqMOba/JWY8XZ4A7q7Gn1Vlfg/SFFIlrtHXt9nPn4op9ZPAkl91Jao+QQv3r/ukw==
 
 "@extractus/oembed-extractor@^3.1.8":
   version "3.1.9"
@@ -393,10 +393,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@humanwhocodes/config-array@^0.11.8":
-  version "0.11.8"
-  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
-  integrity sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==
+"@humanwhocodes/config-array@^0.11.10":
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.10.tgz#5a3ffe32cc9306365fb3fd572596cd602d5e12d2"
+  integrity sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==
   dependencies:
     "@humanwhocodes/object-schema" "^1.2.1"
     debug "^4.1.1"
@@ -1791,30 +1791,30 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
-"@slicemachine/adapter-next@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@slicemachine/adapter-next/-/adapter-next-0.2.0.tgz#313e41544eb0756b439cfd7a532ef6dd079644a1"
-  integrity sha512-Fkrjhp9GjW/j1AcB0//AVew6mhSWse70mkVHWpm/IWp3ZQ54ObXsA4nCz5btc8kzpklfBdRLfddMLhWc/emy5g==
+"@slicemachine/adapter-next@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@slicemachine/adapter-next/-/adapter-next-0.2.1.tgz#c5da85870e21417b838109c4eb75477e7d315df0"
+  integrity sha512-sl0GymO82EbC1dMeUdHs3WX7nRZzZ1AXkxd3jE7Mk5D9vo0J6kkatTTz9YzHWEIvUlvp/yOsmUPMg/6TKYBnfg==
   dependencies:
     "@prismicio/slice-simulator-core" "^0.2.7"
     "@prismicio/types-internal" "2.0.0-beta.1"
-    "@slicemachine/plugin-kit" "0.3.0"
+    "@slicemachine/plugin-kit" "0.3.1"
     common-tags "^1.8.2"
     fs-extra "^11.1.0"
     node-fetch "^3.3.1"
     pascal-case "^3.1.2"
-    prismic-ts-codegen "0.1.9"
+    prismic-ts-codegen "^0.1.10"
 
-"@slicemachine/manager@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@slicemachine/manager/-/manager-0.3.0.tgz#8dbc6b086cc8493abe3670f06b8c21ee531db29a"
-  integrity sha512-8yXtDpsqhhR8DEwF7LPdxOo88ATHkSkmOz0zh9KziGOwvDkkUVlk5fYNrE5HI9sQYxJqB+Gzmq7zOary15jLgQ==
+"@slicemachine/manager@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@slicemachine/manager/-/manager-0.3.1.tgz#ba187f3b1b0439d1955c74655a8f740116393967"
+  integrity sha512-lj+zdivDmszKpug4IplojWMieDs6FvXFhZr1NgpKhY9EGnkq6Shg9ryEWUrtPXME37RJpC66KpLqR3xVNnSbuw==
   dependencies:
     "@antfu/ni" "^0.20.0"
     "@prismicio/custom-types-client" "1.2.0-alpha.0"
     "@prismicio/mocks" "2.0.0-alpha.2"
     "@prismicio/types-internal" "2.0.0-beta.1"
-    "@slicemachine/plugin-kit" "0.3.0"
+    "@slicemachine/plugin-kit" "0.3.1"
     "@wooorm/starry-night" "^1.6.0"
     analytics-node "^6.2.0"
     cookie "^0.5.0"
@@ -1840,10 +1840,10 @@
     semver "^7.3.8"
     unified "^10.1.2"
 
-"@slicemachine/plugin-kit@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@slicemachine/plugin-kit/-/plugin-kit-0.3.0.tgz#e3fb8dfd0ebec50ff8e9f00169a58d711c820cf3"
-  integrity sha512-uAC7ofpD7Db4bbO8x3MYiKakQpjDZdSBrimdXCxIw7hBisWFFFr+ISULvxubjlU16CbW2rGLFbhx5Ko7eTpLOg==
+"@slicemachine/plugin-kit@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@slicemachine/plugin-kit/-/plugin-kit-0.3.1.tgz#bc0532e5c0609a04983fcff528187590ef9cd643"
+  integrity sha512-XG5zfvEu6SVKSL5f9itNTxjUnYR9rOJ9YT3lNngmjs4ldq4qkdgJqPTrOg3nEfsLXPXkFFCVKCGDbS6zfKDwkg==
   dependencies:
     "@prismicio/types-internal" "2.0.0-beta.1"
     common-tags "^1.8.2"
@@ -2090,10 +2090,19 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.7":
+"@types/react@*":
   version "18.2.7"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.7.tgz#dfb4518042a3117a045b8c222316f83414a783b3"
   integrity sha512-ojrXpSH2XFCmHm7Jy3q44nXDyN54+EYKP2lBhJ2bqfyPj6cIUW/FZW/Csdia34NQgq7KYcAlHi5184m4X88+yw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@18.2.8":
+  version "18.2.8"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.8.tgz#a77dcffe4e9af148ca4aa8000c51a1e8ed99e2c8"
+  integrity sha512-lTyWUNrd8ntVkqycEEplasWy2OxNlShj3zqS0LuB1ENUGis5HodmhM7DtCoUGbxj3VW/WsGA0DUhpG6XrM7gPA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3365,16 +3374,16 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
   integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
 
-eslint@8.41.0:
-  version "8.41.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.41.0.tgz#3062ca73363b4714b16dbc1e60f035e6134b6f1c"
-  integrity sha512-WQDQpzGBOP5IrXPo4Hc0814r4/v2rrIsB0rhT7jtunIalgg6gYXWhRMOejVO8yH21T/FGaxjmFjBMNqcIlmH1Q==
+eslint@8.42.0:
+  version "8.42.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.42.0.tgz#7bebdc3a55f9ed7167251fe7259f75219cade291"
+  integrity sha512-ulg9Ms6E1WPf67PHaEY4/6E2tEn5/f7FXGzr3t9cBMugOmf1INYvuUwwh1aXQN4MfJ6a5K2iNwP3w4AColvI9A==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.4.0"
     "@eslint/eslintrc" "^2.0.3"
-    "@eslint/js" "8.41.0"
-    "@humanwhocodes/config-array" "^0.11.8"
+    "@eslint/js" "8.42.0"
+    "@humanwhocodes/config-array" "^0.11.10"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
     ajv "^6.10.0"
@@ -5800,10 +5809,10 @@ prettier@^2.8.4, prettier@^2.8.8:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
   integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
-prismic-ts-codegen@0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/prismic-ts-codegen/-/prismic-ts-codegen-0.1.9.tgz#0ab9343f495d8832c51e489c8cd80678bd6e60ff"
-  integrity sha512-15kA2MSgPp4B2m00yrH3hGmc0vbgSGNqnkJw2DNuyq97nMX1RVU3XXLoJTnn8t0FUOKLeIZGUaaWYiLCJlfwuQ==
+prismic-ts-codegen@^0.1.10:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/prismic-ts-codegen/-/prismic-ts-codegen-0.1.11.tgz#4d27c54e6c04e8bbac87ae01705fd22ff59d7b15"
+  integrity sha512-3KT74niPjMZSNuwVJlAxqMTzF8+KioDzufcB0Y3jvAku5a9FtjMf3rrjw4dHgOvzaRCVcj+ib24OhT3mLWqC4Q==
   dependencies:
     "@prismicio/custom-types-client" "^1.1.0"
     common-tags "^1.8.2"
@@ -6481,10 +6490,10 @@ slash@^4.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
 
-slice-machine-ui@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.1.0.tgz#b85d8a01cf469dcb693fe760ca34493b38414929"
-  integrity sha512-OScoUyj4drVXonmQP6Ltw6piq3T3y22sxTRTqYou025qeM7vncdARsZxHBCQPJGdi5TZk3GmS4sPYu+m1IRDcQ==
+slice-machine-ui@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.1.1.tgz#5b65abfba140d86ad240cb55cf769a5440607db0"
+  integrity sha512-bGmpFLapfLo5WJAvmfgdbVv1ONH09DZB1TD1Y/zjQMu6Yu1QHF7WiyufduCRcTlye2wnWZryNikFI0+rlcJDDQ==
   dependencies:
     "@extractus/oembed-extractor" "^3.1.8"
     "@prismicio/editor-fields" "0.4.1"
@@ -6492,7 +6501,7 @@ slice-machine-ui@^1.1.0:
     "@prismicio/editor-ui" "0.4.1"
     "@prismicio/mocks" "2.0.0-alpha.2"
     "@prismicio/types-internal" "2.0.0-beta.1"
-    "@slicemachine/manager" "0.3.0"
+    "@slicemachine/manager" "0.3.1"
     "@vanilla-extract/css" "1.11.0"
     clsx "1.2.1"
     fast-deep-equal "^3.1.3"
@@ -6506,7 +6515,7 @@ slice-machine-ui@^1.1.0:
     puppeteer "^19.11.0"
     react "^18.2.0"
     semver "^7.3.8"
-    start-slicemachine "0.8.0"
+    start-slicemachine "0.8.1"
     yup "^0.32.11"
 
 source-map-js@^1.0.2:
@@ -6545,12 +6554,12 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.13.tgz#7189a474c46f8d47c7b0da4b987bb45e908bd2d5"
   integrity sha512-XkD+zwiqXHikFZm4AX/7JSCXA98U5Db4AFd5XUg/+9UNtnH75+Z9KxtpYiJZx36mUDVOwH83pl7yvCer6ewM3w==
 
-start-slicemachine@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/start-slicemachine/-/start-slicemachine-0.8.0.tgz#dc9a05afa8b677cc0d16f5a32507f9e66e3d99cb"
-  integrity sha512-/T3XucwSEh8HcEfRNRk4vjnX2jeQfmAf5e5jefnZ0hSId4Ozv34rYIovxyMdDcewVb6ApVEaDh9Or8h72RXd8A==
+start-slicemachine@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/start-slicemachine/-/start-slicemachine-0.8.1.tgz#2d29d71e996400fef42fef4be585c189c9c3ad9b"
+  integrity sha512-kXG83poCU+SFQcDx+RF7eY6uFrezuwq8caBuqaCUl+hr9ChPREV5BcQGgPQ7Pmd8Z8Vvsm/FhaLnWhlFQfC7jw==
   dependencies:
-    "@slicemachine/manager" "0.3.0"
+    "@slicemachine/manager" "0.3.1"
     body-parser "^1.20.2"
     chalk "^4.1.2"
     cors "^2.8.5"

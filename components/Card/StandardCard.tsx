@@ -15,6 +15,7 @@ import {
   PageDocumentData,
   Simplify,
 } from "../../prismicio-types";
+import { SIZES } from "../../constants";
 
 export type CardVariant = "elevated" | "filled" | "outlined";
 
@@ -36,7 +37,12 @@ export const StandardCard = ({
   return (
     <CardContainer padding="noPadding" variant="outlined" link={link}>
       <div className={styles.imageWrapper}>
-        <PrismicNextImage field={image} className={styles.image} alt="" />
+        <PrismicNextImage
+          field={image}
+          className={styles.image}
+          alt=""
+          sizes={SIZES}
+        />
       </div>
       <div className={styles.content}>
         <code>{extra}</code>

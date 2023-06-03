@@ -5,6 +5,7 @@ import { Standard } from "../Standard/Standard";
 import classNames from "classnames";
 import { PageAlignment } from "../../interfaces";
 import { IAction } from "../Buttons/Buttons";
+import { SIZES } from "../../constants";
 
 interface IHero {
   title: RichTextField | null;
@@ -17,11 +18,6 @@ interface IHero {
   imagePositionMobile?: "top" | "bottom" | "hidden" | null;
   hasContentPadding?: boolean;
 }
-
-const sizes = `
-    (max-width: 400px) 400px,
-    (max-width: 600px) 600px
-  `;
 
 export const Hero = ({
   title,
@@ -81,8 +77,8 @@ export const Hero = ({
             }
           }
           alt=""
-          loading="eager"
-          sizes={sizes}
+          sizes={SIZES}
+          priority={title?.[0]?.type === "heading1"}
         />
       </div>
     </div>

@@ -18,7 +18,6 @@ import { Image } from "../components/Image/Image";
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
-import Transition from "../components/Transition/Transition";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -33,11 +32,8 @@ export default function App({
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url: any) => {
-      // Исключаем заходы через http://localhost
-      if (url.includes("localhost")) return;
-      gtag.pageview(url);
-    };
+    const handleRouteChange = (url: any) => gtag.pageview(url);
+
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
@@ -73,11 +69,12 @@ export default function App({
           ></Script>
           <Script id="google-analytics" strategy="afterInteractive">
             {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', '${gtag.GA_TRACKING_ID}',{page_path: window.location.pathname});
+                if ('${process.env.NODE_ENV}' !== 'development') {
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gtag.GA_TRACKING_ID}',{page_path: window.location.pathname});
+                }
              `}
           </Script>
           <Layout
@@ -85,9 +82,7 @@ export default function App({
             config={pageProps.config}
             footer={pageProps.footer}
           >
-            <Transition>
-              <Component {...pageProps} />
-            </Transition>
+            <Component {...pageProps} />
           </Layout>
         </PrismicPreview>
       </PrismicProvider>

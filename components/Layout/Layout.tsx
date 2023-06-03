@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import Transition from "../Transition/Transition";
 
 const materialSymbols = localFont({
   variable: "--font-family-symbols", // Variable name (to reference after in CSS/styles)
@@ -68,7 +69,9 @@ export const Layout = ({ children, menu, config, footer }: ILayout) => {
         isThemeSwitcherVisible={isThemeSwitcherVisible}
       />
       {width < 1000 && <MobileNavbar menu={menu} />}
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <Transition>{children}</Transition>
+      </main>
       <Footer footer={footer} />
     </div>
   );

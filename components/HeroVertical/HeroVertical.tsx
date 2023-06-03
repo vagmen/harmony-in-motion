@@ -49,6 +49,7 @@ export const HeroVertical = ({
         noBorderRadiusTop={imageWidth === "fullWidth"}
         noBorderRadiusBottom={imageWidth === "fullWidth" && isImageBottom}
         alt=""
+        priority={title?.[0]?.type === "heading1"}
       />
     </SliceContainer>
     <SliceContainer
