@@ -1,18 +1,16 @@
 {
   "id": "action",
-  "label": "Действие",
+  "label": "Действия",
   "repeatable": true,
   "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } },
-      "title": {
-        "type": "Text",
-        "config": { "label": "title", "placeholder": "" }
-      },
-      "link": {
-        "type": "Link",
-        "config": { "label": "link", "placeholder": "", "select": null }
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "telegram": { "type": "SharedSlice" } } }
       }
     }
   }

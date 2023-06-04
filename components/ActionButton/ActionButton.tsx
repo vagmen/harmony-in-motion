@@ -52,7 +52,7 @@ export const ActionButton = (props: IButton | ILink) => {
   });
 
   return instanceOfButton(props) ? (
-    <button className={classes}>
+    <button className={classes} style={{ background: "#0088cc" }}>
       <ClickableComponentContent {...props} />
     </button>
   ) : (
@@ -61,6 +61,7 @@ export const ActionButton = (props: IButton | ILink) => {
       className={classes}
       target={props.newTab ? "_blank" : "_self"}
       scroll={false}
+      style={{ background: "#0088cc" }}
     >
       <ClickableComponentContent {...props} />
     </Link>
@@ -78,7 +79,9 @@ const ClickableComponentContent = (props: ICommonClickableComponent) => (
         //   {props.startIcon}
         // </span>
         <Image
-          src="https://img.icons8.com/?size=512&id=98970&format=png"
+          src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-telegram-is-a-cloud-based-instant-messaging-and-voice-over-ip-service-logo-color-tal-revivo.png"
+          // src="https://img.icons8.com/?size=512&id=98970&format=png"
+
           className={styles.startIcon}
           alt=""
           width={24}

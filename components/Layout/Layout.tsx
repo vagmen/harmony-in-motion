@@ -5,9 +5,11 @@ import useWindowSize from "../../hooks/useWindowSize";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
 import styles from "./index.module.css";
 import {
+  ActionDocument,
   ConfigDocumentData,
   FooterDocumentData,
   Simplify,
+  TelegramSlice,
 } from "../../prismicio-types";
 import { prepareButtons } from "../Buttons/Buttons";
 import { useEffect, useRef } from "react";
@@ -16,6 +18,7 @@ import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import Transition from "../Transition/Transition";
+import { SliceZone } from "@prismicio/client";
 
 const materialSymbols = localFont({
   variable: "--font-family-symbols", // Variable name (to reference after in CSS/styles)
@@ -32,6 +35,8 @@ interface ILayout {
   menu: IMenu;
   config?: Simplify<ConfigDocumentData>;
   footer?: Simplify<FooterDocumentData>;
+  // ctas?: ActionDocument<string>;
+  // SliceZone<TelegramSlice>;
 }
 
 export const Layout = ({ children, menu, config, footer }: ILayout) => {
@@ -67,6 +72,7 @@ export const Layout = ({ children, menu, config, footer }: ILayout) => {
         menu={menu}
         actions={config?.buttons ? prepareButtons(config.buttons) : []}
         isThemeSwitcherVisible={isThemeSwitcherVisible}
+        // ctas={ctas}
       />
       {width < 1000 && <MobileNavbar menu={menu} />}
       <main className={styles.main}>

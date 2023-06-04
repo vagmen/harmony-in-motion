@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async ({
 
     const [pages, menu, config, footer] = await Promise.all([
       client.getAllByType("page", {
-        predicates: [prismic.predicate.at("my.page.path", path)],
+        predicates: [prismic.filter.at("my.page.path", path)],
         fetchLinks: [
           "author.name",
           "author.position",
@@ -78,6 +78,7 @@ export const getStaticProps: GetStaticProps = async ({
       }),
       client.getSingle("config"),
       client.getSingle("footer"),
+      client.getByUID("action", "cta"),
     ]);
 
     const currentPage = pages[0];
@@ -88,6 +89,7 @@ export const getStaticProps: GetStaticProps = async ({
         menu: prepareMenuData(menu),
         config: config.data,
         footer: footer.data,
+        // ctas: ctas,
       },
       revalidate: 60,
     };

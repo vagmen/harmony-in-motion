@@ -22,6 +22,7 @@ export const components = {
   quotes: dynamic(() => import("./Quotes")),
   reviews_smart_widgets: dynamic(() => import("./ReviewsSmartWidgets")),
   statistics: dynamic(() => import("./Statistics")),
+  telegram: dynamic(() => import("./CtaButton")),
   text: dynamic(() => import("./Text")),
   video: dynamic(() => import("./Video")),
 };

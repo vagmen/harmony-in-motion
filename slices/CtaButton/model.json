@@ -1,0 +1,31 @@
+{
+  "id": "telegram",
+  "type": "SharedSlice",
+  "name": "CtaButton",
+  "description": "Telegram",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Название", "placeholder": "" }
+        },
+        "contact": {
+          "type": "Link",
+          "config": {
+            "label": "Ссылка",
+            "select": "document",
+            "customtypes": ["contact"]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

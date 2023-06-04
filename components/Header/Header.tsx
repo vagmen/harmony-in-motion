@@ -1,5 +1,9 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { EmptyImageFieldImage, FilledImageFieldImage } from "@prismicio/client";
+import {
+  EmptyImageFieldImage,
+  FilledImageFieldImage,
+  SliceZone,
+} from "@prismicio/client";
 import useWindowSize from "../../hooks/useWindowSize";
 import { IMenu } from "../../interfaces";
 import { Navbar } from "../Navbar/Navbar";
@@ -8,12 +12,18 @@ import { SliceContainer } from "../SliceContainer/SliceContainer";
 import { Buttons, IAction } from "../Buttons/Buttons";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 import Link from "next/link";
+import { ActionButton } from "../ActionButton/ActionButton";
+import { ActionDocument, TelegramSlice } from "../../prismicio-types";
+import { components } from "../../slices";
+import { SliceZone as CtaSliceZone } from "@prismicio/react";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
   menu: IMenu;
   actions?: IAction[];
   isThemeSwitcherVisible: boolean;
+  // ctaSlices?: SliceZone<TelegramSlice>;
+  // ctas?: ActionDocument<string>;
 }
 
 export const Header = ({
@@ -41,6 +51,8 @@ export const Header = ({
   //   }
   // };
 
+  // console.log("ctas", ctas);
+
   return (
     <header className={styles.sticky}>
       <SliceContainer topPadding="noPadding" width="fullWidthWithMargin">
@@ -58,14 +70,22 @@ export const Header = ({
             <Navbar menuItems={menu.menuItems} />
           )}
           <div className={styles.actions}>
+            {/* <div className={styles.grid}>
+              <CtaSliceZone
+                slices={ctas?.data.slices}
+                components={components}
+              />
+            </div> */}
+
             {/* <ActionButton
               link="https://t.me/AhmetovaKat"
               startIcon="etert"
               newTab
-              variant={"filled"}
-            > */}
-            {/* Телега */}
-            {/* </ActionButton> */}
+              variant="filled"
+            >
+              В телеграм
+            </ActionButton> */}
+
             <Buttons actions={actions} />
             {isThemeSwitcherVisible && <ThemeChanger />}
           </div>

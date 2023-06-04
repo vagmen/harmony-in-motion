@@ -1,8 +1,9 @@
 {
   "id": "contact",
-  "label": "contact",
+  "label": "Кнопка/Ссылка",
   "repeatable": true,
   "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } },

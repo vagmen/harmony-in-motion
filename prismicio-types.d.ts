@@ -5,33 +5,27 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Действие documents */
+/** Content for Действия documents */
 interface ActionDocumentData {
   /**
-   * title field in *Действие*
+   * Slice Zone field in *Действия*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: action.title
+   * - **API ID Path**: action.slices[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
    *
    */
-  title: prismic.KeyTextField;
-  /**
-   * link field in *Действие*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: action.link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-   *
-   */
-  link: prismic.LinkField;
+  slices: prismic.SliceZone<ActionDocumentDataSlicesSlice>;
 }
 /**
- * Действие document from Prismic
+ * Slice for *Действия → Slice Zone*
+ *
+ */
+type ActionDocumentDataSlicesSlice = TelegramSlice;
+/**
+ * Действия document from Prismic
  *
  * - **API ID**: `action`
  * - **Repeatable**: `true`
@@ -296,10 +290,10 @@ export type ConfigDocument<Lang extends string = string> =
     "config",
     Lang
   >;
-/** Content for contact documents */
+/** Content for Кнопка/Ссылка documents */
 interface ContactDocumentData {
   /**
-   * title field in *contact*
+   * title field in *Кнопка/Ссылка*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -310,7 +304,7 @@ interface ContactDocumentData {
    */
   title: prismic.KeyTextField;
   /**
-   * link field in *contact*
+   * link field in *Кнопка/Ссылка*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -321,7 +315,7 @@ interface ContactDocumentData {
    */
   link: prismic.LinkField;
   /**
-   * icon field in *contact*
+   * icon field in *Кнопка/Ссылка*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -333,7 +327,7 @@ interface ContactDocumentData {
   icon: prismic.ImageField<never>;
 }
 /**
- * contact document from Prismic
+ * Кнопка/Ссылка document from Prismic
  *
  * - **API ID**: `contact`
  * - **Repeatable**: `true`
@@ -429,7 +423,7 @@ export interface MenuDocumentDataMenuitemItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  pageRelationshipField: prismic.RelationField<"page">;
+  pageRelationshipField: prismic.ContentRelationshipField<"page">;
 }
 /**
  * Меню document from Prismic
@@ -622,7 +616,7 @@ interface AuthorSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  author: prismic.RelationField<"author">;
+  author: prismic.ContentRelationshipField<"author">;
 }
 /**
  * Default variation for Author Slice
@@ -897,7 +891,7 @@ export interface ButtonsV2SliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  action: prismic.RelationField<"action">;
+  action: prismic.ContentRelationshipField<"action">;
 }
 /**
  * Default variation for Buttons Slice
@@ -2129,7 +2123,7 @@ export interface QuotesSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  author: prismic.RelationField<"author">;
+  author: prismic.ContentRelationshipField<"author">;
 }
 /**
  * Default variation for Quotes Slice
@@ -2261,6 +2255,62 @@ export type StatisticsSlice = prismic.SharedSlice<
   StatisticsSliceVariation
 >;
 /**
+ * Primary content in CtaButton → Primary
+ *
+ */
+interface TelegramSliceDefaultPrimary {
+  /**
+   * Название field in *CtaButton → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: telegram.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismic.KeyTextField;
+  /**
+   * Ссылка field in *CtaButton → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: telegram.primary.contact
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  contact: prismic.ContentRelationshipField<"contact">;
+}
+/**
+ * Default variation for CtaButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TelegramSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TelegramSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *CtaButton*
+ *
+ */
+type TelegramSliceVariation = TelegramSliceDefault;
+/**
+ * CtaButton Shared Slice
+ *
+ * - **API ID**: `telegram`
+ * - **Description**: `Telegram`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TelegramSlice = prismic.SharedSlice<
+  "telegram",
+  TelegramSliceVariation
+>;
+/**
  * Primary content in Text → Primary
  *
  */
@@ -2368,6 +2418,7 @@ declare module "@prismicio/client" {
   namespace Content {
     export type {
       ActionDocumentData,
+      ActionDocumentDataSlicesSlice,
       ActionDocument,
       AuthorDocumentData,
       AuthorDocument,
@@ -2478,6 +2529,10 @@ declare module "@prismicio/client" {
       StatisticsSliceDefault,
       StatisticsSliceVariation,
       StatisticsSlice,
+      TelegramSliceDefaultPrimary,
+      TelegramSliceDefault,
+      TelegramSliceVariation,
+      TelegramSlice,
       TextSliceDefaultPrimary,
       TextSliceDefault,
       TextSliceVariation,

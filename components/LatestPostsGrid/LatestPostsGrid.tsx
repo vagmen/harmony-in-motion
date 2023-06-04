@@ -14,8 +14,8 @@ export const LatestPostsGrid = () => {
         const client = prismic.createClient(sm.apiEndpoint);
         const pages = await client.getAllByType("page", {
           predicates: [
-            prismic.predicate.fulltext("my.page.path", "/blog/"),
-            prismic.predicate.not("my.page.path", "/blog"),
+            prismic.filter.fulltext("my.page.path", "/blog/"),
+            prismic.filter.not("my.page.path", "/blog"),
           ],
         });
         setPosts(pages);
