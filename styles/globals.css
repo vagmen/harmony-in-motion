@@ -70,10 +70,9 @@
     0px 16px 24px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
     0px 6px 30px 5px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
 }
-
+/* 
 span.material-symbols-rounded {
   font-family: var(--font-family-symbols);
-  /* // Variable declared in local font configuration */
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
@@ -88,7 +87,7 @@ span.material-symbols-rounded {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -193,10 +192,6 @@ p {
   /* margin: 24px 0 16px; */
 }
 
-li {
-  /* padding: 16px 0 12px; */
-}
-
 ul,
 ol {
   padding-left: 32px;
@@ -269,20 +264,6 @@ ol li {
   html {
     font-size: var(--font-size-xl);
   }
-  h1 {
-    /* font-size: var(--font-size-xxxxxxl); */
-  }
-
-  h2 {
-    /* font-size: var(--font-size-xxxxxl); */
-  }
-
-  h3 {
-    /* font-size: var(--font-size-xxxxl); */
-  }
-  h3 {
-    /* font-size: var(--font-size-xxxl); */
-  }
 }
 
 @media (min-width: 1900px) {
@@ -292,19 +273,5 @@ ol li {
   }
   html {
     font-size: var(--font-size-xl);
-  }
-  h1 {
-    /* font-size: var(--font-size-xxxxxxl); */
-  }
-
-  h2 {
-    /* font-size: var(--font-size-xxxxxl); */
-  }
-
-  h3 {
-    /* font-size: var(--font-size-xxxxl); */
-  }
-  h4 {
-    /* font-size: var(--font-size-xxxl); */
   }
 }

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import Image from "next/image";

@@ -1,6 +1,7 @@
+"use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
 import styles from "./style.module.css";
+import { usePathname } from "next/navigation";
 
 const variants = {
   in: {
@@ -23,13 +24,13 @@ const variants = {
 };
 
 const Transition = ({ children }: { children: any }) => {
-  const { asPath } = useRouter();
+  const pathName = usePathname();
 
   return (
     <div className={styles.effect1}>
       <AnimatePresence initial={false} mode="wait">
         <motion.div
-          key={asPath}
+          key={pathName}
           variants={variants}
           animate="in"
           initial="out"

@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { StandardCard, getPreviewData1 } from "../Card/StandardCard";
 import { Grid } from "../Grid/Grid";

@@ -18,3 +18,26 @@ export function createClient({
   prismicNext.enableAutoPreviews({ client, previewData, req });
   return client;
 }
+
+export const repositoryNameNew = sm.repositoryName;
+
+export const createClientNew = (
+  config: prismicNext.CreateClientConfig = {}
+) => {
+  const client = prismic.createClient(repositoryName, {
+    // routes,
+    fetchOptions: {
+      cache: process.env.NODE_ENV === "production" ? "force-cache" : "no-store",
+      next: { tags: ["prismic"] },
+    },
+    ...config,
+  });
+
+  prismicNext.enableAutoPreviews({
+    client,
+    previewData: config.previewData,
+    req: config.req,
+  });
+
+  return client;
+};
