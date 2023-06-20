@@ -1,4 +1,3 @@
-import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { Avatar } from "../Avatar/Avatar";
@@ -16,8 +15,6 @@ interface IAuthor {
 }
 
 export const Author = ({ name, position, image }: IAuthor) => {
-  const { width } = useWindowSize();
-
   return (
     <div className={classNames(styles.container)}>
       <div>

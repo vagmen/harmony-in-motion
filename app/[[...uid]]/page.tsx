@@ -1,12 +1,31 @@
 import { Metadata } from "next";
 import { createClientNew } from "../../prismicio";
-import { getPathFromParams, prepareAlign } from "../../utils";
+import {
+  getPathFromParams,
+  getPathsFromPages,
+  getStaticParamsFromPages,
+  prepareAlign,
+} from "../../utils";
 import { filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { notFound } from "next/navigation";
 import { components } from "../../slices";
 
 type Params = { uid: string };
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const client = createClientNew();
+  const pages = await client.getAllByType("page");
+  const paths = getStaticParamsFromPages(pages);
+  return paths;
+
+  // https://nextjs.org/docs/app/api-reference/functions/generate-static-params#catch-all-dynamic-segment
+
+  // return posts.map((post) => ({
+  //   slug: post.slug,
+  // }));
+}
 
 const fetchPageData = async (params: Params) => {
   const client = createClientNew();

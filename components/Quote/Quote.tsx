@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./index.module.css";
 import { RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
@@ -5,7 +7,7 @@ import { CardContainer, CardVariant } from "../CardContainer/CardContainer";
 
 interface IQuote {
   text: RichTextField;
-  onClick?: () => void;
+  // onClick?: () => void;
   variant?: CardVariant;
   children?: React.ReactNode;
 }

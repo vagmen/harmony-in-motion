@@ -23,6 +23,18 @@ const getPathsFromUrls = (urls: string[][]) =>
     };
   });
 
+// return [{ slug: ['a', '1'] }, { slug: ['b', '2'] }, { slug: ['c', '3'] }]
+
+const getStaticParams = (urls: string[][]) =>
+  urls.map((url) => ({
+    uid: url,
+  }));
+
+export const getStaticParamsFromPages = (pages: PageDocument<string>[]) => {
+  const urls = getUrlsFromPages(pages);
+  return getStaticParams(urls);
+};
+
 export const getPathsFromPages = (pages: PageDocument<string>[]) => {
   const urls = getUrlsFromPages(pages);
   return getPathsFromUrls(urls);

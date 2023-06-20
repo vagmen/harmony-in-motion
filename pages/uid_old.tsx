@@ -1,7 +1,7 @@
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 import { components } from "../slices";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import {  GetStaticProps, InferGetStaticPropsType } from "next";
 import sm from "../slicemachine.config.json";
 import {
   getPathFromParams,
@@ -105,14 +105,14 @@ export const getStaticProps: GetStaticProps = async ({
   }
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const client = prismic.createClient(sm.apiEndpoint);
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const client = prismic.createClient(sm.apiEndpoint);
 
-  const pages = await client.getAllByType("page");
-  const paths = getPathsFromPages(pages);
-  return {
-    paths: paths,
-    // fallback: false,
-    fallback: "blocking",
-  };
-};
+//   const pages = await client.getAllByType("page");
+//   const paths = getPathsFromPages(pages);
+//   return {
+//     paths: paths,
+//     // fallback: false,
+//     fallback: "blocking",
+//   };
+// };

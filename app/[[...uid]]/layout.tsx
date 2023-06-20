@@ -1,7 +1,7 @@
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import Transition from "../../components/Transition/Transition";
-import useWindowSize from "../../hooks/useWindowSize";
+// import useWindowSize from "../../hooks/useWindowSize";
 import classNames from "classnames";
 import { prepareButtons } from "../../components/Buttons/Buttons";
 import { MobileNavbar } from "../../components/MobileNavbar/MobileNavbar";

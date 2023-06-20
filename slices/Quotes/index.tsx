@@ -25,8 +25,7 @@ const Quotes = ({ slice }: QuotesProps): JSX.Element => {
             {getAuthorComponent(item.author)}
           </Quote>
         )}
-        size={"m"}
-        // size={prepareGridSize(slice.primary.size) || "m"}
+        size={prepareGridSize(slice.primary.size) || "m"}
       />
     </SliceContainer>
   );

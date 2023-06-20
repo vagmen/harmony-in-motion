@@ -7,7 +7,6 @@ interface IAvatar {
 }
 
 export const Avatar = ({ image }: IAvatar) => {
-  // const { width } = useWindowSize();
 
   if (!image) {
     return <span>Нет картинки</span>;

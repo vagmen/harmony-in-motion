@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
-import { Layout } from "../components/Layout/Layout";
+// import { Layout } from "../components/Layout/Layout";
 import { linkResolver } from "../linkResolver";
 import { ThemeProvider } from "next-themes";
 import {
@@ -77,13 +77,13 @@ export default function App({
                 }
              `}
           </Script>
-          <Layout
+          {/* <Layout
             menu={pageProps.menu}
             config={pageProps.config}
             footer={pageProps.footer}
           >
             <Component {...pageProps} />
-          </Layout>
+          </Layout> */}
         </PrismicPreview>
       </PrismicProvider>
     </ThemeProvider>

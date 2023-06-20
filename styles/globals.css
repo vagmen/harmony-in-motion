@@ -70,7 +70,7 @@
     0px 16px 24px 2px rgb(var(--md-sys-color-shadow-rgb) / 0.14),
     0px 6px 30px 5px rgb(var(--md-sys-color-shadow-rgb) / 0.12);
 }
-/* 
+
 span.material-symbols-rounded {
   font-family: var(--font-family-symbols);
   font-weight: normal;
@@ -87,7 +87,7 @@ span.material-symbols-rounded {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
-} */
+}
 
 * {
   box-sizing: border-box;
