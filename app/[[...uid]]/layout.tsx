@@ -53,7 +53,9 @@ export default async function Layout({
     }),
     client.getSingle("config"),
     client.getSingle("footer"),
-    client.getByUID("action", "cta"),
+    client.getByUID("action", "cta", {
+      fetchLinks: ["contact.icon"],
+    }),
   ]);
 
   const config = configRaw.data;

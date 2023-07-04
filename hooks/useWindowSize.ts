@@ -3,8 +3,6 @@ import { useState } from "react";
 import useEventListener from "./useEventListener";
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
-// import { useEventListener, useIsomorphicLayoutEffect } from "usehooks-ts";
-
 interface WindowSize {
   width: number;
   height: number;

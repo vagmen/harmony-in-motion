@@ -41,3 +41,7 @@
   height: 100%;
   width: auto;
 }
+
+.grid {
+  display: flex;
+}

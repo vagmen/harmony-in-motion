@@ -14,6 +14,8 @@ import { Buttons, IAction } from "../Buttons/Buttons";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 import Link from "next/link";
 import { TelegramSlice } from "../../prismicio-types";
+import { components } from "../../slices";
+import { SliceZone as CtaSliceZone } from "@prismicio/react";
 
 interface IHeader {
   logo: EmptyImageFieldImage | FilledImageFieldImage | null | undefined;
@@ -66,9 +68,9 @@ export const Header = ({
             <Navbar menuItems={menu.menuItems} />
           )}
           <div className={styles.actions}>
-            {/* <div className={styles.grid}>
+            <div className={styles.grid}>
               <CtaSliceZone slices={ctaSlices} components={components} />
-            </div> */}
+            </div>
 
             {/* <ActionButton
               link="https://t.me/AhmetovaKat"
