@@ -1,9 +1,10 @@
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { FaqItem } from "../../components/FaqItem/FaqItem";
 import styles from "./styles.module.css";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { Content } from "@prismicio/client";
 import { usePrismicContext } from "../../utils";
+import { PrismicRichText } from "../../components/prismic/PrismicRichText/PrismicRichText";
 
 const Faq = ({ slice, context }: SliceComponentProps<Content.FaqSlice>) => {
   const { align } = usePrismicContext(context);

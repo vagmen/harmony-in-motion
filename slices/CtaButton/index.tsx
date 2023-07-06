@@ -6,7 +6,7 @@ import { linkResolver } from "../../linkResolver";
 export type TelegramProps = SliceComponentProps<Content.TelegramSlice>;
 
 const CtaButton = ({ slice }: TelegramProps): JSX.Element => {
-  console.log("slice.primary.contact", slice);
+  // console.log("slice.primary.contact", slice);
 
   return (
     <Button link={asLink(slice.primary.contact, { linkResolver }) || ""}>

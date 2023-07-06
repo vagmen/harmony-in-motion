@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { createClientNew } from "../../prismicio";
 import {
   getPathFromParams,
-  getPathsFromPages,
   getStaticParamsFromPages,
   prepareAlign,
 } from "../../utils";
@@ -70,9 +69,9 @@ export async function generateMetadata({
   // const client = createClientNew();
   // const settings = await client.getSingle("settings");
   const page = await fetchPageData(params);
-  const metaTitle = page.data.title || "Гармония в движении";
+  const metaTitle = page?.data?.title || "Гармония в движении";
   const metaDescription =
-    page.data.description ||
+    page?.data?.description ||
     "Сайт, который поможет вам обрести гармонию в движении и заботиться о своем теле. Здесь вы найдете множество упражнений и советов, чтобы улучшить свою физическую форму и настроение. Наша миссия - помочь вам достигнуть гармонии тела и духа";
   //   const canonicalUrl = ROOT_URL + router.asPath;
 
@@ -89,6 +88,9 @@ interface IPage {
 
 export default async function Page({ params }: IPage) {
   const page = await fetchPageData(params);
+  if (!page) {
+    return <></>;
+  }
 
   return (
     <SliceZone

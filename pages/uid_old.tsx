@@ -1,14 +1,8 @@
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 import { components } from "../slices";
-import {  GetStaticProps, InferGetStaticPropsType } from "next";
-import sm from "../slicemachine.config.json";
-import {
-  getPathFromParams,
-  getPathsFromPages,
-  prepareAlign,
-  prepareMenuData,
-} from "../utils";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { getPathFromParams, prepareAlign, prepareMenuData } from "../utils";
 import { createClient } from "../prismicio";
 import Head from "next/head";
 import { useRouter } from "next/router";

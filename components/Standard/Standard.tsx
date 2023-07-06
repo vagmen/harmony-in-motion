@@ -1,9 +1,9 @@
 import styles from "./index.module.css";
 import classNames from "classnames";
 import { RichTextField } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
 import { PageAlignment } from "../../interfaces";
 import { Buttons, IAction } from "../Buttons/Buttons";
+import { PrismicRichText } from "../prismic/PrismicRichText/PrismicRichText";
 
 export interface IStandard {
   title: RichTextField | null;

@@ -1,7 +1,8 @@
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "../../components/SliceContainer/SliceContainer";
 import { usePrismicContext } from "../../utils";
 import { TextSlice } from "../../prismicio-types";
+import { PrismicRichText } from "../../components/prismic/PrismicRichText/PrismicRichText";
 
 const Text = ({ slice, context }: SliceComponentProps<TextSlice>) => {
   const { align } = usePrismicContext(context);

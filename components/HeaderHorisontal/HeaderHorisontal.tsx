@@ -1,7 +1,7 @@
 import { RichTextField } from "@prismicio/client";
 import styles from "./index.module.css";
 import { Buttons, IAction } from "../Buttons/Buttons";
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicRichText } from "../prismic/PrismicRichText/PrismicRichText";
 
 interface IHeaderHorisontal {
   title: RichTextField;

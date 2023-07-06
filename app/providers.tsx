@@ -1,10 +1,6 @@
 "use client";
 
-import { PrismicProvider } from "@prismicio/react";
 import { ThemeProvider } from "next-themes";
-import { Button } from "../components/Button/Button";
-import { linkResolver } from "../linkResolver";
-import { Image } from "../components/Image/Image";
 import { PrismicPreview } from "@prismicio/next";
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
@@ -13,7 +9,7 @@ import { repositoryName } from "../prismicio";
 export function Providers({ children }: { children: any }) {
   return (
     <ThemeProvider>
-      <PrismicProvider
+      {/* <PrismicProvider
         internalLinkComponent={({ href, children }) => (
           <Button variant="underlined" link={href}>
             {children}
@@ -30,16 +26,16 @@ export function Providers({ children }: { children: any }) {
             <Image field={node} alt={node.alt || ""} withPadding />
           ),
         }}
-      >
-        <PrismicPreview repositoryName={repositoryName}>
-          {/* <!-- Google tag (gtag.js) --> */}
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-            strategy="afterInteractive"
-          ></Script>
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
+      > */}
+      <PrismicPreview repositoryName={repositoryName}>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
               if ('${process.env.NODE_ENV}' !== 'development') {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -47,11 +43,10 @@ export function Providers({ children }: { children: any }) {
                 gtag('config', '${gtag.GA_TRACKING_ID}',{page_path: window.location.pathname});
               }
            `}
-          </Script>
+        </Script>
 
-          {children}
-        </PrismicPreview>
-      </PrismicProvider>
+        {children}
+      </PrismicPreview>
     </ThemeProvider>
   );
 }
