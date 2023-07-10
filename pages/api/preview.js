@@ -1,8 +1,8 @@
 import { setPreviewData, redirectToPreviewURL } from "@prismicio/next";
-import { createClient } from "../../prismicio";
+import { createClient, createClientNew } from "../../prismicio";
 
 const index = async (req, res) => {
-  const client = createClient({ req });
+  const client = createClientNew({ req });
 
   await setPreviewData({ req, res });
 

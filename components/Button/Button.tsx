@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { KeyTextField } from "@prismicio/client";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { PrismicNextLink } from "@prismicio/next";
 
 export type ButtonVariant =
   | "elevated"
@@ -55,14 +56,14 @@ export const Button = (props: IButton | ILink) => {
       <ClickableComponentContent {...props} />
     </button>
   ) : (
-    <Link
+    <PrismicNextLink
       href={props.link}
       className={classes}
       target={props.newTab ? "_blank" : "_self"}
       scroll={false}
     >
       <ClickableComponentContent {...props} />
-    </Link>
+    </PrismicNextLink>
   );
 };
 

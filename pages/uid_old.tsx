@@ -3,9 +3,9 @@ import * as prismic from "@prismicio/client";
 import { components } from "../slices";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { getPathFromParams, prepareAlign, prepareMenuData } from "../utils";
-import { createClient } from "../prismicio";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { createClientNew } from "../prismicio";
 
 const ROOT_URL = "https://harmony-in-motion.ru";
 
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({
   previewData,
 }) => {
   try {
-    const client = createClient({ previewData });
+    const client = createClientNew({ previewData });
     const path = getPathFromParams(params);
 
     const [pages, menu, config, footer] = await Promise.all([

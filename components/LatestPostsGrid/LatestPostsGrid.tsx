@@ -5,6 +5,7 @@ import { Grid } from "../Grid/Grid";
 import * as prismic from "@prismicio/client";
 import sm from "../../slicemachine.config.json";
 import { PageDocument } from "../../prismicio-types";
+import { createClientNew } from "../../prismicio";
 
 export const LatestPostsGrid = () => {
   const [posts, setPosts] = useState<PageDocument<string>[]>([]);
@@ -12,7 +13,8 @@ export const LatestPostsGrid = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const client = prismic.createClient(sm.apiEndpoint);
+        const client = createClientNew();
+        // const client = prismic.createClient(sm.apiEndpoint);
         const pages = await client.getAllByType("page", {
           predicates: [
             prismic.filter.fulltext("my.page.path", "/blog/"),

@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "../prismicio";
 // import { Layout } from "../components/Layout/Layout";
 import { linkResolver } from "../linkResolver";
 import { ThemeProvider } from "next-themes";
@@ -18,6 +17,7 @@ import { Image } from "../components/Image/Image";
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
+import sm from "./../slicemachine.config.json";
 
 interface CustomPageProps {
   config: Simplify<ConfigDocumentData>;
@@ -60,7 +60,7 @@ export default function App({
           ),
         }}
       >
-        <PrismicPreview repositoryName={repositoryName}>
+        <PrismicPreview repositoryName={sm.repositoryName}>
           {/* <!-- Google tag (gtag.js) --> */}
           <Script
             async

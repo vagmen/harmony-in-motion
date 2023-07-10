@@ -7,24 +7,24 @@ import sm from "./slicemachine.config.json";
  *
  *  pages/slice-simulator
  */
-export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
+// export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
-export function createClient({
-  previewData,
-  req,
-  ...config
-}: prismicNext.CreateClientConfig = {}) {
-  const client = prismic.createClient(sm.apiEndpoint, config);
-  prismicNext.enableAutoPreviews({ client, previewData, req });
-  return client;
-}
+// export function createClient({
+//   previewData,
+//   req,
+//   ...config
+// }: prismicNext.CreateClientConfig = {}) {
+//   const client = prismic.createClient(sm.apiEndpoint, config);
+//   prismicNext.enableAutoPreviews({ client, previewData, req });
+//   return client;
+// }
 
-export const repositoryNameNew = sm.repositoryName;
+// export const repositoryNameNew = sm.repositoryName;
 
 export const createClientNew = (
   config: prismicNext.CreateClientConfig = {}
 ) => {
-  const client = prismic.createClient(repositoryName, {
+  const client = prismic.createClient(sm.repositoryName, {
     // routes,
     fetchOptions:
       process.env.NODE_ENV === "production"

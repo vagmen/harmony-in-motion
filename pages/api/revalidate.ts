@@ -1,7 +1,6 @@
-import * as prismic from "@prismicio/client";
-import sm from "./../../slicemachine.config.json";
 import { asLink } from "@prismicio/client";
 import { linkResolver } from "../../linkResolver";
+import { createClientNew } from "../../prismicio";
 /**
  * This API endpoint will be called by a Prismic webhook. The webhook
  * will send an object containing a list of added, updated, or deleted
@@ -35,7 +34,8 @@ export default async function handler(
       return res.status(401).json({ message: "Invalid token" });
     }
 
-    const client = prismic.createClient(sm.apiEndpoint);
+    const client = createClientNew();
+    // const client = prismic.createClient(sm.apiEndpoint);
     // const pages = await client.getAllByType("page");
 
     const documents = await client.getAllByIDs(req.body.documents as string[]);

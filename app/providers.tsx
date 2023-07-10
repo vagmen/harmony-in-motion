@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { PrismicPreview } from "@prismicio/next";
 import Script from "next/script";
 import * as gtag from "../lib/gtag";
-import { repositoryName } from "../prismicio";
+import sm from "./../slicemachine.config.json";
 
 export function Providers({ children }: { children: any }) {
   return (
@@ -27,7 +27,7 @@ export function Providers({ children }: { children: any }) {
           ),
         }}
       > */}
-      <PrismicPreview repositoryName={repositoryName}>
+      <PrismicPreview repositoryName={sm.repositoryName}>
         {/* <!-- Google tag (gtag.js) --> */}
         <Script
           async

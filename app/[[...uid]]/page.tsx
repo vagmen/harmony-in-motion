@@ -5,7 +5,7 @@ import {
   getStaticParamsFromPages,
   prepareAlign,
 } from "../../utils";
-import { filter } from "@prismicio/client";
+import { asImageSrc, filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { notFound } from "next/navigation";
 import { components } from "../../slices";
@@ -76,9 +76,13 @@ export async function generateMetadata({
   //   const canonicalUrl = ROOT_URL + router.asPath;
 
   return {
-    title: metaTitle,
-    // title: `${page.data.title} — ${asText(settings.data.site_title)}`,
-    description: metaDescription,
+    // title: metaTitle,
+    // description: metaDescription,
+    openGraph: {
+      title: metaTitle,
+      description: metaDescription,
+      images: asImageSrc(page.data?.image) || undefined,
+    },
   };
 }
 
